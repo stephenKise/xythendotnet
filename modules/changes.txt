@@ -1,0 +1,67 @@
+Changes:
+
+v.3.8.13
+* Default level 0 weapon (Fists) and armor (T-Shirt) can now be customized rather than translated.  Also, they can be read from the database if desired.
+* Uninstall erases items one by one, allowing players to get refunds and set their armor/weapon as mentioned above.
+* Deletion of a weapon or armor restores its name for players in the manner described above.  Important: Gold and gems will always be refunded without the discount.
+
+v.3.8.12
+* Debug information appears in the debug log when selling or buying equipment.
+* Donation descriptions list in the lodge now includes this shop if it's set for donators only.
+* Can no longer buy a sold-out item as a gift.
+* When searching for a person to give a gift, multiple matches resulted in a broken output table.
+* Title is sanitized, so the name of the shop may contain color and formatting codes (for the navigation key).
+* Disabled creation of a redundant index on primary key.  Upgraders will need to run the following (raw) SQL:
+ALTER TABLE magicitems DROP INDEX id
+(No fields will be dropped.  The name of the table may need a prefix.)
+* Fixed table creation code to match automatically created table descriptor.
+* Mass cache invalidation code does not attempt to access a directory if the directory is invalid (subject to is_dir function limitations).
+
+v.3.8.11
+* All available items are now displayed as soon as they are available for the player's DK.  [reported by knuckles]
+
+v.3.8.10c
+* massinvalidate functionality is now replicated in a library function.  This fixes an incompatibility issue with core prior to 1.1.0 and a bug that caused massinvalidate to fail in core 1.1.0 and 1.1.1beta.
+* Function delete in the editor is now properly localized to the equipment shop.
+
+v.3.8.10
+* Improved data caching and uncached performance.
+* New hook available.  Runs when attempting to add or edit an item.  Can be used to add item settings.
+$itemarray_extra = modulehook( 'mysticalshop-editor-itemsettings' );
+* Death Overlord's name changes according to the game setting.
+* Item Delete editor function now performs a little house cleaning.  Note that gift items are not refunded, and refunds are issued regardless of players' level.
+* Minor text changes.
+* An external module that uses lib.php can now block shopkeeper's dialog.
+
+v.3.8.9
+* Maintenance: Much redundant and useless code removed/changed throughout the module.  Some <span> tags are closed/<i> tags rearranged for proper nesting.
+* Feature: If charm-based discount is enabled, editor preview will show a table that displays some of the charm-to-discount conversion values so that the administrator(s) may see whether the prices will be appropriate once discount is applied.
+* Discount code no longer lets the shop pay the player for the items that the player buys. The discount formula now uses a non-linear curve.
+* Gifting properly works with all item categories.
+* Equipment editor displays the edited category after adding an item.  It used to show Rings regardless of what was added.
+* Equipment editor's confirmation message after an item gets deleted is now displayed on top of the items list.
+* If a player buys armor or a weapon while carrying an item from MightyE or Pegasus, a message notifies the player that the old item is gone.  These messages display when receiving a gift as well.
+
+v.3.7.8
+* A setting added to disallow rare items to be added to store inventory after a dragon kill.
+* Rare items added back to store inventory only once when sold, not twice.
+* User buff reset is now a library function.
+* "T-Shirt" and "Fists" are now translatable.
+
+v.3.7.7
+* Sale is disallowed if it will leave the player with no defense, attack, or hitpoints.
+* Item buff restoration after DK is now activated by default.
+* Level limit now shows correctly in the YoM.
+
+v.3.7.6
+* Implemented level-based hold on gifts, as requested by Ironman.
+* More minor text changes and bug fixes.
+
+v.3.7.5
+* Removed redundant code from dragonkill.php; reformatted indents.
+* Repaired destroying item for boots (code was there, but was useless).
+* End-of-line character is now '\n' rather than '\r\n'.
+* Armor is no longer selected using ringid.
+* No longer "rolling" twice, nor getting the losechance setting too many times.
+* Charstats no longer show old and long-forgotten equipment.
+* Some minor text changes and bug fixes (sorry, I know these will need to be translated again).

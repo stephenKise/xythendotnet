@@ -1,0 +1,252 @@
+/* CSS Document */
+/* RedDarkness theme by Tela created for LOGD */
+
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+table.nav {
+  height: auto;
+	width: 100%;
+}
+.navhead {
+	text-decoration: none;
+	width: auto;
+	height: auto;
+	padding-top: 10px;
+	float: left;
+	clear: none;
+	font-weight: bold;
+	color: #A9A9A9 ;
+	cursor: default;
+	text-align: center;
+	font-variant: small-caps;
+}
+a {
+	color: #A6A6A6;
+	text-decoration: none;
+}
+#checkoutbutton {
+    background-color: #33FF00;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border: 5px solid #009900;
+  padding: 5px;
+}
+a.nav {
+	color: #A6A6A6;
+	text-decoration: none;
+	width: 182px;
+	height: auto;
+	float: left;
+	padding: 1px;
+	clear: none;
+	text-align: left;
+}
+.navhelp {
+	text-decoration: none;
+	width: 182px;
+	height: auto;
+	padding: 1px;
+	float: left;
+	clear: none;
+}
+a:hover.nav {
+	background-color: #3F331C;
+	color: #282828; /**/
+}
+table {
+}
+td.charinfo {
+  width: 182px;
+	cursor: default;
+}
+td.charhead {
+  width: auto;
+	border: none;
+	cursor: default;
+	color: #A9A9A9 ;
+	font-weight: bold;
+	text-decoration: small-caps;
+}
+table.charinfo {
+	border: none;
+	width: 182px;
+}
+td.popupheader {
+	height: 45px;
+	background-color: #000000;
+	border: 3px groove #959595 ; /**/
+}
+table.popupfooter {
+  width: auto;
+  font-weight: normal;
+  font-size: 12px;
+  background-color: #000000;
+  color: #CCCCCC;
+  border-top: 3px solid #959595 ; /**/
+  border-bottom: 
+ solid #959595 ; /**/
+  border-right: none;
+  border-left: none;
+  height: auto;
+}
+
+input {
+  background-color: #000000;
+	border: 3px groove #959595 ;
+	color: #ffffff ;
+}
+.button {
+  font-family: verdana, arial, helvetica, sans-serif;  
+  font-size: 12;  
+	color: #A9A9A9 ;  
+	background-color: #000000;  
+	border: 1px groove #A9A9A9 ;
+}
+.input {
+	background-color: #000000;
+	border: 2px groove #959595 ;
+	color: #DEDEDE;
+}
+select {
+	background-color: #000000;
+	border: 2px groove #959595;
+	color: #A9A9A9 ;
+}
+table.vitalinfo {
+  width: auto;
+	font-weight: bold;
+	font-size: 12px;
+	font-variant: small-caps
+}
+table.redrule {
+  width: 30em;
+  border-bottom: 2px solid #959595 ;
+  height: auto;
+}
+table.footer {
+  width: auto;
+  font-weight: normal;
+  font-size: 12px;
+  background-color: #000000;
+  color: #A9A9A9;
+  border-top: 3px solid #959595 ;
+  border-bottom: 3px solid #959595 ;
+  border-right: none;
+  border-left: none;
+  height: auto;
+}
+a.motd {
+	text-decoration: none;
+	color:#959595;
+}
+a:hover.motd {
+	font-weight: normal;
+	color:#959595 ;
+}
+a.hotmotd {
+	font-weight: normal;
+	color:#959595 ;
+	text-decoration: underline blink;
+}
+.pagetitle {
+	font-family: Arial Black, Courier, sans-serif;
+	font-variant: small-caps;
+	font-size: 20px;
+	color: #A9A9A9 ;
+}
+.navhi {
+	color: #585858;
+	text-decoration: underline;
+	font-weight: bold;
+}
+td.nav a.thot {
+	position: absolute;
+	left: 0px;
+	height: auto;
+}
+td.nav a.t {
+	position: absolute;
+	left: 0px;
+	height: auto;
+}
+a.t {
+	width: 7px;
+	height: 7px;
+	border: 1px dotted #404040 ;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 7px;
+	text-decoration: none;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+a.thot {
+	width: 7px;
+	height: 7px;
+	border: 1px dotted #404040 ;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 7px;
+	text-decoration: none;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+div.debug {
+	background-color: #404040 ;
+	color: #000000;
+	border: 1px dotted #000000;
+	width: auto;
+	height: auto;
+	font-size: 10px;
+}
+.colDkBlue	  { color: #0000FF; }
+.colDkGreen   { color: #00B000; }
+.colDkCyan	  { color: #00B0B0; }
+.colDkRed	    { color: #BB0000; }
+.colDkMagenta { color: #B000CC; }
+.colDkYellow  { color: #B0B000; }
+.colDkWhite   { color: #B0B0B0; }
+.colLtBlue	  { color: #6262FF; }
+.colLtGreen   { color: #00FF00; }
+.colLtCyan	  { color: #00FFFF; }
+.colLtRed	    { color: #FF2222; }
+.colLtMagenta { color: #FF00FF; }
+.colLtYellow  { color: #FFFF00; }
+.colLtWhite   { color: #ffffff; }
+.colLtBlack   { color: #777777; }
+.colDkOrange  { color: #995500; }
+.colLtOrange  { color: #FF9900; }
+.colBlue  		{ color: #0070FF; }
+.colLime  	  { color: #DDFFBB; }
+.colBlack  		{ color: #333333; }
+.colRose 		  { color: #EEBBEE; }
+.colblueviolet    { color: #9A5BEE; }
+.coliceviolet	{ color: #AABBEE; }
+.colLtBrown 	{ color: #F8DB83; }
+.colDkBrown 	{ color: #6b563f; }
+.colXLtGreen	{ color: #aaff99; }
+.colAttention 	  { background-color: #00FF00; color: #ECE064; }
+.colWhiteBlack 	  { background-color: #BDBDBD; color: #000000; }
+.colBlack {color: #616161; }
+.colbeige     { color: #F5F5DC; }
+.colkhaki     { color: #F0E68C; }
+.coldarkkhaki { color: #BDB76B; }
+.colaquamarine    { color: #7FFFD4; }
+.coldarkseagreen  { color: #8FBC8F; }
+.collightsalmon   { color: #FFA07A; }
+.colsalmon    { color: #FA8072; }
+.colwheat     { color: #F5DEB3; }
+.coltan       { color: #D2B48C; }
+.colLtLinkBlue    { color: #0099FF; }
+.colDkLinkBlue    { color: #006BB3; }
+.colDkRust    { color: #8D6060; }
+.colLtRust    { color: #B07878; }
+.colMdBlue    { color: #0000F0; }
+.colMdGrey    { color: #BDBDBD; }
+.colburlywood { color: #DEB887; }
+.trhead     { background-color:#19195F; color:#E4DD94; }
+.trlight    { background-color:#151515; }
+.trdark     { background-color:#000000; }
+.trhilight  { background-color: #585858; }

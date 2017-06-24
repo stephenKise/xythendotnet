@@ -1,0 +1,244 @@
+<!--!popuphead-->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>{title}</title>
+
+<link href="templates/Classic.css" rel="stylesheet" type="text/css">
+
+{headscript}{script}
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+
+<body bgcolor='#171717' text='#CCCCCC'>
+
+<table border='1' cellpadding=5 cellspacing=0 width='100%'>
+
+  <tr>
+
+  <td colspan=2 class='pageheader'>
+
+    <table border=0 cellpadding=0 cellspacing=0 width='100%' class='noborder'>
+
+	<tr>
+
+	<td width='100%' class='noborder'><b>{title}</b></td>
+
+	</tr>
+
+	</table>
+
+  </td></tr>
+
+  <tr>
+
+  <td valign='top' width='100%'>
+
+<!--!popupfoot--> </td></tr><tr>
+
+  <tr>
+
+  <td bgcolor='#141414' align='left'>{copyright}</td>
+
+  </tr>
+
+</table>
+
+</body>
+
+</html>
+
+<!--!header-->
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>{title}</title>
+
+<link href="templates/Classic.css" rel="stylesheet" type="text/css">
+
+{headscript}{script}
+</head>
+
+<body bgcolor='#141414' text='#CCCCCC'>
+
+<table class='fullwidth' border='0px' cellpadding='5px' cellspacing='0px' width='100%'>
+
+	<tr>
+
+		<td colspan=2 class='pageheader'>
+
+			<table border=0 cellpadding=0 cellspacing=0 width='100%' class='noborder'>
+
+				<tr>
+
+					<td align='left' class='noborder' nowrap="true" width='33%'><b>Arcane, the Arturian Legend Experience</b><br>{version}<br>{source}</td>
+
+					<td align='right' class='noborder' nowrap="true" width='33%'>{loginform}{petitioncount}</td>	
+
+					<td align='right' class='noborder' nowrap="true" width='33%'>{mail} {petition} {motd}</td>				
+
+				</tr>
+
+			</table>
+
+		</td>
+
+	</tr>
+
+	<tr>
+
+		<td width='175px' bgcolor='#171717' valign='top' height='100%' class='navigation'>
+
+			{navad}
+
+			<table border='0' cellpadding='0' cellspacing='0'>{nav}</table><br>
+
+			<table valign='bottom' height='150px' class='navigation'><tr><td>{playerdata}</td></tr></table>
+
+		</td>
+
+		<td rowspan=2 valign='top' width='100%'>
+
+			<div style="float: right">{verticalad}</div>{bodyad}
+
+<!--!footer-->
+
+</td></tr><tr><td width='175px' bgcolor='#171717' valign='bottom' class='navigation'>
+
+{stats}
+
+{paypal}
+
+{pagegen}
+
+</td></tr><tr><td colspan=2 bgcolor='#141414' align='center'>
+
+
+
+	<table border='0' cellpadding='0' cellspacing='0' width='100%' class='noborder'><tr><td class='noborder'>{copyright}<br/>
+
+	</td></tr></table>
+
+	</td></tr></table></body></html>
+
+<!--!statstart--><table cellpadding=2 cellspacing=0 class='charinfo' width='150'>
+
+<!--!stathead--><tr><td class='charhead' colspan='2'><b>{title}</b></td></tr>
+
+<!--!statrow--><tr><td class='charinfo'><b>{title}</b></td><td class='charinfo' align='right'>{value}</td></tr>
+
+<!--!statbuff--><tr><td class='charhead' colspan='2'><b>{title}</b></td></tr><tr><td class='charinfo' colspan='2'>{value}</td></tr>
+
+<!--!statend--></table>
+
+<!--!navhead--><tr><td class="navhead">{title}</td></tr>
+
+<!--!navhelp--><tr><td><span class="navhelp">{text}<br></span></td></tr>
+
+<!--!navitem--><tr><td><a href="{link}"{accesskey}class='nav' {popup}>{text}</a></td></tr>
+
+<!--!petitioncount--><table border='0' cellpadding='5' cellspacing='0' align='right'><tr><td></td></tr></table>
+
+<!--!adwrapper-->
+
+<table cellpadding=2 cellspacing=0>
+
+	<tr><td>{content}</td></tr>
+
+</table>
+
+<!--!login-->
+
+<table border='0' cellpadding='0' cellspacing='0' class='noborder'>
+
+  <tr>
+
+	<td class='noborder'><img src='images/logindragon.gif'></td>
+
+  </tr>
+
+  <tr>
+
+	<td valign='center' align='center' class='noborder'>
+
+	  <table border='0'>
+
+		<tr>
+
+		  <td align='center'>{username}:</td>
+
+		  <td align='center'>{password}:</td>
+
+		</tr>
+
+		<tr>
+
+		  <td><input name='name' id="name" accesskey='u' size='10'></td>
+
+		  <td><input name='password' id="password" accesskey='p' type='password' size='10'></td>
+
+		</tr>
+
+		<tr>
+
+		  <td colspan='2' align='center'><input type='submit' value='{button}' class='button'><br></td>
+
+		</tr>
+
+	  </table>
+
+	</td>
+
+  </tr>
+
+</table>
+
+<!--!loginfull-->
+
+<table border='0' cellpadding='0' cellspacing='0' class='noborder'>
+
+  <tr>
+
+	<td class='noborder'><img src='images/logindragon.gif'></td>
+
+  </tr>
+
+  <tr>
+
+	<td valign='center' align='center' class='noborder'>
+
+	  <table border='0'>
+
+		<tr>
+
+		  <td align='center'><font color='#ff0000'>Server Full!</font></td>
+
+		</tr>
+
+	  </table>
+
+	</td>
+
+  </tr>
+
+</table>
+
+<!--!collapse-->
+
+style:classic
+

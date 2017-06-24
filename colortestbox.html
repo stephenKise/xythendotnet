@@ -1,0 +1,317 @@
+<html>
+	<head>
+		<title>Xythen Colour Testbox</title>
+		<style type="text/css">
+			/**/
+			body{
+				color:#FFF;
+				font-family:courier new;
+				background-color:#000;
+			}
+			div.preview{
+				color:#FFF;
+				font-size:0.8em;
+				font-family:verdana;
+				width:500px;
+				padding:5px;
+			}
+			textarea{
+				color:#FFF;
+				border:1px solid #8B4513;
+				background-color:#CD853F;
+			}
+			.colDkBlue	    { color: #0000FF; }
+			.colDkGreen     { color: #00B000; }
+			.colDkCyan	    { color: #00B0B0; }
+			.colDkRed	    { color: #BB0000; }
+			.colDkMagenta   { color: #B000CC; }
+			.colDkYellow    { color: #B0B000; }
+			.colDkWhite     { color: #B0B0B0; }
+			.colLtBlue	    { color: #6262FF; }
+			.colLtGreen     { color: #00FF00; }
+			.colLtCyan	    { color: #00FFFF; }
+			.colLtRed	    { color: #FF2222; }
+			.colLtMagenta   { color: #FF00FF; }
+			.colLtYellow    { color: #FFFF00; }
+			.colLtWhite     { color: #FFFFFF; }
+			.colLtBlack     { color: #777777; }
+			.colDkOrange    { color: #995500; }
+			.colLtOrange    { color: #FF9900; }
+			.colBlue  	    { color: #0070FF; }
+			.colLime  	    { color: #DDFFBB; }
+			.colBlack  	    { color: #333333; }
+			.colRose 	    { color: #EEBBEE; }
+			.colblueviolet  { color: #9A5BEE; }
+			.coliceviolet   { color: #AABBEE; }
+			.colLtBrown     { color: #F8DB83; }
+			.colDkBrown     { color: #6b563f; }
+			.colXLtGreen    { color: #aaff99; }
+			.colbeige       { color: #F5F5DC; }
+			.colkhaki       { color: #F0E68C; }
+			.coldarkkhaki   { color: #BDB76B; }
+			.colaquamarine  { color: #7FFFD4; }
+			.coldarkseagreen{ color: #8FBC8F; }
+			.collightsalmon { color: #FFA07A; }
+			.colsalmon      { color: #FA8072; }
+			.colwheat       { color: #F5DEB3; }
+			.coltan         { color: #D2B48C; }
+			.colLtLinkBlue  { color: #0099FF; }
+			.colDkLinkBlue  { color: #006BB3; }
+			.colDkRust      { color: #8D6060; }
+			.colLtRust      { color: #B07878; }
+			.colMdBlue      { color: #0000F0; }
+			.colMdGrey      { color: #DDDDDD; }
+			.colburlywood   { color: #DEB887; }
+		</style>
+		<script language="JavaScript" type="text/javascript"><!--
+			function preview_message(t){
+				var out='<span>';
+				var end='</span>';
+				var x=0;
+				var y='';
+				var z='';
+				var i=0;
+				var b=0;
+				var c=0;
+				var s=0;
+				var u=0;
+				for(;x<t.length;x++){
+					y=t.substr(x,1);
+					if(y=='<'){
+						out+='&lt;';
+						continue;
+					}else if(y=='>'){
+						out+='&gt;';
+						continue;
+					}else if(y=='`'){
+						if(x<t.length-1){
+							z=t.substr(x+1,1);
+							if(z=='0'){
+								out+='</span>';
+							}else if(z=='1'){
+								out+='</span><span class=\'colDkBlue\'>';
+							}else if(z=='2'){
+								out+='</span><span class=\'colDkGreen\'>';
+							}else if (z=='3'){
+								out += '</span><span class=\'colDkCyan\'>';
+							}else if (z=='4'){
+								out += '</span><span class=\'colDkRed\'>';
+							}else if (z=='5'){
+								out += '</span><span class=\'colDkMagenta\'>';
+							}else if (z=='6'){
+								out += '</span><span class=\'colDkYellow\'>';
+							}else if (z=='7'){
+								out += '</span><span class=\'colDkWhite\'>';
+							}else if (z=='q'){
+								out += '</span><span class=\'colDkOrange\'>';
+							}else if (z=='!'){
+								out += '</span><span class=\'colLtBlue\'>';
+							}else if (z=='@'){
+								out += '</span><span class=\'colLtGreen\'>';
+							}else if (z=='#'){
+								out += '</span><span class=\'colLtCyan\'>';
+							}else if (z=='$'){
+								out += '</span><span class=\'colLtRed\'>';
+							}else if (z=='%'){
+								out += '</span><span class=\'colLtMagenta\'>';
+							}else if (z=='^'){
+								out += '</span><span class=\'colLtYellow\'>';
+							}else if (z=='&'){
+								out += '</span><span class=\'colLtWhite\'>';
+							}else if (z=='Q'){
+								out += '</span><span class=\'colLtOrange\'>';
+							}else if (z==')'){
+								out += '</span><span class=\'colLtBlack\'>';
+							}else if (z=='r'){
+								out += '</span><span class=\'colRose\'>';
+							}else if (z=='R'){
+								out += '</span><span class=\'colRose\'>';
+							}else if (z=='v'){
+								out += '</span><span class=\'coliceviolet\'>';
+							}else if (z=='V'){
+								out += '</span><span class=\'colBlueViolet\'>';
+							}else if (z=='g'){
+								out += '</span><span class=\'colXLtGreen\'>';
+							}else if (z=='G'){
+								out += '</span><span class=\'colXLtGreen\'>';
+							}else if (z=='T'){
+								out += '</span><span class=\'colDkBrown\'>';
+							}else if (z=='t'){
+								out += '</span><span class=\'colLtBrown\'>';
+							}else if (z=='~'){
+								out += '</span><span class=\'colBlack\'>';
+							}else if (z=='j'){
+								out += '</span><span class=\'colMdGrey\'>';
+							}else if (z=='J'){
+								out += '</span><span class=\'colMdBlue\'>';
+							}else if (z=='e'){
+								out += '</span><span class=\'colDkRust\'>';
+							}else if (z=='E'){
+								out += '</span><span class=\'colLtRust\'>';
+							}else if (z=='l'){
+								out += '</span><span class=\'colDkLinkBlue\'>';
+							}else if (z=='L'){
+								out += '</span><span class=\'colLtLinkBlue\'>';
+							}else if (z=='x'){
+								out += '</span><span class=\'colburlywood\'>';
+							}else if (z=='X'){
+								out += '</span><span class=\'colbeige\'>';
+							}else if (z=='y'){
+								out += '</span><span class=\'colkhaki\'>';
+							}else if (z=='Y'){
+								out += '</span><span class=\'coldarkkhaki\'>';
+							}else if (z=='k'){
+								out += '</span><span class=\'colaquamarine\'>';
+							}else if (z=='K'){
+								out += '</span><span class=\'coldarkseagreen\'>';
+							}else if (z=='p'){
+								out += '</span><span class=\'collightsalmon\'>';
+							}else if (z=='P'){
+								out += '</span><span class=\'colsalmon\'>';
+							}else if (z=='m'){
+								out += '</span><span class=\'colwheat\'>';
+							}else if (z=='M'){
+								out += '</span><span class=\'coltan\'>';
+							}else if (z=='n'){
+								out += '<br />';
+							}else if (z=='b'){
+								b++;
+								if( b%2 ){
+									out += '<b>';
+								}else{
+									out += '</b>';
+								}
+							}else if (z=='i'){
+								i++;
+								if( i%2 ){
+									out += '<i>';
+								}else{
+									out += '</i>';
+								}
+							}else if (z=='c'){
+								c++;
+								if( c%2 ){
+									out += '<center>';
+								}else{
+									out += '</center>';
+								}
+							}else if (z=='s'){
+								s++;
+								if( s%2 ){
+									out += '<s>';
+								}else{
+									out += '</s>';
+								}
+							}else if (z=='u'){
+								u++;
+								if( u%2 ){
+									out += '<u>';
+								}else{
+									out += '</u>';
+								}
+							}
+							x++;
+						}
+					}
+					else
+					{
+						out += y;
+					}
+				}
+				str = out.replace(/\n/g, '<br />');
+				document.getElementById('preview_message').innerHTML=str+end+'<br />';
+			}
+
+			function increase_row(target, value)
+			{
+				target.rows = target.rows + value;
+			}
+
+			function increase_col(target, value)
+			{
+				target.cols = target.cols + value;
+			}
+
+			function bg_change(value)
+			{
+				document.getElementsByTagName('body')[0].style.backgroundColor='#'+value;
+			}
+			//-->
+		</script>
+	</head>
+	<body>
+		<div class="preview" id="preview_message">
+			&nbsp;
+		</div>
+
+		<br />
+		<br />
+
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td><textarea name="message" cols="40" rows="9" id="textarea" onkeyup="preview_message(this.value);">Thank you, MarcTheSlayer, for making this colorbox!</textarea></td>
+				<td rowspan="2" valign="top"><input type="submit" onClick="increase_row(textarea,1);" value="+" />&nbsp;<input type="submit" onClick="increase_row(textarea,-1);" value="-" /><br /><span class="colLtWhite">Height</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" onClick="increase_col(textarea,1);" value="+" />&nbsp;<input type="submit" onClick="increase_col(textarea,-1);" value="-" /><br /><span class="colLtWhite">Width</span></td>
+			</tr>
+		</table>
+
+		<br />
+		<br />
+
+		<div>
+			<span style="cursor: hand" class="colDkBlue"		onClick="bg_change('0000B0');">`1</span>&nbsp;
+			<span style="cursor: hand" class="colDkGreen"		onClick="bg_change('00B000');">`2</span>&nbsp;
+			<span style="cursor: hand" class="colDkCyan"		onClick="bg_change('00B0B0');">`3</span>&nbsp;
+			<span style="cursor: hand" class="colDkRed"			onClick="bg_change('B00000');">`4</span>&nbsp;
+			<span style="cursor: hand" class="colDkMagenta"		onClick="bg_change('B000CC');">`5</span>&nbsp;
+			<span style="cursor: hand" class="colDkYellow"		onClick="bg_change('B0B000');">`6</span>&nbsp;
+			<span style="cursor: hand" class="colDkWhite"		onClick="bg_change('B0B0B0');">`7</span>&nbsp;
+			<span style="cursor: hand" class="colDkRust"		onClick="bg_change('8D6060');">`e</span>&nbsp;
+			<span style="cursor: hand" class="colXLtGreen"		onClick="bg_change('AAFF99');">`g</span>&nbsp;
+			<span style="cursor: hand" class="colMdGrey"		onClick="bg_change('DDDDDD');">`j</span>&nbsp;
+			<span style="cursor: hand" class="colaquamarine"	onClick="bg_change('7FFFD4');">`k</span>&nbsp;
+			<span style="cursor: hand" class="colDkLinkBlue"	onClick="bg_change('006BB3');">`l</span>&nbsp;
+			<span style="cursor: hand" class="colwheat"			onClick="bg_change('F5DEB3');">`m</span>&nbsp;
+			<span style="cursor: hand" class="collightsalmon"	onClick="bg_change('FFA07A');">`p</span>&nbsp;
+			<span style="cursor: hand" class="colDkOrange"		onClick="bg_change('994400');">`q</span>&nbsp;
+			<span style="cursor: hand" class="colRose"			onClick="bg_change('EEBBEE');">`r</span>&nbsp;
+			<span style="cursor: hand" class="colLtBrown"		onClick="bg_change('F8DB83');">`t</span>&nbsp;
+			<span style="cursor: hand" class="coliceviolet"		onClick="bg_change('AABBEE');">`v</span>&nbsp;
+			<span style="cursor: hand" class="colburlywood"		onClick="bg_change('DEB887');">`x</span>&nbsp;
+			<span style="cursor: hand" class="colkhaki"			onClick="bg_change('F0E68C');">`y</span>&nbsp;
+			<span style="cursor: hand" class="colLtBlack"		onClick="bg_change('999999');">`)</span><br />
+			<span style="cursor: hand" class="colLtBlue"		onClick="bg_change('0000FF');">`!</span>&nbsp;
+			<span style="cursor: hand" class="colLtGreen"		onClick="bg_change('00FF00');">`@</span>&nbsp;
+			<span style="cursor: hand" class="colLtCyan"		onClick="bg_change('00FFFF');">`#</span>&nbsp;
+			<span style="cursor: hand" class="colLtRed"			onClick="bg_change('FF0000');">`$</span>&nbsp;
+			<span style="cursor: hand" class="colLtMagenta"		onClick="bg_change('FF00FF');">`%</span>&nbsp;
+			<span style="cursor: hand" class="colLtYellow"		onClick="bg_change('FFFF00');">`^</span>&nbsp;
+			<span style="cursor: hand" class="colLtWhite"		onClick="bg_change('FFFFFF');">`&</span>&nbsp;
+			<span style="cursor: hand" class="colLtRust"		onClick="bg_change('B07878');">`E</span>&nbsp;
+			<span style="cursor: hand" class="colXLtGreen"		onClick="bg_change('AAFF99');">`G</span>&nbsp;
+			<span style="cursor: hand" class="colMdBlue"		onClick="bg_change('0000F0');">`J</span>&nbsp;
+			<span style="cursor: hand" class="coldarkseagreen"	onClick="bg_change('8FBC8F');">`K</span>&nbsp;
+			<span style="cursor: hand" class="colLtLinkBlue"	onClick="bg_change('0099FF');">`L</span>&nbsp;
+			<span style="cursor: hand" class="coltan"			onClick="bg_change('D2B48C');">`M</span>&nbsp;
+			<span style="cursor: hand" class="colsalmon"		onClick="bg_change('FA8072');">`P</span>&nbsp;
+			<span style="cursor: hand" class="colLtOrange"		onClick="bg_change('FF9900');">`Q</span>&nbsp;
+			<span style="cursor: hand" class="colRose"			onClick="bg_change('EEBBEE');">`R</span>&nbsp;
+			<span style="cursor: hand" class="colDkBrown"		onClick="bg_change('6B563F');">`T</span>&nbsp;
+			<span style="cursor: hand" class="colBlueViolet"	onClick="bg_change('9A5BEE');">`V</span>&nbsp;
+			<span style="cursor: hand" class="colbeige"			onClick="bg_change('F5F5DC');">`X</span>&nbsp;
+			<span style="cursor: hand" class="coldarkkhaki"		onClick="bg_change('BDB76B');">`Y</span>&nbsp;
+			<span style="cursor: hand" class="colBlack"			onClick="bg_change('333333');">`~</span><br />
+			<span class="colLtWhite"><br />
+			`n (newline)<br />
+			`b (bold)   Requires 2, beginning and end of text to be bold.<br />
+			`i (italic) Requires 2, beginning and end of text to be italic.<br />
+			`c (center) Requires 2, beginning and end of text to be centered.<br />
+			`u (underline) Requires 2, beginning and end of text to be underlined.<br />
+			`s (strikethrough) Requires 2, beginning and end of text to be strikethroughed.<br /><br />
+			<span style="cursor: hand; background-color:#000" onClick="bg_change('000000');">Click colour codes to change background colour.</span>
+			</span>
+		</div>
+	</body>
+</html>

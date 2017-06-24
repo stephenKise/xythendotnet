@@ -1,0 +1,306 @@
+/* CSS Document */
+
+@font-face {
+ font-family: Kingthings_Petrock;
+ src: url("Kingthings_Petrock.ttf"); /* For most other browsers */
+}
+
+.blogClass {
+	font-family: Kingthings_Petrock;
+}
+
+
+::selection {
+	background: #B2442F; /* Safari */
+	}
+::-moz-selection {
+	background: #B2442F; /* Firefox */
+}
+br::selection {
+	background: #B2442F; /* Safari */
+	}
+br::-moz-selection {
+	background: #B2442F; /* Firefox */
+}
+
+caption {
+	white-space: nowrap;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+
+table.nav {
+	border: 1px solid #444444;
+	height: auto;
+	width: 182px;
+}
+
+.navhead {
+	text-decoration: none;
+	width: 180px;
+	height: auto;
+	padding: 1px;
+	float: left;
+	line-height: 18px;
+	border-top: 10px solid transparent;
+	clear: none;
+	font-weight: bold;
+	color: #FFFFFF;
+	cursor: default;
+	text-align: center;
+	font-variant: small-caps;
+}
+
+a {
+	color: #D1FFD1;
+	text-decoration: none;
+}
+
+a.nav {
+	color: #D1FFD1;
+	text-decoration: none;
+	width: 181px;
+	height: auto;
+	float: left;
+	padding: 1px;
+	clear: none;
+	border: 1px solid transparent;
+	text-align: left;
+}
+
+.navhelp {
+	text-decoration: none;
+	width: 181px;
+	height: auto;
+	padding: 1px;
+	float: left;
+	clear: none;
+	border: 1px solid #444444;
+}
+
+a:hover.nav {
+	border-top: 1px solid #444444;
+	border-left: 1px solid #444444;
+	border-bottom: 1px solid #444444;
+	border-right: 1px solid #444444;
+}
+a.navhilite {
+	text-decoration: none;
+	width: 150px;
+	height: auto;
+	padding: 1px;
+	float: left;
+	clear: none;
+	color:#FFFF66;
+	border-top: thin solid #444444;
+	border-bottom: thin solid #444444;
+	border-right: thin none #444444;
+	border-left: thin none #444444;
+}
+a:hover.navhilite {
+}
+
+
+table {
+}
+td.charinfo {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #444444;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	cursor: default;
+}
+td.charhead {
+	border-top: 10px solid transparent;
+	cursor: default;
+	color: #FFFF66;
+}
+table.charinfo {
+	border: none;
+	width: 182px;
+}
+td.popupheader {
+	background-color: #161616;
+	height: 20px;
+}
+td.noborder {
+	border: none;
+}
+table.noborder {
+	border: none;
+}
+input {
+	background-color: #0c0c0c;
+	border: 1px solid #444444;
+	color: #CCCCCC;
+}
+.button {
+	font-family: verdana,arial,helvetica,sans-serif;  
+	 font-size: 10px;  
+	 color: #FFFFFF;   
+	 border-top: 1px solid #444444;  
+	 border-left: 1px solid #444444;  
+	 border-right: 1px solid #444444;  
+	 border-bottom: 1px solid #444444;
+}
+.paypal {
+	 background-color: transparent;
+	 border-top: 0px solid #444444;  
+	 border-left: 0px solid #444444;  
+	 border-right: 0px solid #444444;  
+	 border-bottom: 0px solid #444444;
+}
+.input {
+	background-color: #161616;
+	border: 1px solid #444444;
+	color: #CCCCCC;
+}
+select {
+	background-color: #0c0c0c;
+	border: 1px solid #444444;
+	color: #CCCCCC;
+}
+table.vitalinfo {
+	border: 1px solid #444444;
+	width: 182px;
+}
+a.motd {
+	text-decoration: none;
+	color:#c1aa73;
+}
+a:hover.motd {
+	font-weight: normal;
+	color:#b0874b;
+}
+
+a.hotmotd {
+	font-weight: normal;
+	color:#cec5b1;
+}
+
+@font-face {
+	font-family: Jellyka;
+	src: url('Jellyka.ttf');
+}
+
+.pagetitle {
+	font-family: Century Gothic, sans-serif;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+.navhi {
+	color: #00FF00;
+	text-decoration: underline;
+}
+
+td.nav a.thot {
+	position: absolute;
+	left: 0px;
+	height: auto;
+}
+td.nav a.t {
+	position: absolute;
+	left: 0px;
+	height: auto;
+}
+
+a.t {
+	width: 7px;
+	height: 7px;
+	border: 1px dotted #0000FF;
+	background-color: #9999FF;
+	color: #FFFFFF;
+	font-size: 7px;
+	text-decoration: none;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+a.thot {
+	width: 7px;
+	height: 7px;
+	border: 1px dotted #FF0000;
+	background-color: #FF9999;
+	color: #FFFFFF;
+	font-size: 7px;
+	text-decoration: none;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+div.debug {
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px dotted #000000;
+	width: auto;
+	height: auto;
+	font-size: 10px;
+}
+.colDkBlue	{ color: #15317E; }
+.colDkGreen   { color: #347C17; }
+.colDkCyan	{ color: #307D7E; }
+.colDkRed	 { color: #7E2217; }
+.colDkMagenta { color: #571B7e; }
+.colDkYellow  { color: #E8C32F; }
+.colDkWhite   { color: #868686; }
+.colLtBlue	{ color: #357FF0; }
+.colLtGreen   { color: #4CC417; }
+.colLtCyan	{ color: #05E7F4; }
+.colLtRed	 { color: #C11B17; }
+.colLtMagenta { color: #E238EC; }
+.colLtYellow  { color: #FFE87C; }
+.colLtWhite   { color: #BFBFBF; }
+.colLtBlack   { color: #585858; }
+.colDkOrange  { color: #7E3517; }
+.colLtOrange  { color: #F88017; }
+.colBlue  		{ color: #0070FF; }
+.colLime  		{ color: #DDFFBB; }
+.colBlack  		{ color: #1F1F1F; }
+.colRose 		{ color: #EEBBEE; }
+.colblueviolet 	{ color: #6633CC; }
+.coliceviolet	{ color: #99CCFF; }
+.colLtBrown 	{ color: #877663; }
+.colDkBrown 	{ color: #6b563f; }
+.colXLtGreen	{ color: #aaff99; }
+.colBack  		{ background-color: #00FFFF; color: #000000; }
+.colbeige  { color: #F5F5DC; }
+.colkhaki  { color: #F0E68C; }
+.coldarkkhaki  { color: #BDB76B; }
+.colaquamarine  { color: #7FFFD4; }
+.coldarkseagreen  { color: #8FBC8F; }
+.collightsalmon  { color: #FFA07A; }
+.colsoftblue { color: #09A0D3; }
+.coldsoftblue { color: #006BB3; }
+.colalertinggreen { color: #9CCB1C; }
+.coldalertinggreen { color: #3B6304; }
+.colboringyellow { color: #B8B82B; }
+.coldboringyellow { color: #7B7B04; }
+.colscaredtan { color: #DCC760; }
+.coldscaredtan { color: #BDB37F; }
+.coldemon { color: #9F1916; }
+.colddemon { color: #630909; }
+.colgreatgreen { color: #80D384; }
+.colgreatergreen { color: #12FD4D; }
+.colshinywhite { color: #A2A3A2; }
+.colaquatic { color: #4EE0A4; }
+.coldaquatic { color: #2EB07A; }
+.colpumpkin { color: #F87400; }
+.colwooden { color: #966F33 ; }
+.coldshinywhite { color: #686868;}
+.colsalmon { color: #AE5A51; }
+.colDkRust { color: #8D6060; }
+.colLtRust { color: #B07878; }
+.colglow { text-shadow: 0 0 10px #ededed; color:#1F1F1F;
+}
+.trhead  { background-color: #0a0a0a; color:#FFFFFF;}
+.trlight { background-color: #0a0a0a; }
+.trdark  { background-color: #0a0a0a; }
+.trhilight { background-color: #0a0a0a; }

@@ -1,0 +1,23 @@
+******************************************
+*****      Great Library Hooks       *****
+******************************************
+
+---
+greatmodule_codify
+---
+
+Notes:
+	Occurs just before new books or changes to books are written to the database.
+	Return boolean false to prevent the intended action from going ahead.
+Arguments:
+	"Name" - String. Name of the book, after security parsing.
+	"Content" - String. Content of the book, after security parsing.
+	
+---
+greatmodule_enter
+---
+
+Notes:
+	Occurs as you enter the library. Intended for new navigation buttons.
+Arguments:
+	None.

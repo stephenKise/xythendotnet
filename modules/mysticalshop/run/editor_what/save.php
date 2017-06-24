@@ -6,11 +6,11 @@ $postname = stripslashes( $postname );
 $postdescribe = stripslashes( $postdescribe );
 $postbigdesc = stripslashes( $postbigdesc );
 $displayname = $postname;
-if( function_exists( 'mysql_real_escape_string' ) )
+if( function_exists( 'mysqli_real_escape_string' ) )
 {
-	$name = mysql_real_escape_string( $postname );
-	$describe = mysql_real_escape_string( $postdescribe );
-	$bigdesc = mysql_real_escape_string( $postbigdesc );
+	$name = mysqli_real_escape_string( $postname );
+	$describe = mysqli_real_escape_string( $postdescribe );
+	$bigdesc = mysqli_real_escape_string( $postbigdesc );
 }
 else
 {

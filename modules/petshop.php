@@ -57,19 +57,19 @@ function petshop_getmoduleinfo(){
 function petshop_install(){
 	if (db_table_exists(db_prefix("pets"))) {
 		$sql = "Select petattack FROM ".db_prefix("pets")." LIMIT 1";
-		$result = db_quey($sql);
+		$result = db_query($sql);
 	    if (!$result) db_query("ALTER TABLE ".db_prefix("pets")." ADD `petattack` tinyint(3) NOT NULL default '0'");
 	    $sql = "Select attacktype FROM ".db_prefix("pets")." LIMIT 1";
-		$result = db_quey($sql);
+		$result = db_query($sql);
 	    if (!$result) db_query("ALTER TABLE ".db_prefix("pets")." ADD `attacktype` tinyint(3) NOT NULL default '0'");
 	    $sql = "Select mindamage FROM ".db_prefix("pets")." LIMIT 1";
-		$result = db_quey($sql);
+		$result = db_query($sql);
 	    if (!$result) db_query("ALTER TABLE ".db_prefix("pets")." ADD `mindamage` int(11) NOT NULL default '0'");
 	    $sql = "Select maxdamage FROM ".db_prefix("pets")." LIMIT 1";
-		$result = db_quey($sql);
+		$result = db_query($sql);
 	    if (!$result) db_query("ALTER TABLE ".db_prefix("pets")." ADD `maxdamage` int(11) NOT NULL default '0'");
 	    $sql = "Select petturns FROM ".db_prefix("pets")." LIMIT 1";
-		$result = db_quey($sql);
+		$result = db_query($sql);
 	    if (!$result) db_query("ALTER TABLE ".db_prefix("pets")." ADD `petturns` int(11) NOT NULL default '0'");
 	
 	}else{

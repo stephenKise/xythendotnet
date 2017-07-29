@@ -211,7 +211,7 @@ function previewfield($name, $startdiv=false, $talkline="says", $showcharsleft=t
 		if (isset($info['maxlength'])) {
 			$l = $info['maxlength'];
 		} else {
-			$l=1000;
+			$l=5000;
 		}
 
 		if (isset($info['type']) && $info['type'] == 'textarea') {
@@ -451,7 +451,7 @@ function mfpreviewfield($name, $startdiv=false, $talkline="says", $showcharsleft
 		if (isset($info['maxlength'])) {
 			$l = $info['maxlength'];
 		} else {
-			$l=1000;
+			$l=5000;
 		}
 
 		if (isset($info['type']) && $info['type'] == 'textarea') {

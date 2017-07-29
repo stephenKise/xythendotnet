@@ -138,7 +138,7 @@ if ($session['user']['loggedin']){
 	$result = db_query("SELECT mid(motddate,1,7) AS d, count(*) AS c FROM ".db_prefix("motd")." WHERE motdtype = $motdtype GROUP BY d ORDER BY d DESC");
 	rawoutput("<form action='motd.php".($op?"?op=polls":"")."' method='POST'>");
 	$archive = ($op?"Poll":"MoTD");
-	output("%s `b`^egg`b Archives:", $archive);
+	output("%s Archives:", $archive);
 	rawoutput("<select name='month' onChange='this.form.submit();' >");
 	rawoutput("<option value=''>--Current--</option>");
 	while ($row = db_fetch_assoc($result)){

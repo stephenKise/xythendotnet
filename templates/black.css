@@ -1,0 +1,116 @@
+body, iframe {
+    background-color: #000;
+}
+
+body {
+    color: #CCCCCC;
+    scrollbar-face-color: #EAB523;
+}
+
+/* Subtle background, to make certain text stick out. */
+.alerts {
+    color: #121212;
+}
+
+.commentaryRoll, .commentaryRollModified, tr.trlight td, input:hover,
+input:focus, textarea:hover, textarea:focus, .bg-primary, .thot, .t, .info {
+    background-color: #121212;
+}
+
+.charrow {
+    border-bottom: 1px solid #121212;
+}
+
+/* Input background colors. */
+.trhead td, th {
+    background-color: #131313;
+}
+
+input, select, textarea {
+    border: 1px solid #131313;
+}
+
+.thot, .t, .info {
+    border: 1px dotted #131313;
+}
+
+/* Soft tertiary color to be easy to read. */
+a, .motd, li.nav, .charstat {
+    color: #F2E2A9;
+}
+
+.alerts {
+    background-color: #F2E2A9;
+}
+
+textarea:focus, textarea:hover, {
+    border-color: #F2E2A9;
+}
+
+input, textarea {
+    color: #F2E2A9;
+}
+
+/* Bright colored accent, to bring contrast */
+input[type="button"], input[type="submit"], select, .hotmotd, .motd:hover,
+.unreadmotd, .navhead, .charhead, .secondary, .contact a:hover, .nav:hover,
+th, .trhead td, .main-menu, .primary {
+    color: #EAB523;
+}
+
+::selection, .bg-tertiary {
+    background-color: #EAB523;
+}
+
+.commentaryRoll:hover, input:focus, input:hover, select:focus, select:hover {
+    border: 1px solid #EAB523;
+}
+
+.characterCreation {
+    border-color: #EAB523;
+}
+
+.debug {
+    border: 1px dashed #EAB523;
+}
+
+::-webkit-scrollbar-thumb {
+    border-left: 2px solid #EAB523;
+}
+
+li.nav {
+    border-right: 0px solid #EAB523;
+}
+
+li.nav:hover {
+    border-right: 5px solid #EAB523;
+}
+
+tr.trdark:hover td, tr.trlight:hover td, .charrow:hover {
+    border-bottom: 1px solid #EAB523;
+}
+
+.contact a:hover {
+    text-shadow: 0px 0px 10px #EAB523;
+}
+
+.main-menu {
+    text-shadow: 0px 3px 8px #EAB52324;
+}
+
+/* Secondary Background colors */
+input, select, textarea, tr.trdark td, .bg-secondary {
+    background-color: #222;
+}
+
+header.bg-primary {
+    box-shadow: 0px 2px 3px #222;
+}
+
+.danger {
+    color: #db2b39;
+}
+
+.alert {
+    color: #FFA544;
+}

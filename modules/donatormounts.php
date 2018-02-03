@@ -249,7 +249,7 @@ function donatormounts_run(){
 				addnav($session['user']['name']." `^has created their own Donator Mount!");
 				invalidatedatacache("mountdata-".get_module_pref("mountid"));
 				if (db_affected_rows()){
-					output("`^`cMount saved!`c`0`n`2For now, your mount's stats are all set to the lower default. This will make your mount a bit weak for the time being. But it will grow stronger after your next Tentromech kill, and match your stats.");
+					output("`^`cMount saved!`c`0`n`2For now, your mount's stats are all set to the lower default. This will make your mount a bit weak for the time being. But it will grow stronger after your next Crystal Guardian kill, and match your stats.");
 					$result = db_query("SELECT * FROM ".db_prefix("mounts")." ORDER BY mountid DESC LIMIT 1");
 					$row = db_fetch_assoc($result);
 					invalidatedatacache("mountdata-".$row['mountid']);

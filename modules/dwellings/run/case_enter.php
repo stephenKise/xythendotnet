@@ -1,7 +1,7 @@
 <?php	
 addnav("Leave");
 
-addnav("Toxic Forest", "runmodule.php?module=dwellings&forest=1");
+addnav("Crystal Forest", "runmodule.php?module=dwellings&forest=1");
 
 if ($session['user']['location'] != get_module_setting("logoutlocation"))
 	set_module_pref("location_saver", $session['user']['location']);
@@ -47,7 +47,7 @@ if(get_module_setting("othersleep",$type)){
 	}	
 }
 $session['user']['location'] = get_module_setting("logoutlocation");
-addnav("Dwellings Extras");
+addnav("Extra");
 modulehook("dwellings-inside", array("type"=>$type, "dwid"=>$dwid, "owner"=>$row['ownerid']));
 if(get_module_setting("enablecof") && get_module_setting("enablecof",$type)==1){
 	addnav("The Coffers","runmodule.php?module=dwellings&op=coffers&dwid=$dwid");

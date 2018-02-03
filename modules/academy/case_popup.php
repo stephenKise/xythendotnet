@@ -25,7 +25,7 @@ switch (get_module_pref("class")){
 $maxdmg = round($maxdmg*$div);
 $maxstat = $maxdmg;
 
-$classarray = array(0=>translate_inline("Squire"),1=>translate_inline("Knight"),2=>translate_inline("Warlord"));
+$classarray = array(0=>translate_inline("Novice"),1=>translate_inline("Adept"),2=>translate_inline("Master"));
 $class = get_module_pref("class");
 	output("`n");
 	$name = get_module_pref("name");

@@ -27,7 +27,7 @@ function guild_pack_uninstall(){
 function guild_pack_dohook($hookname,$args){
 	global $session;
 	$pack_costs = array(1000,1800,2500);
-	$pack_ranks = array("Lvl 1","Lvl 2","Lvl 3");
+	$pack_ranks = array("1","2","3");
 	switch ($hookname){
 		case "lodge":
 			addnav("Guild");

@@ -12,20 +12,23 @@ require_once ("lib/taunt.php");
 require_once ("lib/names.php");
 tlschema("dragon");
 $battle=false;
-page_header("The TentroMech!");
+page_header("The Crystal Guardian!");
 $op=httpget('op');
 if ($op=="")
 {
 	if (!httpget('nointro'))
 	{
-		output("`\$Gas mask strapped firmly against your face, you fight the fear that was instilled upon you previously. Your path leading you towards the mountain, in which you will seek the Tentromech's lair...
-
-
-
-As quiet as you attempt to be, you know the echoes of the mountain will upset one of the many rouge machines inside of the cave, but once you find the entrance - no one is waiting for you. Cautiously, you enter the cave...Only to find it empty.");
-		output("A thunderous sound leads to the ground shaking, stalagmites on the roof of the cave loosening and cascading to the floor...The Tentromech has discovered you, actually having watched you from the moment you stepped near the lagoon... It has you trapped.");
+		output("`n`c`3Fighting back against the instinct to run, you reach forth " .
+			"and place your palm firmly against the crystal. Light shoots " .
+			"from it towards the heavens above as the ground around you " .
+			"quakes...Every crystal shard in the massive crater rattling and " .
+			"trembling, filling the air with strange melodious music, before " .
+			"they shoot into the air, coalescing before you in a single " .
+			"form...barely humanoid in shape and held by raw Aether, " .
+			"the manifestation of this land appears before you, " .
+			"ready to vanquish you for your gall!`c`n");
 	}
-	$badguy=array("creaturename" => translate_inline("`\$Tentromech`0"), "creaturelevel" => 18, "creatureweapon" => translate_inline("Tentacles"), "creatureattack" => 45, "creaturedefense" => 25, "creaturehealth" => 300, "diddamage" => 0, "type" => "dragon");
+	$badguy=array("creaturename" => translate_inline("`\$Crystal Guardian`0"), "creaturelevel" => 18, "creatureweapon" => translate_inline("a Shardblade"), "creatureattack" => 45, "creaturedefense" => 25, "creaturehealth" => 300, "diddamage" => 0, "type" => "dragon");
 	//toughen up each consecutive dragon.
 	// First, find out how each dragonpoint has been spent and count those
 	// used on attack and defense.
@@ -65,15 +68,33 @@ elseif ($op=="prologue1")
 	{
 		output("`b`c`&~~ Flawless Fight ~~`0`c`b`n`n");
 	}
-	output("`7The mountain continues to shake as the Tentromech's titanium tentacles unleash from the mountainside - the sharp prongs that extended from the heavy metal were the only thing keeping the creature suctioned perfectly to the rocks, now mangled and broken. You hear a screeching sound, as though the creature was letting out once last mechanical roar into the highly polluted air... ");
-	output("`7From head to toe you are covered in a thick oil substance, probably one of the final defense motions of the creature...A few loud explosions occur within the giant mechanism, fire inside the aqua-domed eyes that resembled control panels at one point. Whatever was left of the rouge machines must have exploded along with the machine of death, at this rate. ");
-	output("`7From the mouth of the Tentromech falls a machine, mangled from the waist down...As the creature crawls towards your legs, you stamper back. Reaching, the machine pounds its fist into the ground furiously. `^You are foolish, you impure resident of Xythen!`7 The device mutters, having great difficulty between all of the spark sounds and ticking of its mechanical heart...`^We..The true residents of Xythen...Before the impure portals to other dimensions showed up...`7 The creature released a mechanical cough as the rest of the Tentromech disappeared into the lagoon..`^There are thousands of us ready to repair the war machine, Tentromech! We shall not give up the right to Xythen! We shall not share!`7 As the machine continued to animate itself, oil leaked onto the floor - steam flowing from all angles of the machine's body... ");
-	output("`7You shake your head...`^Xythen belongs to many...Not just one race.`7 You utter, kicking at the mechanical creature to end it's misery... ");
-	output("As soon as you do this, however...The creature quickly swipes at your legs with a syringe, penetrating your armor with a defensive drill. As a strange fluid flows into your veins, the mechanical creature states, `^You are as dead as the Tentromech...`7 .`n`n");
-	output("Realizing that already the edges of your vision are a little dim, you flee from the cave, bound to reach the healer's hut before it is too late. Somewhere along the way you lose your weapon, and finally you trip on a stone and into the polluted lagoon, sight now limited to only a small circle that seems to float around your head. As you lay, staring up through the smoky sky, you think that nearby you can hear the sounds of the village. Your final thought is that although you defeated the Tentromech, you reflect on the irony that it defeated you in an attempt to even the odds. As your vision winks out, far away in the polluted lagoon...");
+	output("`c`3As you continue to battle, you begin to notice the Aether " .
+		"Guardian becoming less and less cohesive, with small crystals " .
+		"falling with every blow, until your last strike rends apart it's " .
+		"core. The creature begins to fall, limbs collapsing as the energy " .
+		"emanating it continues to pulse, before exploding in a flash of " .
+		"brilliance, the energy moving through you as the crystals begin to " .
+		"sink back into the earth peppered around the crater. The larger ". 
+		"crystal behind you ceases to glow, the haze ceasing its spread, for " .
+		"now. `n`nYou won. You have killed the Aether Guardian...But as you " .
+		"walk away you know it was not a clean victory. Your vision blurs, " .
+		"your legs wobble beneath you. The Aether radiation...even with all " .
+		"your protection, its getting to you. You keep walking, trying to get " .
+		"out of this place, trying to reach civilisation!...You collapse upon " .
+		"the ground as darkness takes you. Before your eyes close, you notice " .
+		"a small spark of light drum within the central crystal. " .
+		"`n`nYou awake along the edge of Crystal Forest, a well-travelled " .
+		"path leading you to a nearby city. You dimly recall you are a " .
+		"fighter, an adventurer, and that something in the Crystal Forest has " .
+		"been creating a haze, spreading the Forest more and more with each " .
+		"year. Deciding to make a name for yourself you decide that you shall " .
+		"train until one day you can find the source of this evil.`c");
+
 	if ($flawless)
 	{
-		output("`n`nYou fall forward, and remember at the last moment that you at least managed to grab some of the Tentromech's treasure, so maybe it wasn't all a total loss.");
+		output("`n`n`#You fall forward, and remember at the last moment that " .
+			"you at least managed to grab some of the Crystal Guardian's" .
+			" treasure, so maybe it wasn't all a total loss.`0");
 	}
 	addnav("It is a new day", "news.php");
 	strip_all_buffs();
@@ -139,7 +160,7 @@ elseif ($op=="prologue1")
 	if ($session['user']['maxhitpoints']<1)
 	{
 	// Yes, this is a freaking hack.
-		die("ACK!! Somehow this user would end up perma-dead.. Not allowing DK to proceed!  Notify admin and figure out why this would happen so that it can be fixed before DK can continue.");
+		die("ACK!! Somehow this user would end up perma-dead.. Not allowing CK to proceed!  Notify admin and figure out why this would happen so that it can be fixed before DK can continue.");
 		exit ();
 	}
 	// Set the new title.
@@ -162,25 +183,23 @@ elseif ($op=="prologue1")
 	$session['user']['slaydragon']=1;
 	$companions=array();
 	$session['user']['companions']=array();
-	output("`n`nYou wake up in the midst of some trees.  Nearby you hear the sounds of a village.");
-	output("Dimly you remember that you are a new warrior, and something of a dangerous War Machine controlled by Rogue Machines plaguing the area. You decide you would like to earn a name for yourself by perhaps some day confronting this deadly creature. ");
 	// allow explanative text as well.
 	modulehook("dragonkilltext");
 	$regname=get_player_basename();
 	output("`n`n`^You are now known as `&%s`^!!", $session['user']['name']);
 	if ($session['user']['dragonkills']==1)
 	{
-		addnews("`#%s`# is now `&%s`# for slaying the `\$Tentromech `^%s`# time!", $regname, $session['user']['title'], $session['user']['dragonkills']);
-		addnews("`7The `\$Tentromech`7 has been obliterated by %s!", $regname, $session['user']['title']);
-		output("`n`n`&Because you have slain the Tentromech %s time, you start with some extras.  You also keep additional permanent hitpoints you've earned.`n", $session['user']['dragonkills']);
+		addnews("`#%s`# is now `&%s`# for slaying the `\$Crystal Guardian `^%s`# time!", $regname, $session['user']['title'], $session['user']['dragonkills']);
+		addnews("`7The `\$Crystal Guardian`7 has been obliterated by %s!", $regname, $session['user']['title']);
+		output("`n`n`&Because you have slain the Crystal Guardian %s time, you start with some extras.  You also keep additional permanent hitpoints you've earned.`n", $session['user']['dragonkills']);
 	}
 	elseif (($session['user']['dragonkills']%25)==0)
 	{
-		addnews("`#%s`# is now `&%s`# for slaying the `\$Tentromech `^%s`# times!", $regname, $session['user']['title'], $session['user']['dragonkills']);
-		output("`n`n`&Because you have slain the Tentromech %s times, you start with some extras.  You also keep additional permanent hitpoints you've earned.`n", $session['user']['dragonkills']);
+		addnews("`#%s`# is now `&%s`# for slaying the `\$Crystal Guardian `^%s`# times!", $regname, $session['user']['title'], $session['user']['dragonkills']);
+		output("`n`n`&Because you have slain the Crystal Guardian %s times, you start with some extras.  You also keep additional permanent hitpoints you've earned.`n", $session['user']['dragonkills']);
 	}
 	$session['user']['charm']+=5;
-	output("`^You gain FIVE charm points for having defeated the `\$Tentromech!`n");
+	output("`^You gain FIVE charm points for having defeated the `\$Crystal Guardian!`n");
 	debuglog("slew the dragon and starts with {$session['user']['gold']} gold and {$session['user']['gems']} gems");
 	// Moved this here to make some things easier.
 	modulehook("dragonkill", array());
@@ -188,7 +207,7 @@ elseif ($op=="prologue1")
 }
 if ($op=="run")
 {
-	output("The creature's tail blocks the only exit to its lair!");
+	output("The exit is blocked by a barricade of crystal shards...");
 	$op="fight";
 	httpset('op', 'fight');
 }
@@ -205,8 +224,8 @@ if ($battle)
 		if ($badguy['diddamage']!=1)
 			$flawless=1;
 		$session['user']['dragonkills']++;
-		output("`&With a mighty final blow, `\$Tentromech`& lets out a tremendous bellow and falls at your feet, dead at last.");
-		//addnews("`&%s has slain the hideous creature known as `\$Tentromech`&.  All across the land, people rejoice!",$session['user']['name']);
+		output("`&With a mighty final blow, `\$Crystal Guardian`& lets out a tremendous bellow and falls at your feet, dead at last.");
+		//addnews("`&%s has slain the hideous creature known as `\$Crystal Guardian`&.  All across the land, people rejoice!",$session['user']['name']);
 		modulehook("newraces");
 		tlschema("nav");
 		addnav("Continue", "dragon.php?op=prologue1&flawless=$flawless");
@@ -222,17 +241,17 @@ if ($battle)
 			$taunt=select_taunt_array();
 			if ($session['user']['sex'])
 			{
-				addnews("`%%s`5 has been slain by the `\$Tentromech`5.`n%s", $session['user']['name'], $taunt);
+				addnews("`%%s`5 has been slain by the `\$Crystal Guardian`5.`n%s", $session['user']['name'], $taunt);
 			}
 			else
 			{
-				addnews("`%%s`5 has been slain by the `\$Tentromech`5e.`n%s", $session['user']['name'], $taunt);
+				addnews("`%%s`5 has been slain by the `\$Crystal Guardian`5e.`n%s", $session['user']['name'], $taunt);
 			}
 			$session['user']['alive']=false;
 			debuglog("lost {$session['user']['gold']} gold when they were slain");
 			$session['user']['gold']=0;
 			$session['user']['hitpoints']=0;
-			output("`b`&You have been slain by `$Tentromech`&!!!`n");
+			output("`b`&You have been slain by `$Crystal Guardian`&!!!`n");
 			output("`4All gold on hand has been lost!`n");
 			output("You may begin fighting again tomorrow.");
 			page_footer();

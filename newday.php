@@ -91,7 +91,7 @@ if ($pdk==1){
 			}
 		}
 	}else{
-		output("`\$Error: Please spend the correct total amount of dragon points.`n`n");
+		output("`\$Error: Please spend the correct total amount of crystal guardian points.`n`n");
 	}
 }
 

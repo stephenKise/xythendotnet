@@ -41,9 +41,21 @@ if ($session['user']['level']>=15  && $session['user']['seendragon']==0){
 
 
 	if ($noshowmessage!=true){
-		output("`c`7`bThe Forest`b`0`c");
-		output("`0");
-		output("`c`i`gAs you enter the industrial forest, you pull a scarf over your breathing outlets to avoid ingesting the horrid smell that carries on such contaminated air ...This polluted, dissolute area, is home to some of the most vile creatures known to Xythen. Everything in you virtually screams to warn you of the creatures you'll face if you choose to venture further in, a single voice calling out for you to run in the other direction to avoid imminent death. Enemies of the most heinous origins lurk within the shadowed, hazy confines of the forest, some just a breath away from where you stand... Each creature present has been mutated by their choice of habituation, their entire frames adapting to what we as cyborgs, humanoids, automations, humans, and robots alike cannot.`i`c`n`n");
+
+		output("`c`i`3`nYou slowly step into the Crystal forest, and " .
+            "immediately know why it was named such. an ever-present " .
+            "luminous haze hangs around the area, casting prismatic hues " .
+            "in all directions and obstructing sight beyond a few feet. " .
+            "Large, ancient trees rise from the glowing soil, the dark " .
+            "bark splinting into hundreds of small flexible branches, small " .
+            "crystals sprouting from each tip, and larger ones from the bark. " .
+            "The air feels heavy and oppressive, as if there was too much " .
+            "oxygen in the air, or too much energy, a faint scent of ozone " .
+            "lingering in each breath. The Crystal Forest stands as a testament " .
+            "of what can happen after long-term Aether exposure, twisting both " .
+            "body and mind. Any creature that calls this place home has evolved " .
+            "or changed to be fit of it...as should any adventurer treading " .
+            "these lands. `i`c`n`n");
 		output("`0");
 		output("`0");
 		modulehook("forest-desc");

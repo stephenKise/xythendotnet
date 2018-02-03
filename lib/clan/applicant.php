@@ -20,7 +20,7 @@
 			$claninfo = array();
 			$sql = "DELETE FROM " . db_prefix("mail") . " WHERE msgfrom=0 AND seen=0 AND subject='".serialize($apply_subj)."'";
 			db_query($sql);
-			output("You are not a member of any clan.");
+			output("You are not a member of any Guild.");
 			addnav("Apply for Membership to a Guild","clan.php?op=apply");
 			addnav("Apply for a New Guild","clan.php?op=new");
 		}else{

@@ -36,7 +36,7 @@ function warrior_attack($p){
 		$members=0;
 	}
 	if ($members>0){
-		output("There are %s Guild members with you",$members);
+		output("There are %s guild members with you.",$members);
 		output_notl("`n");
 	}
 	if ($members==0){
@@ -74,7 +74,7 @@ function warrior_attack($p){
 				$timenow = date("Y-m-d H:i:s");
 				set_module_pref("time",$timenow,"clanpyramid",$enemy);
 				set_module_pref("square",905,"clanpyramid",$enemy);
-				output("and you kill them, you earn a Guild point for your Guild");
+				output("and you kill them, you earn a guild  point for your guild.");
 				set_module_pref("cp",(get_module_pref("cp","clanhof",$userid)+1),"clanhof",$userid);
 				output_notl("`n");
 				$cw=get_module_objpref("clans",$clanid,"clanwins","clanpyramid")+1;
@@ -84,7 +84,7 @@ function warrior_attack($p){
 				set_module_objpref("clans",$clanid,"clanwins",$cw,"clanpyramid");
 				//add in clanpoint additions
 			}elseif($optime==905){
-				output(" you have killed them, however another has earnt the point");
+				output(" you have killed them, however another guild mate has already earned the point.");
 				output_notl("`n");
 			}
 			$kills=get_module_pref("kills","clanhof",$userid)+1;
@@ -95,7 +95,7 @@ function warrior_attack($p){
 	}elseif($dam==0){
 		output("You miss");
 	}elseif($dam<0){
-		output("`4You are riposted by %s`4 for %s damage",$enemyname,$dam);
+		output("`4You are riposted by %s`4 for %s damage.",$enemyname,$dam);
 		$hp=$u['hitpoints']+=$dam;
 		if ($hp<=0){
 			$attime = get_module_pref("square","clanpyramid",$userid);
@@ -104,7 +104,7 @@ function warrior_attack($p){
 				set_module_pref("square",905,"clanpyramid",$userid);
 				$timenow = date("Y-m-d H:i:s");
 				set_module_pref("time",$timenow,"clanpyramid",$userid);
-				output(" and have been killed, you have just lost a Guild point for your Guild");
+				output(" and have been killed, you have just lost a guild point.");
 				output_notl("`n");
 				$cw=get_module_objpref("clans",$clanid,"clanwins","clanpyramid")-1;
 				if ($cw<=0){
@@ -121,7 +121,7 @@ function warrior_attack($p){
 				set_module_pref("clans",$enemycid,"clanwins",$ecw,"clanpyramid");
 				//add in subtract clan point
 			}elseif ($attime==905){
-				output(" and killed again, luckily you can only loose one point per death");
+				output("You were killed again, luckily you can only loose one point per death.");
 				output_notl("`n");
 			}
 			villagenav();
@@ -164,7 +164,7 @@ function warriors_list($p){
 	$res=db_query($sql);
 	$opp=db_num_rows($res);
 	if ($opp<>0){
-		output("There are %s warriors from other Guilds rushing towards you",$opp);
+		output("There are %s warriors from other guilds rushing towards you.",$opp);
 		output_notl("`n");
 	}
 	if(!db_num_rows($res)){
@@ -192,6 +192,6 @@ function warriors_list($p){
    	}
    }    
    rawoutput("</table>");
-   addnav("Return to Vaults", "runmodule.php?module=clanpyramid&op=move&move=return&wall=$square&p=$p");
+   addnav("Return to Labyrinths s", "runmodule.php?module=clanpyramid&op=move&move=return&wall=$square&p=$p");
 }
 ?>

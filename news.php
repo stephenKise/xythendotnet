@@ -18,6 +18,7 @@ if ((int)getsetting("expirecontent",180)>0){
 }
 
 if ($session['user']['loggedin']) checkday();
+debug($session['user']);
 $newsperpage=50;
 
 $offset = (int)httpget('offset');

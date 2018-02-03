@@ -1,5 +1,5 @@
 .colDkBlue {
-    color: #0000FF;
+    color: #5151EA;
 }
 .colDkGreen {
     color: #00B000;
@@ -56,7 +56,7 @@
     color: #DDFFBB;
 }
 .colBlack {
-    color: #333333;
+    color: #484646;
 }
 .colRose {
     color: #EEBBEE;
@@ -79,9 +79,6 @@
 .colBack {
     background-color: #00FFFF;
     color: #000000;
-}
-.colBlack {
-    color: #616161;
 }
 .colbeige {
     color: #F5F5DC;
@@ -135,6 +132,206 @@
     text-shadow: 0 0 10px #ededed;
     color: #1F1F1F;
 }
+.col8 {
+    color: #904c4c;
+}
+.colAsterisk {
+    color: #F98080;
+}
+.col9 {
+    color: #Ff4343;
+}
+.colLeftParen {
+    color: #BB0000;
+}
+.cola {
+    color: #A27a1d;
+}
+.colA {
+    color: #D26417;
+}
+.colB {
+    color: #Fb9e4f;
+}
+.colC {
+    color: #F57910;
+}
+.cold {
+    color: #Ffbb22;
+}
+.colD {
+    color: #F5e784;
+}
+.colf {
+    color: #E0cb8f
+}
+.colF {
+    color: #A29367;
+}
+.colI {
+    color: #Ffff33;
+}
+.colN {
+    color: #449412;
+}
+.colo {
+    color: #98ff63
+}
+.colO {
+    color: #0e7911
+}
+.colS {
+    color: #6e8820;
+}
+.colU {
+    color: #62ffa1
+}
+.colW {
+    color: #3bc539;
+}
+.colMinus {
+    color: #3a8888;
+}
+.colUnderscore {
+    color: #445f5c;
+}
+.colEquals {
+    color: #71bdda
+}
+.colPlus {
+    color: #305777;
+}
+.colLeftBracket {
+    color: #377eff;
+}
+.colRightBracket {
+    color: #46bdf3;
+}
+.colBackSlash {
+    color: #105092;
+}
+.colPipe {
+    color: #7243e2
+}
+.colSemicolon {
+    color: #6262ff;
+}
+.colColon {
+    color: #5b2d8e;
+}
+.colApostrophe {
+    color: #B000ab;
+}
+.colQuote {
+    color: #edacf5;
+}
+.colComma {
+    color: #C863d4;
+}
+.colPeriod {
+    color: #C13b85;
+}
+.colForwardSlash {
+    color: #A47df1;
+}
+.colQuestion {
+    color: #Bba1dc;
+}
+
+
+.colZ {
+    -webkit-animation: redtoorange 1s infinite;
+    -ms-animation: redtoorange 1s infinite;
+    -o-animation: redtoorange 1s infinite;
+    animation: redtoorange 1s infinite;
+}
+
+@-webkit-keyframes redtoorange {
+    0% {color: red;}
+    20% {color: orange;}
+    40% {color: yellow;}
+    60% {color: yellow;}
+    80% {color: orange;}
+    100% {color: red;}
+}
+
+@-ms-keyframes redtoorange {
+    0% {color: red;}
+    20% {color: orange;}
+    40% {color: yellow;}
+    60% {color: yellow;}
+    80% {color: orange;}
+    100% {color: red;}
+}
+
+@-o-keyframes redtoorange {
+    0% {color: red;}
+    20% {color: orange;}
+    40% {color: yellow;}
+    60% {color: yellow;}
+    80% {color: orange;}
+    100% {color: red;}
+}
+
+@keyframes redtoorange {
+    0% {color: red;}
+    20% {color: orange;}
+    40% {color: yellow;}
+    60% {color: yellow;}
+    80% {color: orange;}
+    100% {color: red;}
+}
+
+.colz {
+
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: rainbow 5s linear infinite;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+    -ms-background-clip: text;
+    -ms-text-fill-color: transparent;
+    -ms-animation: rainbow 5s linear infinite;
+    -ms-transform: translate3d(0,0,0);
+    -ms-backface-visibility: hidden;
+    -o-background-clip: text;
+    -o-text-fill-color: transparent;
+    -o-animation: rainbow 5s linear infinite;
+    -o-transform: translate3d(0,0,0);
+    -o-backface-visibility: hidden;
+    background-clip: text;
+    text-fill-color: transparent;
+    animation: rainbow 5s linear infinite;
+    transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+@-ms-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+@keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
 .trhead {
     background-color: #0a0a0a;
     color: #FFFFFF;

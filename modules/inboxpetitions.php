@@ -101,12 +101,12 @@ function inboxpetitions_run(){
 		
 		$statuses=array(
 			0=>"`&`bUnhandled`b",
-			1=>"`\$Errors",
-			2=>"`QVotes",
-			3=>"`^Contest",
-			4=>"`@Donation",
-			5=>"`#Progressive",
-			6=>"`!Miscellaneous",
+			1=>"`\$Code Review",
+			2=>"`QJob Posting",
+			3=>"`^Donation",
+			4=>"`@Contest",
+			5=>"`#Miscellaneous",
+			6=>"`!Pending Response",
 			7=>"`)`iClosed`i",
 		);
 		//CHECKING AUTHOR ALLOWANCE HERE!!!

@@ -1,26 +1,31 @@
 <?php
-	output("`6You wander into a grand hall.");
-	output("Gazing at the ceiling, you suddenly lose track of your footing.");
-	output("All of a sudden, a tall knight stands before you.");
-	output("He glares gently at you, as your eyes scan over him.");
-	output("You note a large Lion on his cape, his cut physique and his well-groomed beard.");
-	output("`n`n\"`&Hello, my name is Dycedarg Beoulve... may I ask what you think you are doing in my Academy?`6\"");
-	output("`n`nHe takes a step back and turns his back to you, ushering you forward with a single finger.");
-	output("`n`nHis voice booms throughout the halls, \"`&Here, we take pride in the development of a warrior.");
-	output("Our Squires are taught the most powerful techniques, the strongest moves and they are trained to their fullest potential.");
-	output("If you are interested in purchasing one of my fine protege's, you shall have to pay up `%%s `&Gems.",get_module_setting("cost"));
-	output("Once you pay for your Squire, it shall be indoctrinated to you.");
-	output("It shall serve you until death.`6\"");
-	addnav("Venture");
+	output(
+		"You make your way into the seedy bar, the scent of smoke, beer," .
+		" blood and other less savory fluids fills your nostrils." .
+		" Scattered across the many tables and benches are some of" .
+		" the most dangerous citizens of the realm. Bandits, assassins," .
+		" cut-throats, military, professional bodyguards. Their" . 
+		" backgrounds are varied, but they are all united in this" .
+		" place by one common creed, anything for money." .
+		" As you approach the bar, MacCready gives you a sly nod" .
+		" of acknowledgement as he puts a glass away. Working as the" .
+		" face and intermediate of this fine establishment," .
+		" many wouldn't guess that the thin, scrappy-looking man behind" .
+		" the bar was, in fact, one of the best shots around." .
+		"`n`n\"`&The name's MacCready. What can I get ya?" . 
+		" Cheap beer or some muscle to aid you in battle?" . 
+		"`&If it's hired help you need, I can sell you a contract" . 
+		" for `%%s gems.\"",get_module_setting("cost")); 
+	addnav("Options");
 	addnav("Training Hall","runmodule.php?module=academy&op=hall");
 	if ($active && !$dead){
-		output("`n`n`6Dycedarg scans his eyes over you and tilts his head to the side.");
-		output("\"`&My... I didn't see you there...");
-		output("Please step forward, `^%s`&.`6\"",$name);
-		output("You take a quick look at your warrior and Dycedarg smiles.");
+		output(
+			"`n`n`7MacCready pauses and gives you glance before continuing," .
+			"`&\"I see `^%s`& is still alive and kicking." .
+			" Beer then?`7\"",$name);
 		addnav(array("Dismiss %s",$classarray[$class]),"runmodule.php?module=academy&op=dismiss");
 	}elseif($dead){
-		output("`n`n`6Dycedarg notes the limp body in your arms.");
-		output("\"`&I see... Well, if you will follow me into the Training Hall... I shall be able to sort this all out.`6\"");
-	}
+		output("`n`n`&MacCready quirks a brow at you for dragging a dead body" . 
+			" into his pub. `&\"I'll get the resurrection stone,\" MacCready" . 
+			" said, in a resigned manner.");	}
 ?>

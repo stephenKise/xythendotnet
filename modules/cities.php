@@ -149,34 +149,7 @@ function cities_dohook($hookname,$args){
 	case "villagetext":
 		if ($session['user']['location'] == $city){
 			// DESCRIPTION / RECENT NEWS / PLAYER OWNED LOCATIONS
-		$args['text'] = array(
-			"`L`bS`b`iy`3l`#i`ls`i`Lt`b`3e`b`#n`7, the floating 
-			`b`i`4V`b`Pi`pc`mt`bo`br`pi`i`Pa`i`4n`i`7 city suspends above the
-			 ocean due to a mixture of aether and machinery. After a few years,
-			 the dusty-rose coloring that once lingered above the estates,
-			 townhouses, and shacks had dissipated due to the decreased usage of
-			 pollutants by manufacturers. Sylisten, being a `~smaller`7 city,
-			 still manages to hold a magnitude of jobs and resources for
-			 residents. The most widely imported food source comes from
-			 `b`GA`b`@u`2r`ga`@t`2o`gn`7's farms, as expected from a floating city.
-			 On the opposite side of the city, in order to keep the mass
-			 balanced, a large mountain protected by Ulysses stands firm. This 
-			 `)mountain`7 is home to many mystical`7 spirits, creatures, and
-			plants-forms. It is cautioned to enter the mountain without permission
-			 from the guardian. Among popular locations, residents often frequent
-			 the Titanium Rose Inn or `b`QC`b`i`mlo`i`^c`b`Qk`b`^w`to`mr`Qk 
-			 `QT`b`me`b`Ma`i`i`6s`7. Those who seek a more private and serene
-			 atmosphere often head to the Great Library or
-			 `b`)B`b`7o`b`gt`b`i`@a`kn`i`L`bi`b`lc`ia`il
-			 `)G`i`7a`gr`i`@d`b`ke`b`Ln`i`ls`i`7. Off to the side of the
-			 floating city, near the sky dock, a large airship docks peacefully
-			 with open doors to all children seeking wealth-dependent quality
-			 education at `4R`\$os`Pen`pva`Mil `4A`\$c`Pa`pd`Me`mm`Ey`7. Those
-			 who wish to travel to the continent must do so by the sky docks,
-			 where airships are always for hire at 100 gold a trip. The first
-			 location typically visited due to proximity is the Valley Inn,
-			 nearing the Toxic Forest."
-		,$city,$city);
+		$args['text'] = array("`c`b`LS`b`i`ly`3l`i`#`bi`b`Ls`i`lt`3e`i`Ln`7, the floating capital of `b`i`dX`i`b`^y`Dth`^e`dn`7, suspends one-hundred feet above the ocean with the assistance of aether technology. The city consists of several districts in order to maintain a systematic order. In the very center of the city is the Immigration Center, a large Classical-style building where the `b`~O`b`)m`dn`i`Di`i `b`DP`b`i`^o`dr`i`7t`)a`b`~l`b`7 is heavily guarded and protected. The `b`~O`b`)m`dn`i`Di`i `b`DP`b`i`^o`dr`i`7t`)a`b`~l`b`7 being the sole entry point into and out of the realm of `b`i`dX`i`b`^y`Dth`^e`dn`7, was created to create realm stability after the `b`8T`b`i`ee`En`i`Ft`Dr`^o`b`dm`b`i`Qe`i`Cc`Ah `AW`i`da`i`er`7. Outside of the Immigration Center is the center of `b`LS`b`i`ly`3l`i`#`bi`b`Ls`i`lt`3e`i`Ln`7. The city center contains a large and elaborate aether fountain using the same style of stone as the courthouse; decorated with several carvings and engravings meant to represent the `b`TH`b`i`ei`Es`i`tt`Eo`b`er`b`i`Ty`i `7`iof`i `b`i`dX`i`b`^y`Dth`^e`dn`7. Several stone benches surround the fountain for lounging and relaxing. Occasional traveling vendors can be found on the outskirts of the city center, typically offering meals or trinkets to those nearby. Located across from the Immigration Center is the `b`~L`b`i`:o`5c`i`%a`b`Ql`b `b`~T`b`i`:a`5v`i`%e`Br`b`Cn`b`7, where those who need a warm place to rest, eat or drink may head. To the right and left of the `b`~T`b`i`:a`5v`i`%e`Br`b`Cn`b `7are two other classical-style buildings, the `b`dN`b`i`Da`^t`b`mi`b`Xo`i`^n`Da`b`dl`b `b`yB`b`i`^a`Dn`b`dk`b`i`7 and the `b`TG`b`4r`b`Qe`i`^a`b`i`Tt `i`T`bL`bi`i`4b`i`Qr`i`^a`i`T`br`by`i`7. As one can see, the center of `b`LS`b`i`ly`3l`i`#`bi`b`Ls`i`lt`3e`i`Ln `7primarily caters to newcomers, while also offering a common place to meet up with friends. `n`nStreets lined with small shops and lower-class housing branch off of the city center, leading to different districts. North, and past the Immigration Center, leads to the `b`!R`b`i`Le`i`ls`i`[i`i`]d`-e`b`=n`b`Kt`ki`ga`Ul `b`!D`b`i`Li`ls`i`[t`]r`-i`b`=c`b`Kt `7for upper and middle class citizens. To the East, down the streets framing the `b`dN`b`i`Da`^t`b`mi`b`Xo`i`^n`Da`b`dl`b `b`yB`b`i`^a`Dn`b`dk`b`i`7, is the industrial quarter - where factories and laboratories can be found. Heading south, passing the `b`~L`b`i`:o`5c`i`%a`b`Ql`b `b`~T`b`i`:a`5v`i`%e`Br`b`Cn`b`7, would lead to the social district where the `b`&G`b`7u`=i`b`]l`b`-d `b`&H`b`7a`=l`b`]l`b`-s`7 and `b`)B`b`7o`b`gt`b`i`@a`kn`i`L`bi`b`lc`ia`il `)G`i`7a`gr`i`@d`b`ke`b`Ln`i`ls`i`7 reside. In addition, there are several bars and restaurants for those seeking a more social or private atmosphere. Finally, down the streets framing the `b`TG`b`4r`b`Qe`i`^a`b`i`Tt `i`T`bL`bi`i`4b`i`Qr`i`^a`i`T`br`by`i`7, leads to the central area for travel; where individuals could buy tickets to the main land or other major cities in `b`i`dX`i`b`^y`Dth`^e`dn`7.`n`nTo the east of `b`LS`b`i`ly`3l`i`#`bi`b`Ls`i`lt`3e`i`Ln`7, on the main land, a small coastal area for fishing and oceanic trade rests nestled between the `b`3o`b`#c`i`ke`i`-a`_n `b`_w`b`-a`kt`i`#e`i`3r`b`ls`b`7 and a steep incline that separates the `b`LC`b`#r`i`3y`i`ls`Lt`b`3a`b`#l `b`@F`b`i`2o`gr`i`Ge`2s`@t`7 from the citizens. This area is primarily filled with fishermen, `b`&b`b`i`ko`i`La`$t`b`4s`b`7, docks and several fish merchants - but further in the distance there is a mile stretch of beach meant for lounging in the `b`^s`b`i`du`Dn`i`7.`c",$city,$city);
 
 
 			//$args['text'] = array("`c`b`iCamelot, home of Trade and Diplomacy`i`b`nThe streets of Camelot bustle with the new visitors, journeying to the home of trade and diplomacy in hopes of claiming their stake in this fresh environment. The sound of traders advertising their wares permeates the air of the new market, hoping to rise in the ranks of being the best new barterer. The King's men stand guard watching over the cobbled streets, wearing the Camelonian coat of arms with such pride and honor. The eastern side of the town is where most of the housing seems to be, offering many townhouses for new residents to claim as their own.`c");

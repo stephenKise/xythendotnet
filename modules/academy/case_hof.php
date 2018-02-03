@@ -5,9 +5,9 @@
 	$page = httpget('page');
 	$pp = 25;
 	$classarray = array(
-				0=>translate_inline("Squire"),
-				1=>translate_inline("Knight"),
-				2=>translate_inline("Warlord")
+				0=>translate_inline("Novice"),
+				1=>translate_inline("Adept"),
+				2=>translate_inline("Master")
 	);
 	$pageoffset = (int)$page;
 	if ($pageoffset > 0) $pageoffset--;
@@ -39,9 +39,9 @@
 	$result = db_query($sql);
 	$rank = translate_inline("Rank");
 	$name = translate_inline("Name");
-	$sname = translate_inline("Squire Name");
-	$class = translate_inline("Class");
-	output("`b`c`@Strongest Squires In The Land`c`b`n`n");
+	$sname = translate_inline("Mercenary");
+	$class = translate_inline("Mercenary Rank");
+	output("`b`c`@Strongest Mercenaries in the Land`c`b`n`n");
 	rawoutput("<table border='0' cellpadding='2' cellspacing='1' align='center' bgcolor='#999999'>");
 	rawoutput("<tr class='trhead'><td>$rank</td><td>$name</td><td>$sname</td><td>$class</td></tr>");
 	if (db_num_rows($result)>0){

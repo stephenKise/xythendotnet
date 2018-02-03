@@ -429,7 +429,7 @@ function claneditor_run(){
 			$rank = translate_inline("Rank");
 			$name = translate_inline("Name");
 			$lev = translate_inline("Level");
-			$dk = translate_inline("Tentromech Kills");
+			$dk = translate_inline("Guardian Kills");
 			$jd = translate_inline("Join Date");
 			$lo = translate_inline("Last On");
 			$ops = translate_inline("Operations");
@@ -472,7 +472,7 @@ function claneditor_run(){
 				rawoutput("</tr>");
 			}
 			rawoutput("</table>");
-			output("`n`n`^This Guild has a total of `\$%s`^ tentromech kills.",$tot);
+			output("`n`n`^This Guild has a total of `\$%s`^ Crystal Guardian kills.",$tot);
 		}
 		if ($dt!=""&&isset($claninfo)) {
 			addnav("Guild Options");

@@ -148,9 +148,9 @@ if ($op=="armorhof"){
 
 if ($op=="enter"){
 	output("`b`c`i`b`&R`b`7ak`#ei`&'`7s`i Forge`b`c");
-	output_notl("`n`n");
+	output_notl("`n");
 	output("`$ You enter the Guild Forge, you approach your `)Stone Anvil`$ and set to work creating...");
-	output_notl("`n`n`n");
+	output_notl("`0");
 	clear_module_pref("paid");
 	clear_module_pref("paida");
 	$wlevel=get_module_pref("level");
@@ -173,7 +173,7 @@ if ($op=="weapon"){
 	$lvlmax = $dk*5+2;
 	if ($dk<=0) $lvlmax = 5;
 	if ($level>=$lvlmax){
-		output("Sorry you have forged to your current maximum level, please try again after you've destroyed the Tentromech");
+		output("Sorry you have forged to your current maximum level, please try again after you've destroyed a Crystal Guardian");
 		addnav("Forget It","village.php");
 	}else{
 		output("`$ Picking up a large hammer you begin to work on your new weapon, you are currently at level %s.",$level);
@@ -199,7 +199,7 @@ if ($op=="armor"){
 	$dk = $session['user']['dragonkills'];
 	$lvlmax = $dk*5+2;
 	if ($levela>=$lvlmax){
-		output("Sorry you have forged to your current maximum level, please try again after you've destroyed the Tentromech.");
+		output("Sorry you have forged to your current maximum level, please try again after you've destroyed a Crystal Guardian.");
 		addnav("Forget It","village.php");
 	}else{
 		output("`$ Picking up a large hammer you begin to work on your new armor, you are currently at level %s.",$levela);
@@ -225,7 +225,7 @@ if ($op=="cweapon"){
 	$lvlmax = $dk*5+2;
 	if ($level>=$lvlmax){
 		if ($level>$lvlmax) $level = $lvlmax;
-		output("Sorry you have forged to your current maximum level, please try again after you've destroyed the Tentromech");
+		output("Sorry you have forged to your current maximum level, please try again after you've destroyed a Crystal Guardian");
 		addnav("Forget It","village.php");
 	}else{
 		if ($session['user']['gems']<$cost){
@@ -263,7 +263,7 @@ if ($op=="carmor"){
 	$lvlmax = $dk*5+2;
 	if ($levela>=$lvlmax){
 		if ($levela>$lvlmax) $levela = $lvlmax;
-		output("Sorry you have forged to your current maximum level, please try again after you've destroyed the tentromech");
+		output("Sorry you have forged to your current maximum level, please try again after you've destroyed a Crystal Guardian");
 		addnav("Forget It","village.php");
 	}else{
 		if ($session['user']['gems']<$cost){

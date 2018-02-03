@@ -28,14 +28,14 @@ function hofclandk_dohook($hookname,$args){
 	switch ($hookname){
 		case "footer-hof":
 			addnav("Guild Rankings");
-			addnav("Guild Tentromech Kills","runmodule.php?module=hofclandk");
+			addnav("Guild CG Kills","runmodule.php?module=hofclandk");
 			break;
 		}
 	return $args;
 }
 function hofclandk_run(){
 	global $session;
-	page_header("Guild Tentromech Kills");
+	page_header("Guild CG Kills");
 	$ac = db_prefix("accounts");
 	$cl = db_prefix("clans");
 	$op = httpget('op');
@@ -65,13 +65,13 @@ function hofclandk_run(){
 			memcount ASC $limit";
 	$res = db_query($sql);
 	rawoutput("<big>");
-	output("`c`b`^Guild Tentromech Kill Rankings`b`c`0`n");
+	output("`c`b`^Guild CG Kill Rankings`b`c`0`n");
 	rawoutput("</big>");
 	$rank = translate_inline("Rank");
 	$name = translate_inline("Guild Name");
 	$mem = translate_inline("# of Members");
-	$dk = translate_inline("Tentromech Kills");
-	$ratio = translate_inline("DK to Member Ratio");
+	$dk = translate_inline("CG Kills");
+	$ratio = translate_inline("CG kills to Member Ratio");
 	rawoutput("<table border='0' cellpadding='2' cellspacing='1' align='center' bgcolor='#999999'>");
 	rawoutput("<tr class='trhead'><td>$rank</td><td align='center'>$name</td><td>$mem</td><td>$dk</td><td>$ratio</td></tr>");
 	if (db_num_rows($res)>0){

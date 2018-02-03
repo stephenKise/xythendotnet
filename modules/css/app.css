@@ -1,0 +1,97 @@
+/*Districts*/
+#village-container {
+    display: none;
+}
+
+/*jQuery Commentary*/
+.jQuery-chat-form {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    background-color: #222;
+    padding: 2px;
+    border-radius: 3px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+.jQuery-chat-form:hover {
+    background-color: #111;
+}
+
+.jQuery-chat-form textarea {
+    position: absolute;
+    resize: none;
+    padding-right: 8px;
+    padding: 5px;
+    font-family: Whitney, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    text-rendering: optimizeLegibility;
+    color: rgba(234, 181, 35, 1);
+    background-color: transparent;
+    border: 0px;
+    border-right: 0px solid #EAB523;
+    border-radius: 0px;
+    box-sizing: border-box;
+    width: calc(100% - 52px);
+    margin: 2px;
+    margin-top: 0px;
+    display: inline;
+    float: left;
+    height: 95%;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+
+.jQuery-chat-form textarea:hover,
+.jQuery-chat-form textarea:focus {
+    border-right: 3px solid #EAB523;
+    padding-right: 5px;
+}
+.jQuery-chat-form input[type='submit'] {
+    color: #F2E2A9;
+    background-color: transparent;
+    border: 0px;
+    display: inline;
+    float: right;
+    min-width: 0px;
+    width: 50px;
+    height: 100px !important;
+    margin-top: 0px;
+    margin-right: 0px;
+}
+
+.jQuery-chat-form input[type='submit']:hover {
+    cursor: pointer;
+}
+.jQuery-message .editMessage {
+    display: inline !important;
+    font-weight: normal;
+}
+.jQuery-message .chatMessage {
+    display: inline !important;
+}
+
+.jQuery-chat-section {
+    float: left;
+}
+
+.jQuery-chat-navs {
+    float: right;
+}
+/*Dice Roll*/
+.dice-roll {
+    border-radius: 10%;
+    border: 1px solid gold;
+    display: inline;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+}
+.dice-roll:after {
+    content: "\1F3B2";
+}

@@ -43,7 +43,7 @@ function dragonpoints_dohook($hookname,$args){
                     case "pointsdesc":
                         $args['count']++;
                         $format = $args['format'];
-                        $str = "`\$- `^Reset your Tentromech Points at any time.`n";
+                        $str = "`\$- `^Reset your Crystal Guardian Points at any time.`n";
                         output($str, true);
                         break;
                 }
@@ -52,12 +52,12 @@ function dragonpoints_dohook($hookname,$args){
 function dragonpoints_run(){
     global $session;
 	page_header("Donation Center");
-	output("`Q`c`bReset TK Points`b`c");
+	output("`Q`c`bReset CGK Points`b`c");
     $op = httpget('op');
     $cost=get_module_setting("cost");
 	if ($op == "reset") {
 		addnav("Return to the Lodge","lodge.php");
-	    output("`2When you kill a Tentromech you are allowed to allocate a point to one of your stats. If you are not pleased with your current stats, at level 15 you may request to have your points reset.`n");
+	    output("`2When you kill a Crystal Guardian you are allowed to allocate a point to one of your stats. If you are not pleased with your current stats, at level 15 you may request to have your points reset.`n");
 	    if ($session['user']['level']>=15) addnav("`@Reset Points","runmodule.php?module=dragonpoints&op=reset2");
 	}
 	if ($op == "reset2") {

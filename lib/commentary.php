@@ -352,11 +352,6 @@ function viewcommentary($section,$message="Interject your own commentary?",$limi
 		$args1 = array('section'=>$section,'talkline'=>$talkline,'schema'=>$schema);
 		$args2 = modulehook("viewcommentaryheader", $args1);
 	}
-	if ($session['user']['prefs']['toggleooc'] == 1)
-	{
-		displayooc();
-		output("`n`n");
-	}
 // *** AJAX CHAT MOD END ***
 
 // *** DRAGONBG.COM CORE PATCH START ***
@@ -743,11 +738,6 @@ function viewcommentary($section,$message="Interject your own commentary?",$limi
 		$needclose = 0;
 	}
 
-	if ($session['user']['prefs']['toggleooc'] == 2)
-	{
-		output("`n`n");
-		displayooc();
-	}
 	modulehook('endofcommentary');
 	if ($moderating){
 		output_notl("`n");
@@ -764,7 +754,10 @@ function viewcommentary($section,$message="Interject your own commentary?",$limi
 	}
 
 	if ($session['user']['loggedin']) {
-		$args = modulehook("insertcomment", array("section"=>$section));
+		$args = modulehook(
+			"insertcomment",
+			['section' => $section]
+		);
 		if (array_key_exists("mute",$args) && $args['mute'] &&
 				!($session['user']['superuser'] & SU_EDIT_COMMENTS)) {
 			output_notl("%s", $args['mutemsg']);

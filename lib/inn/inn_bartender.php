@@ -2,10 +2,22 @@
 $act = httpget('act');
 if ($act==""){
 	output("%s`0 looks at you sort-of sideways like.",$barkeep);
-	output("He never was the sort who would trust a man any farther than he could throw them, which gave dwarves a decided advantage, except in provinces where dwarf tossing was made illegal.");
-	output("%s`0 polishes a glass, holds it up to the light of the door as another patron opens it to stagger out into the street.",$barkeep);
-	output("He then makes a face, spits on the glass and goes back to polishing it.");
-	output("\"`%What d'ya want?`0\" he asks gruffly.");
+	output("`7You stride up towards the renowned owner, Cedrick, who looks at" .
+    " you with the single good eye he had left, its gaze as piercing and" .
+    " his younger years doing various jobs, most of them either mercenary" . 
+    " work or heavy lifting, so he was accustomed to, and knew, the streets" .
+    " and the city itsel. This was shown off by his trusty, custom, 10-round" .
+    " chambered revolver strapped to his right leg. It was obvious to have" .
+    " seen a lot of use due to how weathered it appeared, but many a regular" .
+    " patron vouched that despite it's age and Cedrick's eyesight, he could" .
+    " still disarm a man faster than you could say \"`&Boo`7!\" Cedrick's right hand" .
+    " instinctively reaches under the bar, though whether it was to pull out" .
+    " his gun or to grab a glass was up to you. Once your choice was made," .
+    " He'd perform said action and narrows his one eye at you \"`&What is it ya" .
+    " want pardner?`7\" he asks in his gravelly voice, the sound enough to" . 
+    " strike fear into the hearts of even the most hardened of heroes and" .
+    " villains alike.",$barkeep);
+
 	addnav_notl(sanitize($barkeep));
 	addnav("Bribe","inn.php?op=bartender&act=bribe");
 	addnav("Drinks");

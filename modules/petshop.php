@@ -25,7 +25,6 @@ function petshop_getmoduleinfo(){
 		"settings"=>array(
 			"Pet Shop Settings - Main,title",
 			"petshopname"=>"Name of petshop|Ye Olde Pet Shoppe",			
-			"petshoploc"=>"Where does the pet shop appear?,location|".getsetting("villagename", LOCATION_FIELDS),
 			"Pet Shop Settings - Misc,title",
 			"givegift"=>"Allow players to buy pets as gifts?,bool|1",
 			"dklose"=>"Allow chance to lose pet after a DK?,bool|0",
@@ -234,14 +233,6 @@ function petshop_dohook($hookname,$args){
 		$args['tablebiostat']['Companions/Items'][$scolor.'Pet'] = $petnone;
 	}
 	break;
-
-	case "changesetting":
-		if ($args['setting'] == "villagename") {
-			if ($args['old'] == get_module_setting("petshoploc")) {
-				set_module_setting("petshoploc", $args['new']);
-			}
-		}
-	break;
 	case "charstats":
 	if ($haspet==1){
 		//Relax! Mood is strictly aesthetic this time! Just something to give the pet a little more personality
@@ -412,11 +403,8 @@ function petshop_dohook($hookname,$args){
 	if ($session['user']['superuser'] & SU_EDIT_MOUNTS)addnav("$link", $from."op=view&category=0");	
 	break;
 	case "village":
-	$shopname = translate_inline(get_module_setting("petshopname"));
-	if ($session['user']['location'] == get_module_setting("petshoploc")) {	
-		addnav($args['marketnav']);			
-		addnav("$shopname",$from2);					
-	}
+		addnav($args['marketnav']);
+		addnav(get_module_setting('petshopname'), $from2);
 	break;
 	case "village-desc":
 	if ($haspet == 1){
@@ -451,7 +439,7 @@ function petshop_run(){
 		$petid = get_module_pref("petid");
 		$haspet = get_module_pref("haspet");
 		$from = "runmodule.php?module=petshop&";
-		output("As you push open the door to the quaint, brightly lit shop an orchestra of animal noises waft through the air and beckon you in further. Ornate bird cages displaying parakeets and barn owls in the shop’s multitude of windows. In the center of the shop is a pen with ferrets scampering around playing with one another.  In small tanks there are turtles and goldfish swimming about. As you peruse the multitude of options available to you, A sweet demeanored woman of small stature and rabbit ears greets you before showing you her pets for sale.");
+		output("new shop, who dis?");
 		if ($haspet == 0){
 			output("`2\"Welcome to my shop, friend,\" she greets you. \"May I help you with anything?\"`n`n");
 		}else{
@@ -790,8 +778,7 @@ function petshop_run(){
 				require_once("lib/systemmail.php");
 				$subject = translate_inline("Someone Bought you a Pet!");
 				$petshop = get_module_setting("petshopname");
-				$loc = get_module_setting("petshoploc");
-				$mailmessage="".$session['user']['name']." `2has bought you a `^$giftedpet`2!`n`nYou may pick it up at `^$petshop `2in `^$loc`2.";			
+				$mailmessage="".$session['user']['name']." `2has bought you a `^$giftedpet`2!`n`nYou may pick it up at `^$petshop`2.";			
 				$message = translate_inline($mailmessage);
 			 	systemmail($row['acctid'],$subject,$message);	
 				break;

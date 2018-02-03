@@ -74,8 +74,8 @@ function quester_dohook($hookname,$args){
 	switch ($hookname){
 		//potion book in bio
 		case "ale":
-			addnav("Cedrik");
-			addnav("Rumors","runmodule.php?module=quester&op=enter");
+			addnav("Cedrick");
+			addnav("Quests","runmodule.php?module=quester&op=enter");
 		break;
 		case "footer-hof":
 			addnav("Warrior Rankings");
@@ -179,7 +179,7 @@ function quester_runevent($type,$link) {
 		} else if ($op == "quester3") {
 			if ($act == "yes") {
 				output("You pity the old man, so you jump over and chop the lesser monster in half. 'Thank you, you saved my life,' he says, 'Here, I have a nice reward for you, I found it in the ground. I am an archaeologist, hence these rocks. They were too important to leave behind.'`n`n");
-				output("At first you don't really think you want a dirty old artifact that you have no use for, but when he takes it out, you are dumbfounded. He's giving you the %s you needed for Cedrik! How lucky you are!`n`n",get_module_pref("levelname"));
+				output("At first you don't really think you want a dirty old artifact that you have no use for, but when he takes it out, you are dumbfounded. He's giving you the %s you needed for Cedrick! How lucky you are!`n`n",get_module_pref("levelname"));
 				set_module_pref("completed",1);
 			} else {
 				output("You decide that helping an old man is a waste of your time, so you ignore him and move on. You're not very nice, are you?`n`n");
@@ -190,7 +190,7 @@ function quester_runevent($type,$link) {
 		} else if ($op == "quester4") {
 			if ($act == "yes") {
 				output("You pity the old man, so you walk over and ask him if he needs any help. He says, 'Why, thank you kind young lad.' After carrying his very heavy sack for him to the village, he says, 'You are so kind. Here, I have a nice reward for you, I found it in the ground. I am an archaeologist, hence these rocks. Here, I can give you this little trinket I dug up.'`n`n");
-				output("At first you don't really think you want a dirty old artifact that you have no use for, but when he takes it out, you are dumbfounded. He's giving you the %s you needed for Cedrik! How lucky you are!`n`n",get_module_pref("levelname"));
+				output("At first you don't really think you want a dirty old artifact that you have no use for, but when he takes it out, you are dumbfounded. He's giving you the %s you needed for Cedrick! How lucky you are!`n`n",get_module_pref("levelname"));
 				if ($session['user']['turns'] > 0) { $session['user']['turns']--; }
 				set_module_pref("completed",1);
 			} else {
@@ -216,10 +216,10 @@ function quester_runevent($type,$link) {
     	    	addnews("`4`b%s`b has sealed the `b%s`b into another realm, freeing our world from it's terrible immortal evil!",$session['user']['name'],get_module_pref("levelname"));
 			} else {
 				if (get_module_pref("leveltype") == 1) {
-					output("`nWith one final blow, you smite the %s onto the mountainside. Darkness takes you, but it is not your time yet. You awaken thereafter, though you can't tell how long you have been out. You remember now that you have killed a powerful monster. You don't know if Cedrik will believe you, so you ponder a solution. An idea comes to you...  You cut the head off of the corpse, and keep it to take back to Cedrik as proof of your victory.`n`n",get_module_pref("levelname"));
+					output("`nWith one final blow, you smite the %s onto the mountainside. Darkness takes you, but it is not your time yet. You awaken thereafter, though you can't tell how long you have been out. You remember now that you have killed a powerful monster. You don't know if Cedrick will believe you, so you ponder a solution. An idea comes to you...  You cut the head off of the corpse, and keep it to take back to Cedrick as proof of your victory.`n`n",get_module_pref("levelname"));
 					output("`4You have defeated the %s!!!.`0`n`n",get_module_pref("levelname"));
 				} else {
-				  	output("`nWith one finaly blow, you smite your foe onto the mountainside. Darkness takes you, but it is not your time yet. You awaken thereafter, though you can't tell how long you were out. You remember now that you needed the item that thing was guarding. You stand up and take the %s from the creature's grasp, and you head back to Cedrik.`n`n",get_module_pref("levelname"));
+				  	output("`nWith one finaly blow, you smite your foe onto the mountainside. Darkness takes you, but it is not your time yet. You awaken thereafter, though you can't tell how long you were out. You remember now that you needed the item that thing was guarding. You stand up and take the %s from the creature's grasp, and you head back to Cedrick.`n`n",get_module_pref("levelname"));
 				  	output("`4You have defeated the monster and taken the %s!!!.`0`n`n",get_module_pref("levelname"));
 				}
 				$exp = round($session['user']['experience'] * 0.08, 0);
@@ -266,48 +266,48 @@ function quester_run(){
 	switch ($op) {
 		case "enter":
 		    if (get_module_pref("questlevel") == 0) {
-				output("You decide to ask Cedrik if he has heard any rumors, but he gives you a very serious look. 'You want to know some Rumors?' he asks, and you start to feel sorry for asking.`n`n");
-				output("Cedrik looks at you and says, 'I know of a few rumors for an adventurer like yourself, however you look like the kind of person who would run out to inspect these rumors and get yourself killed.' Are you sure you want to hear them?`n`n");
+				output("You decide to ask Cedrick if he has heard any rumors, but he gives you a very serious look. 'You want to know some Rumors?' he asks, and you start to feel sorry for asking.`n`n");
+				output("Cedrick looks at you and says, 'I know of a few rumors for an adventurer like yourself, however you look like the kind of person who would run out to inspect these rumors and get yourself killed.' Are you sure you want to hear them?`n`n");
 				addnav("Accept","runmodule.php?module=quester&op=start");
 				addnav("Decline","inn.php?op=bartender");
 			} else if (get_module_pref("completed") == 0) {
-				output("You decide to ask Cedrik if he has heard any rumors. He looks at you as if you were nuts, and says, 'You want more rumors? Why? You already have a quest going from a rumor I told you, and you didn't event finish it. Haven't you gone to %s yet?`n`n", get_module_pref("levelloc"));
-				output("Just a little scared, you wonder if you should ask Cedrik if you can start another quest, or if you should leave him alone lest something bad happen.`n`n");
+				output("You decide to ask Cedrick if he has heard any rumors. He looks at you as if you were nuts, and says, 'You want more rumors? Why? You already have a quest going from a rumor I told you, and you didn't event finish it. Haven't you gone to %s yet?`n`n", get_module_pref("levelloc"));
+				output("Just a little scared, you wonder if you should ask Cedrick if you can start another quest, or if you should leave him alone lest something bad happen.`n`n");
 				addnav("Abandon Quest","runmodule.php?module=quester&op=abandon");
 				addnav("Leave","inn.php?op=bartender");
 			} else {
-				output("You tell Cedrik you've finished the quest. 'Oh yeah? Lets see your proof!' he responds. You don't know whether he's pleased with you or not, but you proceed to show him your proof.`n`n");
+				output("You tell Cedrick you've finished the quest. 'Oh yeah? Lets see your proof!' he responds. You don't know whether he's pleased with you or not, but you proceed to show him your proof.`n`n");
 				if (get_module_pref("questlevel") == get_module_pref("queststage")) {
 					if (get_module_setting("bossreward") > 0) {
-						output("You start to reach into your backpack, but then you stop and stare at Cedrik realizing that you have no proof, since you banished the %s to another dimension. After a few seconds, Cedrik laughs and says, 'Hahaha, just kidding. I could feel the evil lift from the world, so I know you did it. Good job. Your reward is %s gold, and you definitely deserve it.' `n`n",get_module_pref("levelname"),get_module_setting("bossreward"));
+						output("You start to reach into your backpack, but then you stop and stare at Cedrick realizing that you have no proof, since you banished the %s to another dimension. After a few seconds, Cedrick laughs and says, 'Hahaha, just kidding. I could feel the evil lift from the world, so I know you did it. Good job. Your reward is %s gold, and you definitely deserve it.' `n`n",get_module_pref("levelname"),get_module_setting("bossreward"));
 					} else {
-						output("You start to reach into your backpack, but then you stop and stare at Cedrik realizing that you have no proof, since you banished the %s to another dimension. After a few seconds, Cedrik laughs and says, 'Hahaha, just kidding. I could feel the evil lift from the world, so I know you did it. Good job.' `n`n",get_module_pref("levelname"));
+						output("You start to reach into your backpack, but then you stop and stare at Cedrick realizing that you have no proof, since you banished the %s to another dimension. After a few seconds, Cedrick laughs and says, 'Hahaha, just kidding. I could feel the evil lift from the world, so I know you did it. Good job.' `n`n",get_module_pref("levelname"));
 					}
 					quester_finish();
 				} else {
 					if (get_module_pref("leveltype") == 0) {
 						if (get_module_setting("normreward") > 0) {
-							output("You show him the %s you got from your quest, and Cedrik smiles. 'You've done well, young adventurer. Your reward is %s gold.' `n`n",get_module_pref("levelname"),get_module_setting("normreward"));
+							output("You show him the %s you got from your quest, and Cedrick smiles. 'You've done well, young adventurer. Your reward is %s gold.' `n`n",get_module_pref("levelname"),get_module_setting("normreward"));
 						} else {
-							output("You show him the %s you got from your quest, and Cedrik smiles. 'You've done well, young adventurer.' `n`n",get_module_pref("levelname"));
+							output("You show him the %s you got from your quest, and Cedrick smiles. 'You've done well, young adventurer.' `n`n",get_module_pref("levelname"));
 						}
 					} else {
 						if (get_module_setting("normreward") > 0) {
-							output("You show him the head of the %s, and Cedrik smiles. 'You've done well, young adventurer. Your reward is %s gold.' `n`n",get_module_pref("levelname"),get_module_setting("normreward"));
+							output("You show him the head of the %s, and Cedrick smiles. 'You've done well, young adventurer. Your reward is %s gold.' `n`n",get_module_pref("levelname"),get_module_setting("normreward"));
 						} else {
-							output("You show him the head of the %s, and Cedrik smiles. 'You've done well, young adventurer.' `n`n",get_module_pref("levelname"));
+							output("You show him the head of the %s, and Cedrick smiles. 'You've done well, young adventurer.' `n`n",get_module_pref("levelname"));
 						}
 					}
 					quester_nextlvl();
 					if (get_module_pref("questlevel") == get_module_pref("queststage")) {
-						output("This time, Cedrik looks at you more serious than you have ever seen. You begin to tremble just from the way he's looking at you. He says in the most serious tone of voice you have ever heard a man speak in, 'This is it. The preparations are done. It is time to rid the world of this great evil once and for all.'`n`n");
+						output("This time, Cedrick looks at you more serious than you have ever seen. You begin to tremble just from the way he's looking at you. He says in the most serious tone of voice you have ever heard a man speak in, 'This is it. The preparations are done. It is time to rid the world of this great evil once and for all.'`n`n");
 						output("'It's time I told you the name of this foe. It is known as the `b%s`b, and is very powerful. This foe is immortal, so you cannot defeat him. However, there is another way to rid the world of its evil. Once you beat it down to unconsciousness, you must seal it into another dimension. This will rid the world of it without killing it.'`n`n",get_module_pref("levelname"));
-						output("'You can find this last foe in the forests of `b%s`b. This will be your toughest foe yet, so be cautious. I hope I will see you again in one piece.' Then Cedrik turns back to his drinks, and you decide that you're not getting any younger, so you take a deep breath and head off to rid the world of this evil.`n`n",get_module_pref("levelloc"));
+						output("'You can find this last foe in the forests of `b%s`b. This will be your toughest foe yet, so be cautious. I hope I will see you again in one piece.' Then Cedrick turns back to his drinks, and you decide that you're not getting any younger, so you take a deep breath and head off to rid the world of this evil.`n`n",get_module_pref("levelloc"));
 					} else {
 						if (get_module_pref("leveltype") == 0) {
-							output("Cedrik turns to a scroll and says, 'This part of the quest should be rather easy. You need to go and find the `b%s`b, down in the forests of `b%s`b. This is a very rare and powerful item, and it will help you greatly in your quest, as it's powerful magic can be used to seal away the great foe you must face. Be careful, however, as you never know what dangers you will find with it.' He hands you the scroll and you go off to find and take this item.`n`n",get_module_pref("levelname"),get_module_pref("levelloc"));
+							output("Cedrick turns to a scroll and says, 'This part of the quest should be rather easy. You need to go and find the `b%s`b, down in the forests of `b%s`b. This is a very rare and powerful item, and it will help you greatly in your quest, as it's powerful magic can be used to seal away the great foe you must face. Be careful, however, as you never know what dangers you will find with it.' He hands you the scroll and you go off to find and take this item.`n`n",get_module_pref("levelname"),get_module_pref("levelloc"));
 						} else {
-							output("Cedrik leans twards you and says softly, 'This part of the quest could be a little tricky. You need to seek out and kill the `b%s`b, down in the forests of `b%s`b. This is one of your great foe's most loyal underlings, and, if not killed, will come to his aid. This will, in turn, pose a great threat to you as you battle your foe. So go now and kill this evil being.' He leans back and you go off to find and kill this monster.`n`n",get_module_pref("levelname"),get_module_pref("levelloc"));
+							output("Cedrick leans twards you and says softly, 'This part of the quest could be a little tricky. You need to seek out and kill the `b%s`b, down in the forests of `b%s`b. This is one of your great foe's most loyal underlings, and, if not killed, will come to his aid. This will, in turn, pose a great threat to you as you battle your foe. So go now and kill this evil being.' He leans back and you go off to find and kill this monster.`n`n",get_module_pref("levelname"),get_module_pref("levelloc"));
 						}
 					}
 				}
@@ -316,15 +316,15 @@ function quester_run(){
 		break;
 		case "abandon":
 			if ($act == "baby") {
-				output("You explain to Cedrik that you are a little baby and you want your bottle. He laughs and says, 'Yeah, I thought so. Ok then, I'll be sure to get someone else to do this for me.'`n`n");
+				output("You explain to Cedrick that you are a little baby and you want your bottle. He laughs and says, 'Yeah, I thought so. Ok then, I'll be sure to get someone else to do this for me.'`n`n");
 				quester_abandon();
 				addnav("Continue","inn.php?op=bartender");
 			} else if ($act == "not") {
-				output("You forget why you said you wanted to stop, and tell Cedrik that if you're a baby he must be a fetus. You start to laugh, but when you notice the look he's giving you, you quiet down. `n`n");
-				output("After about 6 seconds of silence, Cedrik laughs too and says, 'you are the funny one, but rememer not to confuse funny with stupid around me, got it?' You nod, and leave.`n`n");
+				output("You forget why you said you wanted to stop, and tell Cedrick that if you're a baby he must be a fetus. You start to laugh, but when you notice the look he's giving you, you quiet down. `n`n");
+				output("After about 6 seconds of silence, Cedrick laughs too and says, 'you are the funny one, but rememer not to confuse funny with stupid around me, got it?' You nod, and leave.`n`n");
 				addnav("Continue","inn.php?op=bartender");
 			} else {
-				output("After telling Cedrik you want to abandon the quest, he replies, 'What? Chickening out? I guess I should've expected as much. Fine, I'll go find soneone else to do this. That is, if you're absolutly sure you want to be a baby'`n`n");
+				output("After telling Cedrick you want to abandon the quest, he replies, 'What? Chickening out? I guess I should've expected as much. Fine, I'll go find soneone else to do this. That is, if you're absolutly sure you want to be a baby'`n`n");
 				addnav("I'm a baby.","runmodule.php?module=quester&op=abandon&act=baby");
 				addnav("I'm not a baby!","runmodule.php?module=quester&op=abandon&act=not");
 			}
@@ -333,12 +333,12 @@ function quester_run(){
 			if (!isset($_GET['level'])) {
 				if (get_module_pref("questpoints") == 0) {
 					if ($session['user']['dragonkills'] > 0) {
-						output("Cedrik smiles and says, 'Why, aren't you the brave one. Ok, I know a rumor. I have heard that there is a great monster terrorizing the world, perhaps even more powerful than the Green Dragon itself! I heard that his monster was spawned from all of the evil in this world, which has taken the form of this hideous beast. You look like you have slain the Green Dragon about %s times, so I think you may be just the one for this job.'`n`n",$session['user']['dragonkills']);
+						output("Cedrick smiles and says, 'Why, aren't you the brave one. Ok, I know a rumor. I have heard that there is a great monster terrorizing the world, perhaps even more powerful than the Green Dragon itself! I heard that his monster was spawned from all of the evil in this world, which has taken the form of this hideous beast. You look like you have slain the Green Dragon about %s times, so I think you may be just the one for this job.'`n`n",$session['user']['dragonkills']);
 					} else {
-						output("Cedrik smiles and says, 'Why, aren't you the brave one. Ok, I know a rumor. I have heard that there is a great monster terrorizing the world, perhaps even more powerful than the Green Dragon itself! I heard that his monster was spawned from all of the evil in this world, which has taken the form of this hideous beast. I will help you slay this monster, but I'm not sure if you can handel it. At least you seem to be brave enough.'`n`n");
+						output("Cedrick smiles and says, 'Why, aren't you the brave one. Ok, I know a rumor. I have heard that there is a great monster terrorizing the world, perhaps even more powerful than the Green Dragon itself! I heard that his monster was spawned from all of the evil in this world, which has taken the form of this hideous beast. I will help you slay this monster, but I'm not sure if you can handel it. At least you seem to be brave enough.'`n`n");
 					}
 				} else {
-					output("Cedrik smiles and says, 'You're as brave as ever I see. Ok, I know another rumor, but it won't please you. I have heard that a new being was spawned from the deep evil released from this world by the great monster you killed, perhaps even more powerful than the last one! This new evil being has come back from another world through a dimensional rift, and is once again terrorizing this world. I think you may be just the one for this job. So, do you think you can handle it?'`n`n");
+					output("Cedrick smiles and says, 'You're as brave as ever I see. Ok, I know another rumor, but it won't please you. I have heard that a new being was spawned from the deep evil released from this world by the great monster you killed, perhaps even more powerful than the last one! This new evil being has come back from another world through a dimensional rift, and is once again terrorizing this world. I think you may be just the one for this job. So, do you think you can handle it?'`n`n");
 				}
 				if (get_module_setting("autolvls") == 0) {
 					if (get_module_setting("lvl2") == 1) { addnav("Accept (lvl2)","runmodule.php?module=quester&op=start&level=2"); }
@@ -362,9 +362,9 @@ function quester_run(){
 				}
 				output("Great. Your courage is admirable, but be warned: you will need more than courage to complete this quest. Now, for your first task.`n`n");
 				if (get_module_pref("leveltype") == 0) {
-					output("Cedrik turns to a scroll and says, 'The first part of the quest should be rather easy. You need to go and find the `b%s`b, down in the forests of `b%s`b. This is a very rare and powerful item, and it will help you greatly in your quest, as it's powerful magic can be used to seal away the great foe you must face. Be careful, however, as you never know what dangers you will find with it.' He hands you the scroll and you go off to find and take this item.`n`n",get_module_pref("levelname"),get_module_pref("levelloc"));
+					output("Cedrick turns to a scroll and says, 'The first part of the quest should be rather easy. You need to go and find the `b%s`b, down in the forests of `b%s`b. This is a very rare and powerful item, and it will help you greatly in your quest, as it's powerful magic can be used to seal away the great foe you must face. Be careful, however, as you never know what dangers you will find with it.' He hands you the scroll and you go off to find and take this item.`n`n",get_module_pref("levelname"),get_module_pref("levelloc"));
 				} else {
-					output("Cedrik leans towards you and says softly, 'The first part of the quest could be a little tricky. You need to seek out and kill the `b%s`b, down in the forests of `b%s`b. This is one of your great foe's most loyal underlings, and, if not killed, will come to his aid. This will, in turn, pose a great threat to you as you battle your foe. So go now and kill this evil being.' He leans back and you go off to find and kill this monster.`n`n",get_module_pref("levelname"),get_module_pref("levelloc"));
+					output("Cedrick leans towards you and says softly, 'The first part of the quest could be a little tricky. You need to seek out and kill the `b%s`b, down in the forests of `b%s`b. This is one of your great foe's most loyal underlings, and, if not killed, will come to his aid. This will, in turn, pose a great threat to you as you battle your foe. So go now and kill this evil being.' He leans back and you go off to find and kill this monster.`n`n",get_module_pref("levelname"),get_module_pref("levelloc"));
 				}
 				addnav("Continue","inn.php?op=bartender");
 			}

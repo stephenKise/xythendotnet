@@ -1,0 +1,115 @@
+body, iframe {
+    background-color: #11151C;
+}
+
+body {
+    color: #CCCCCC;
+    scrollbar-face-color: #FFF4E8;
+}
+
+a, .motd, li.nav, .charstat {
+    color: #9FAAAC;
+}
+
+.alerts {
+    background-color: #9FAAAC;
+}
+
+textarea:focus, textarea:hover, {
+    border-color: #9FAAAC;
+}
+
+.alerts {
+    color: #0C1F2D;
+}
+
+.commentaryRoll, .commentaryRollModified, tr.trlight td, input:hover,
+input:focus, textarea:hover, textarea:focus, .bg-primary, .thot, .t, .info{
+    background-color: #0C1F2D;
+}
+
+.charrow {
+    border-bottom: 1px solid #0C1F2D;
+}
+
+.trhead td, th {
+    background-color: #61666D;
+}
+
+input, select, textarea {
+    border: 1px solid #61666D;
+}
+
+.thot, .t, .info {
+    border: 1px dotted #61666D;
+}
+
+
+input, textarea {
+    color: #F2E2A9;
+}
+
+input[type="button"], input[type="submit"], select, .hotmotd, .motd:hover,
+.unreadmotd, .navhead, .charhead, .secondary, .contact a:hover, .nav:hover {
+    color: #FFF4E8;
+}
+
+::selection, .bg-tertiary {
+    background-color: #FFF4E8;
+}
+
+.commentaryRoll:hover, input:focus, input:hover, select:focus, select:hover {
+    border: 1px solid #FFF4E8;
+}
+
+.characterCreation {
+    border-color: #FFF4E8;
+}
+
+.debug {
+    border: 1px dashed #FFF4E8;
+}
+
+::-webkit-scrollbar-thumb {
+    border-left: 2px solid #FFF4E8;
+}
+
+li.nav {
+    border-right: 0px solid #FFF4E8;
+}
+
+li.nav:hover {
+    border-right: 5px solid #FFF4E8;
+}
+
+tr.trdark:hover td, tr.trlight:hover td, .charrow:hover {
+    border-bottom: 1px solid #FFF4E8;
+}
+
+.contact a:hover {
+    text-shadow: 0px 0px 10px #FFF4E8;
+}
+
+.main-menu {
+    text-shadow: 0px 3px 8px #FFF4E824;
+}
+
+th, .trhead td, .main-menu, .primary {
+    color: #202C39;
+}
+
+input, select, textarea, tr.trdark td, .bg-secondary {
+    background-color: #202C39;
+}
+
+header.bg-primary {
+    box-shadow: 0px 2px 3px #202C39;
+}
+
+.danger {
+    color: #db2b39;
+}
+
+.alert {
+    color: #FFA544;
+}

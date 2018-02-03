@@ -3,9 +3,8 @@
 $return = round(get_module_setting("cost")/2);
 
 if (httpget('confirm')){
-	output("Dycedarg nods and takes %s back into the Training Hall.",$name);
-	output("On the table, Dycedarg had left %s gems for you.",$return);
-	output("Without haste, you pick up the gems and leave.");
+	output("MacCready nods and then gestures %s back to the bar tables.",$name);
+	output("On the counter, MacCready had left %s gems for you.",$return);
 	$session['user']['gems']+=$return;
 	set_module_pref("name","");
 	set_module_pref("active",0);
@@ -15,10 +14,12 @@ if (httpget('confirm')){
 	set_module_pref("tacc",0);
 	set_module_pref("class",0);
 }else{
-	output("`6You approach Dycedarg and ask, \"`3May I dismiss my %s?`6\"",$classarray[$class]);
-	output("Dycedarg arches a brow and nods, \"`&Yes, you may.");
-	output("To compensate, I shall offer you %s gems.",$return);
-	output("Are you sure you wish to dismiss your %s?`6\"",$classarray[$class]);
+	output("`7You approach MacCready at the bar, laying down the contract" .
+	  " that you had signed for your current mercenary, \"`&I want to end" .
+	  " my contract with this %s, will you buy the contract back from me?`7\"`n`n",$classarray[$class]);
+	output("MacCready releases a long drawn out sigh, reaching" .
+		"into his pockets for %s gems as compensation.",$return);
+	output("`n`n\"`&Are you sure you wish to end your contract with your %s?`7\"",$classarray[$class]);
 	addnav("Decide");
 	addnav("Dismiss","runmodule.php?module=academy&op=dismiss&confirm=1");
 }

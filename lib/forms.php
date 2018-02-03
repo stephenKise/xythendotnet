@@ -75,90 +75,168 @@ function previewfield($name, $startdiv=false, $talkline="says", $showcharsleft=t
 								z = t.substr(x+1,1);
 								if (z=='0'){
 									out += '</span>';
-								}else if (z=='1'){
-									out += '</span><span class=\\'colDkBlue\\'>';
-								}else if (z=='2'){
-									out += '</span><span class=\\'colDkGreen\\'>';
-								}else if (z=='3'){
-									out += '</span><span class=\\'colDkCyan\\'>';
-								}else if (z=='4'){
-									out += '</span><span class=\\'colDkRed\\'>';
-								}else if (z=='5'){
-									out += '</span><span class=\\'colDkMagenta\\'>';
-								}else if (z=='6'){
-									out += '</span><span class=\\'colDkYellow\\'>';
-								}else if (z=='7'){
-									out += '</span><span class=\\'colDkWhite\\'>';
-								}else if (z=='q'){
-									out += '</span><span class=\\'colDkOrange\\'>';
-								}else if (z=='!'){
-									out += '</span><span class=\\'colLtBlue\\'>';
-								}else if (z=='@'){
-									out += '</span><span class=\\'colLtGreen\\'>';
-								}else if (z=='#'){
-									out += '</span><span class=\\'colLtCyan\\'>';
-								}else if (z=='$'){
-									out += '</span><span class=\\'colLtRed\\'>';
-								}else if (z=='%'){
-									out += '</span><span class=\\'colLtMagenta\\'>';
-								}else if (z=='^'){
-									out += '</span><span class=\\'colLtYellow\\'>';
-								}else if (z=='&'){
-									out += '</span><span class=\\'colLtWhite\\'>';
-								}else if (z=='Q'){
-									out += '</span><span class=\\'colLtOrange\\'>';
-								}else if (z==')'){
-									out += '</span><span class=\\'colLtBlack\\'>';
-								}else if (z=='r'){
-									out += '</span><span class=\\'colRose\\'>';
-								}else if (z=='R'){
-									out += '</span><span class=\\'colRose\\'>';
-								}else if (z=='v'){
-									out += '</span><span class=\\'coliceviolet\\'>';
-								}else if (z=='V'){
-									out += '</span><span class=\\'colBlueViolet\\'>';
-								}else if (z=='g'){
-									out += '</span><span class=\\'colXLtGreen\\'>';
-								}else if (z=='G'){
-									out += '</span><span class=\\'colXLtGreen\\'>';
-								}else if (z=='T'){
-									out += '</span><span class=\\'colDkBrown\\'>';
-								}else if (z=='t'){
-									out += '</span><span class=\\'colLtBrown\\'>';
-								}else if (z=='~'){
-									out += '</span><span class=\\'colBlack\\'>';
-								}else if (z=='j'){
-									out += '</span><span class=\\'colMdGrey\\'>';
-								}else if (z=='J'){
-									out += '</span><span class=\\'colMdBlue\\'>';
-								}else if (z=='e'){
-									out += '</span><span class=\\'colDkRust\\'>';
-								}else if (z=='E'){
-									out += '</span><span class=\\'colLtRust\\'>';
-								}else if (z=='l'){
-									out += '</span><span class=\\'colDkLinkBlue\\'>';
-								}else if (z=='L'){
-									out += '</span><span class=\\'colLtLinkBlue\\'>';
-								}else if (z=='x'){
-									out += '</span><span class=\\'colburlywood\\'>';
-								}else if (z=='X'){
-									out += '</span><span class=\\'colbeige\\'>';
-								}else if (z=='y'){
-									out += '</span><span class=\\'colkhaki\\'>';
-								}else if (z=='Y'){
-									out += '</span><span class=\\'coldarkkhaki\\'>';
-								}else if (z=='k'){
-									out += '</span><span class=\\'colaquamarine\\'>';
-								}else if (z=='K'){
-									out += '</span><span class=\\'coldarkseagreen\\'>';
-								}else if (z=='p'){
-									out += '</span><span class=\\'collightsalmon\\'>';
-								}else if (z=='P'){
-									out += '</span><span class=\\'colsalmon\\'>';
-								}else if (z=='m'){
-									out += '</span><span class=\\'colwheat\\'>';
-								}else if (z=='M'){
-									out += '</span><span class=\\'coltan\\'>';
+								}else if (z=='1') {
+									out += '</span><span class=\\'colDkBlue\\'>'; 
+								}else if (z=='2') {
+									out += '</span><span class=\\'colDkGreen\\'>'; 
+								}else if (z=='3') {
+									out += '</span><span class=\\'colDkCyan\\'>'; 
+								}else if (z=='4') {
+									out += '</span><span class=\\'colDkRed\\'>'; 
+								}else if (z=='5') {
+									out += '</span><span class=\\'colDkMagenta\\'>'; 
+								}else if (z=='6') {
+									out += '</span><span class=\\'colDkYellow\\'>'; 
+								}else if (z=='7') {
+									out += '</span><span class=\\'colDkWhite\\'>'; 
+								}else if (z=='8') {
+									out += '</span><span class=\\'col8\\'>'; 
+								}else if (z=='9') {
+									out += '</span><span class=\\'col9\\'>'; 
+								}else if (z=='~') {
+									out += '</span><span class=\\'colBlack\\'>'; 
+								}else if (z=='!') {
+									out += '</span><span class=\\'colLtBlue\\'>'; 
+								}else if (z=='@') {
+									out += '</span><span class=\\'colLtGreen\\'>'; 
+								}else if (z=='#') {
+									out += '</span><span class=\\'colLtCyan\\'>'; 
+								}else if (z=='$') {
+									out += '</span><span class=\\'colLtRed\\'>'; 
+								}else if (z=='%') {
+									out += '</span><span class=\\'colLtMagenta\\'>'; 
+								}else if (z=='^') {
+									out += '</span><span class=\\'colLtYellow\\'>'; 
+								}else if (z=='&') {
+									out += '</span><span class=\\'colLtWhite\\'>'; 
+								}else if (z=='*') {
+									out += '</span><span class=\\'colAsterisk\\'>'; 
+								}else if (z=='(') {
+									out += '</span><span class=\\'colLeftParen\\'>'; 
+								}else if (z==')') {
+									out += '</span><span class=\\'colLtBlack\\'>'; 
+								}else if (z=='-') {
+									out += '</span><span class=\\'colMinus\\'>'; 
+								}else if (z=='_') {
+									out += '</span><span class=\\'colUnderscore\\'>'; 
+								}else if (z=='=') {
+									out += '</span><span class=\\'colEquals\\'>'; 
+								}else if (z=='+') {
+									out += '</span><span class=\\'colPlus\\'>'; 
+								}else if (z=='[') {
+									out += '</span><span class=\\'colLeftBracket\\'>'; 
+								}else if (z=='{') {
+									out += '</span><span class=\\'colLeftCurly\\'>'; 
+								}else if (z==']') {
+									out += '</span><span class=\\'colRightBracket\\'>'; 
+								}else if (z=='}') {
+									out += '</span><span class=\\'colRightCurly\\'>'; 
+								}else if (z=='\\\\') {
+									out += '</span><span class=\\'colBackSlash\\'>'; 
+								}else if (z=='|') {
+									out += '</span><span class=\\'colPipe\\'>'; 
+								}else if (z==';') {
+									out += '</span><span class=\\'colSemicolon\\'>'; 
+								}else if (z==':') {
+									out += '</span><span class=\\'colColon\\'>'; 
+								}else if (z=='\'') {
+									out += '</span><span class=\\'colApostrophe\\'>'; 
+								}else if (z=='\"') {
+									out += '</span><span class=\\'colQuote\\'>'; 
+								}else if (z==',') {
+									out += '</span><span class=\\'colComma\\'>'; 
+								}else if (z=='.') {
+									out += '</span><span class=\\'colPeriod\\'>'; 
+								}else if (z=='/') {
+									out += '</span><span class=\\'colForwardSlash\\'>'; 
+								}else if (z=='?') {
+									out += '</span><span class=\\'colQuestion\\'>'; 
+								}else if (z=='a') {
+									out += '</span><span class=\\'cola\\'>'; 
+								}else if (z=='A') {
+									out += '</span><span class=\\'colA\\'>'; 
+								}else if (z=='B') {
+									out += '</span><span class=\\'colB\\'>'; 
+								}else if (z=='C') {
+									out += '</span><span class=\\'colC\\'>'; 
+								}else if (z=='d') {
+									out += '</span><span class=\\'cold\\'>'; 
+								}else if (z=='D') {
+									out += '</span><span class=\\'colD\\'>'; 
+								}else if (z=='e') {
+									out += '</span><span class=\\'colDkRust\\'>'; 
+								}else if (z=='E') {
+									out += '</span><span class=\\'colLtRust\\'>'; 
+								}else if (z=='f') {
+									out += '</span><span class=\\'colf\\'>'; 
+								}else if (z=='F') {
+									out += '</span><span class=\\'colF\\'>'; 
+								}else if (z=='g') {
+									out += '</span><span class=\\'colXLtGreen\\'>'; 
+								}else if (z=='G') {
+									out += '</span><span class=\\'colXLtGreen\\'>'; 
+								}else if (z=='I') {
+									out += '</span><span class=\\'colI\\'>'; 
+								}else if (z=='j') {
+									out += '</span><span class=\\'colMdGrey\\'>'; 
+								}else if (z=='J') {
+									out += '</span><span class=\\'colMdBlue\\'>'; 
+								}else if (z=='k') {
+									out += '</span><span class=\\'colaquamarine\\'>'; 
+								}else if (z=='K') {
+									out += '</span><span class=\\'coldarkseagreen\\'>'; 
+								}else if (z=='l') {
+									out += '</span><span class=\\'colDkLinkBlue\\'>'; 
+								}else if (z=='L') {
+									out += '</span><span class=\\'colLtLinkBlue\\'>'; 
+								}else if (z=='m') {
+									out += '</span><span class=\\'colwheat\\'>'; 
+								}else if (z=='M') {
+									out += '</span><span class=\\'coltan\\'>'; 
+								}else if (z=='N') {
+									out += '</span><span class=\\'colN\\'>'; 
+								}else if (z=='o') {
+									out += '</span><span class=\\'colo\\'>'; 
+								}else if (z=='O') {
+									out += '</span><span class=\\'colO\\'>'; 
+								}else if (z=='p') {
+									out += '</span><span class=\\'collightsalmon\\'>'; 
+								}else if (z=='P') {
+									out += '</span><span class=\\'colsalmon\\'>'; 
+								}else if (z=='q') {
+									out += '</span><span class=\\'colDkOrange\\'>'; 
+								}else if (z=='Q') {
+									out += '</span><span class=\\'colLtOrange\\'>'; 
+								}else if (z=='r') {
+									out += '</span><span class=\\'colRose\\'>'; 
+								}else if (z=='R') {
+									out += '</span><span class=\\'colRose\\'>'; 
+								}else if (z=='S') {
+									out += '</span><span class=\\'colS\\'>'; 
+								}else if (z=='t') {
+									out += '</span><span class=\\'colLtBrown\\'>'; 
+								}else if (z=='T') {
+									out += '</span><span class=\\'colDkBrown\\'>'; 
+								}else if (z=='U') {
+									out += '</span><span class=\\'colU\\'>'; 
+								}else if (z=='v') {
+									out += '</span><span class=\\'coliceviolet\\'>'; 
+								}else if (z=='V') {
+									out += '</span><span class=\\'colBlueViolet\\'>'; 
+								}else if (z=='W') {
+									out += '</span><span class=\\'colw\\'>'; 
+								}else if (z=='x') {
+									out += '</span><span class=\\'colburlywood\\'>'; 
+								}else if (z=='X') {
+									out += '</span><span class=\\'colbeige\\'>'; 
+								}else if (z=='y') {
+									out += '</span><span class=\\'colkhaki\\'>'; 
+								}else if (z=='Y') {
+									out += '</span><span class=\\'coldarkkhaki\\'>'; 
+								}else if (z=='z') {
+									out += '</span><span class=\\'colz\\'>'; 
+								}else if (z=='Z') {
+									out += '</span><span class=\\'colZ\\'>'; 
 								}else if (z=='b'){
 									b++;
 									if( b%2 ){
@@ -315,90 +393,168 @@ function mfpreviewfield($name, $startdiv=false, $talkline="says", $showcharsleft
 								z = t.substr(x+1,1);
 								if (z=='0'){
 									out += '</span>';
-								}else if (z=='1'){
-									out += '</span><span class=\\'colDkBlue\\'>';
-								}else if (z=='2'){
-									out += '</span><span class=\\'colDkGreen\\'>';
-								}else if (z=='3'){
-									out += '</span><span class=\\'colDkCyan\\'>';
-								}else if (z=='4'){
-									out += '</span><span class=\\'colDkRed\\'>';
-								}else if (z=='5'){
-									out += '</span><span class=\\'colDkMagenta\\'>';
-								}else if (z=='6'){
-									out += '</span><span class=\\'colDkYellow\\'>';
-								}else if (z=='7'){
-									out += '</span><span class=\\'colDkWhite\\'>';
-								}else if (z=='q'){
-									out += '</span><span class=\\'colDkOrange\\'>';
-								}else if (z=='!'){
-									out += '</span><span class=\\'colLtBlue\\'>';
-								}else if (z=='@'){
-									out += '</span><span class=\\'colLtGreen\\'>';
-								}else if (z=='#'){
-									out += '</span><span class=\\'colLtCyan\\'>';
-								}else if (z=='$'){
-									out += '</span><span class=\\'colLtRed\\'>';
-								}else if (z=='%'){
-									out += '</span><span class=\\'colLtMagenta\\'>';
-								}else if (z=='^'){
-									out += '</span><span class=\\'colLtYellow\\'>';
-								}else if (z=='&'){
-									out += '</span><span class=\\'colLtWhite\\'>';
-								}else if (z=='Q'){
-									out += '</span><span class=\\'colLtOrange\\'>';
-								}else if (z==')'){
-									out += '</span><span class=\\'colLtBlack\\'>';
-								}else if (z=='r'){
-									out += '</span><span class=\\'colRose\\'>';
-								}else if (z=='R'){
-									out += '</span><span class=\\'colRose\\'>';
-								}else if (z=='v'){
-									out += '</span><span class=\\'coliceviolet\\'>';
-								}else if (z=='V'){
-									out += '</span><span class=\\'colBlueViolet\\'>';
-								}else if (z=='g'){
-									out += '</span><span class=\\'colXLtGreen\\'>';
-								}else if (z=='G'){
-									out += '</span><span class=\\'colXLtGreen\\'>';
-								}else if (z=='T'){
-									out += '</span><span class=\\'colDkBrown\\'>';
-								}else if (z=='t'){
-									out += '</span><span class=\\'colLtBrown\\'>';
-								}else if (z=='~'){
-									out += '</span><span class=\\'colBlack\\'>';
-								}else if (z=='j'){
-									out += '</span><span class=\\'colMdGrey\\'>';
-								}else if (z=='J'){
-									out += '</span><span class=\\'colMdBlue\\'>';
-								}else if (z=='e'){
-									out += '</span><span class=\\'colDkRust\\'>';
-								}else if (z=='E'){
-									out += '</span><span class=\\'colLtRust\\'>';
-								}else if (z=='l'){
-									out += '</span><span class=\\'colDkLinkBlue\\'>';
-								}else if (z=='L'){
-									out += '</span><span class=\\'colLtLinkBlue\\'>';
-								}else if (z=='x'){
-									out += '</span><span class=\\'colburlywood\\'>';
-								}else if (z=='X'){
-									out += '</span><span class=\\'colbeige\\'>';
-								}else if (z=='y'){
-									out += '</span><span class=\\'colkhaki\\'>';
-								}else if (z=='Y'){
-									out += '</span><span class=\\'coldarkkhaki\\'>';
-								}else if (z=='k'){
-									out += '</span><span class=\\'colaquamarine\\'>';
-								}else if (z=='K'){
-									out += '</span><span class=\\'coldarkseagreen\\'>';
-								}else if (z=='p'){
-									out += '</span><span class=\\'collightsalmon\\'>';
-								}else if (z=='P'){
-									out += '</span><span class=\\'colsalmon\\'>';
-								}else if (z=='m'){
-									out += '</span><span class=\\'colwheat\\'>';
-								}else if (z=='M'){
-									out += '</span><span class=\\'coltan\\'>';
+								}else if (z=='1') {
+									out += '</span><span class=\\'colDkBlue\\'>'; 
+								}else if (z=='2') {
+									out += '</span><span class=\\'colDkGreen\\'>'; 
+								}else if (z=='3') {
+									out += '</span><span class=\\'colDkCyan\\'>'; 
+								}else if (z=='4') {
+									out += '</span><span class=\\'colDkRed\\'>'; 
+								}else if (z=='5') {
+									out += '</span><span class=\\'colDkMagenta\\'>'; 
+								}else if (z=='6') {
+									out += '</span><span class=\\'colDkYellow\\'>'; 
+								}else if (z=='7') {
+									out += '</span><span class=\\'colDkWhite\\'>'; 
+								}else if (z=='8') {
+									out += '</span><span class=\\'col8\\'>'; 
+								}else if (z=='9') {
+									out += '</span><span class=\\'col9\\'>'; 
+								}else if (z=='~') {
+									out += '</span><span class=\\'colBlack\\'>'; 
+								}else if (z=='!') {
+									out += '</span><span class=\\'colLtBlue\\'>'; 
+								}else if (z=='@') {
+									out += '</span><span class=\\'colLtGreen\\'>'; 
+								}else if (z=='#') {
+									out += '</span><span class=\\'colLtCyan\\'>'; 
+								}else if (z=='$') {
+									out += '</span><span class=\\'colLtRed\\'>'; 
+								}else if (z=='%') {
+									out += '</span><span class=\\'colLtMagenta\\'>'; 
+								}else if (z=='^') {
+									out += '</span><span class=\\'colLtYellow\\'>'; 
+								}else if (z=='&') {
+									out += '</span><span class=\\'colLtWhite\\'>'; 
+								}else if (z=='*') {
+									out += '</span><span class=\\'colAsterisk\\'>'; 
+								}else if (z=='(') {
+									out += '</span><span class=\\'colLeftParen\\'>'; 
+								}else if (z==')') {
+									out += '</span><span class=\\'colLtBlack\\'>'; 
+								}else if (z=='-') {
+									out += '</span><span class=\\'colMinus\\'>'; 
+								}else if (z=='_') {
+									out += '</span><span class=\\'colUnderscore\\'>'; 
+								}else if (z=='=') {
+									out += '</span><span class=\\'colEquals\\'>'; 
+								}else if (z=='+') {
+									out += '</span><span class=\\'colPlus\\'>'; 
+								}else if (z=='[') {
+									out += '</span><span class=\\'colLeftBracket\\'>'; 
+								}else if (z=='{') {
+									out += '</span><span class=\\'colLeftCurly\\'>'; 
+								}else if (z==']') {
+									out += '</span><span class=\\'colRightBracket\\'>'; 
+								}else if (z=='}') {
+									out += '</span><span class=\\'colRightCurly\\'>'; 
+								}else if (z=='\\\\') {
+									out += '</span><span class=\\'colBackSlash\\'>'; 
+								}else if (z=='|') {
+									out += '</span><span class=\\'colPipe\\'>'; 
+								}else if (z==';') {
+									out += '</span><span class=\\'colSemicolon\\'>'; 
+								}else if (z==':') {
+									out += '</span><span class=\\'colColon\\'>'; 
+								}else if (z=='\'') {
+									out += '</span><span class=\\'colApostrophe\\'>'; 
+								}else if (z=='\"') {
+									out += '</span><span class=\\'colQuote\\'>'; 
+								}else if (z==',') {
+									out += '</span><span class=\\'colComma\\'>'; 
+								}else if (z=='.') {
+									out += '</span><span class=\\'colPeriod\\'>'; 
+								}else if (z=='/') {
+									out += '</span><span class=\\'colForwardSlash\\'>'; 
+								}else if (z=='?') {
+									out += '</span><span class=\\'colQuestion\\'>'; 
+								}else if (z=='a') {
+									out += '</span><span class=\\'cola\\'>'; 
+								}else if (z=='A') {
+									out += '</span><span class=\\'colA\\'>'; 
+								}else if (z=='B') {
+									out += '</span><span class=\\'colB\\'>'; 
+								}else if (z=='C') {
+									out += '</span><span class=\\'colC\\'>'; 
+								}else if (z=='d') {
+									out += '</span><span class=\\'cold\\'>'; 
+								}else if (z=='D') {
+									out += '</span><span class=\\'colD\\'>'; 
+								}else if (z=='e') {
+									out += '</span><span class=\\'colDkRust\\'>'; 
+								}else if (z=='E') {
+									out += '</span><span class=\\'colLtRust\\'>'; 
+								}else if (z=='f') {
+									out += '</span><span class=\\'colf\\'>'; 
+								}else if (z=='F') {
+									out += '</span><span class=\\'colF\\'>'; 
+								}else if (z=='g') {
+									out += '</span><span class=\\'colXLtGreen\\'>'; 
+								}else if (z=='G') {
+									out += '</span><span class=\\'colXLtGreen\\'>'; 
+								}else if (z=='I') {
+									out += '</span><span class=\\'colI\\'>'; 
+								}else if (z=='j') {
+									out += '</span><span class=\\'colMdGrey\\'>'; 
+								}else if (z=='J') {
+									out += '</span><span class=\\'colMdBlue\\'>'; 
+								}else if (z=='k') {
+									out += '</span><span class=\\'colaquamarine\\'>'; 
+								}else if (z=='K') {
+									out += '</span><span class=\\'coldarkseagreen\\'>'; 
+								}else if (z=='l') {
+									out += '</span><span class=\\'colDkLinkBlue\\'>'; 
+								}else if (z=='L') {
+									out += '</span><span class=\\'colLtLinkBlue\\'>'; 
+								}else if (z=='m') {
+									out += '</span><span class=\\'colwheat\\'>'; 
+								}else if (z=='M') {
+									out += '</span><span class=\\'coltan\\'>'; 
+								}else if (z=='N') {
+									out += '</span><span class=\\'colN\\'>'; 
+								}else if (z=='o') {
+									out += '</span><span class=\\'colo\\'>'; 
+								}else if (z=='O') {
+									out += '</span><span class=\\'colO\\'>'; 
+								}else if (z=='p') {
+									out += '</span><span class=\\'collightsalmon\\'>'; 
+								}else if (z=='P') {
+									out += '</span><span class=\\'colsalmon\\'>'; 
+								}else if (z=='q') {
+									out += '</span><span class=\\'colDkOrange\\'>'; 
+								}else if (z=='Q') {
+									out += '</span><span class=\\'colLtOrange\\'>'; 
+								}else if (z=='r') {
+									out += '</span><span class=\\'colRose\\'>'; 
+								}else if (z=='R') {
+									out += '</span><span class=\\'colRose\\'>'; 
+								}else if (z=='S') {
+									out += '</span><span class=\\'colS\\'>'; 
+								}else if (z=='t') {
+									out += '</span><span class=\\'colLtBrown\\'>'; 
+								}else if (z=='T') {
+									out += '</span><span class=\\'colDkBrown\\'>'; 
+								}else if (z=='U') {
+									out += '</span><span class=\\'colU\\'>'; 
+								}else if (z=='v') {
+									out += '</span><span class=\\'coliceviolet\\'>'; 
+								}else if (z=='V') {
+									out += '</span><span class=\\'colBlueViolet\\'>'; 
+								}else if (z=='W') {
+									out += '</span><span class=\\'colw\\'>'; 
+								}else if (z=='x') {
+									out += '</span><span class=\\'colburlywood\\'>'; 
+								}else if (z=='X') {
+									out += '</span><span class=\\'colbeige\\'>'; 
+								}else if (z=='y') {
+									out += '</span><span class=\\'colkhaki\\'>'; 
+								}else if (z=='Y') {
+									out += '</span><span class=\\'coldarkkhaki\\'>'; 
+								}else if (z=='z') {
+									out += '</span><span class=\\'colz\\'>'; 
+								}else if (z=='Z') {
+									out += '</span><span class=\\'colZ\\'>'; 
 								}else if (z=='b'){
 									b++;
 									if( b%2 ){

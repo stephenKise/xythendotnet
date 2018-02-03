@@ -37,15 +37,24 @@ if ($op=="run"){
 }
 if ($op=="dragon"){
 	require_once("lib/partner.php");
-	addnav("Search The Mountain","dragon.php");
+	addnav("Touch the Crystal","dragon.php");
 	addnav("Retreat in Shame","inn.php?op=fleedragon");
-	output("`\$As you approach the forbidden lagoon of pollution, a shiver buckles down your spine. From where you are, beyond the tree line, you can see the mountainous structure that encased the resting place of the Tentromech. As you press forward, the bubbling green water before you releases a gurgling noise - as though the war-machine knew you were drawing close...");
-	output("There is no way to see through the polluted water before you. Each ripple of the lagoon pushes oil and scrap metal chunks into the blackened sand. The stench of the pollution nearly chokes you, but glancing around the area - you notice a corpse nearby with a gas mask on...");
-	output("Ripping the mask off of the corpse, you flinch back in disgust... The rotting flesh of the being before you, mangled - even with its defenses. Gulping, you look to the mask and question your future actions.");
-	output("If you chose to go home, you would not have the possible chance of being mangled and murdered like the being before you...`n`n");
-	output("But if you allow the war machine to continue its reign of terror...You are no friend of Xythen - and you would live in shame at dismissing such an opportunity. ");
-	output("The sound starts again, and stops again in a regular rhythm.`n`n");
-	output("What do you do?`0");
+	output("`c`3Wandering across the Crystal Forest, you begin to walk towards " .
+        "the brighter area, the location where from which the glow and haze " .
+        "emanate. The vegetation becomes sparser and sparser, replaced by raw " .
+        "chunks of aether crystal, until suddenly the entire tree-line is " .
+        "replaced by a sharp rim of jagged glowing crystals, initiating a deep" .
+        " descent in a gargantuan crater. Strangely, the haze is gone here, " .
+        "replaced by a permanent multi-hued aurora that dances across the " .
+        "perfect crystals that dot the sides of the crater, inviting you " .
+        "further, inviting you deeper. Yet as you descend you begin to " .
+        "notice. The signs of other travellers. A discarded weapon, a piece " .
+        "of armour imbued in a crystal...and the occasional preserved corpse. " .
+        "It's not just the aether radiation, something else exists here. " .
+        "Ever-ready you begin to approach the centre, ground-zero for this " .
+        "crater, and there, rising vertically, a swirl of haze and aurora " .
+        "surrounding it, was a large pillar of the purest Aether you have " .
+        "ever seen... `n`n`bDo you touch dare reach out and touch it?`b`c");
 	$session['user']['seendragon']=1;
 }
 //Claburatura

@@ -1,0 +1,20 @@
+.turnRegenBar {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    max-width: 200px;
+    padding: 3px;
+} 
+
+#turnAmt {
+    text-align: center;
+}
+
+#turnPct {
+    position: absolute;
+    opacity: .25;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 3px;
+    background-color: rgb(160, 170, 172);
+}

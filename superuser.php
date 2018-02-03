@@ -38,9 +38,9 @@ commentdisplay("", $args['section'],"Engage in conversation,",15);
 
 addnav("Navigation");
 if ($session['user']['superuser'] &~ SU_DOESNT_GIVE_GROTTO) addnav("Staff Guide", "https://docs.google.com/document/d/1UfZPg-GC1ro9tU6xCcWV3Mfe6qstWOfM51bKXw0bNTE/edit#", true, true);
-if ($session['user']['superuser'] &~ SU_DOESNT_GIVE_GROTTO) addnav("Projects Folder", "https://drive.google.com/drive/u/0/folders/0B7t7rzVpK_Uifl9OV2lZRHo1UDBfX1JVbDNTSllTY0oyOTNKM2xfR1ljbVE3WkVMY3VpWFE", true, true);
-if ($session['user']['superuser'] &~ SU_DOESNT_GIVE_GROTTO) addnav("RPF Skype", "skype:?chat&blob=sft8cpaHE3Jor_15WGfuEIXj6eL8UXjfXoC3-xwAQya3ebbAcH_6GP2KlBmHaCjALWNo4uhinSOts3orSg", true, true);
-if ($session['user']['superuser'] &~ SU_DOESNT_GIVE_GROTTO) addnav("Report a Warning", "https://docs.google.com/forms/d/1udcU5981ZYQ9n-BOfzINbnF6TR1UuqetG2PNX6bQavM/viewform", true, true);
+if ($session['user']['superuser'] &~ SU_DOESNT_GIVE_GROTTO) addnav("Google Drive", "https://drive.google.com/drive/folders/0B7t7rzVpK_Uib2c5d0tHSWV0ZHM?usp=sharing", true, true);
+if ($session['user']['superuser'] &~ SU_DOESNT_GIVE_GROTTO) addnav("Staff Skype", "skype:?chat&blob=sft8cpaHE3Jor_15WGfuEIXj6eL8UXjfXoC3-xwAQya3ebbAcH_6GP2KlBmHaCjALWNo4uhinSOts3orSg", true, true);
+if ($session['user']['superuser'] &~ SU_DOESNT_GIVE_GROTTO) addnav("Report a Warning", "https://goo.gl/forms/UyXG0QYNmb0ALkak1", true, true);
 
 
 

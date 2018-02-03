@@ -215,7 +215,7 @@ function clanpyramid_enemylist($square){
 }
 function clanpyramid_take(){
 	page_header();
-	output("The Vault has been taken, return to the village."); 
+	output("The Labyrinth has been taken, return to the village."); 
 	villagenav();
 	page_footer();
 }

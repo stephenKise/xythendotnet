@@ -58,7 +58,7 @@ function banking_run(){
 	}
 	
 	popup_header("Bank Accounts");
-	output("`n`n<center>[ <a href='runmodule.php?module=banking&op=main'>Main</a> ]</center>",true);
+	output("`c`7The National Bank of Xythen is an institution that rose to prominence once most of the random portals closed. With the slowed influx of foreign currency, a standard could be implemented and a new centre of economy chosen. Every city holds one of these large perfectly square buildings, allowing everyone to deposit and withdraw both gold and gems from the institution, no matter where they are.`c",true);
 	switch($op){
 		case "main":
 		output("<hr>`n`c`^You have {$onhandgold} `^Gold and {$onhandgems} `^Gems on hand`c`n<hr>",true);

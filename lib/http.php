@@ -2,6 +2,41 @@
 // translator ready
 // addnews ready
 // mail ready
+
+/**
+ * Clean a variable from $_POST, but leave $_POST untouched.
+ *
+ * @var string $variable Key from $_POST to clean.
+ */
+
+function httpPostClean($variable)
+{
+	global $sqlite_resource, $mysqli_resource;
+	if ($sqlite_resource) {
+		return sqlite_real_escape_string(
+			soap($_POST[$variable] ?: '', true, true)
+		);
+	}
+	return mysqli_real_escape_string(
+		$mysqli_resource,
+		soap($_POST[$variable] ?: '', true, true)
+	);
+}
+/**
+ * Clean all variables from $_POST, but leave $_POST itself untouched.
+ * 
+ * @return array Array of cleaned $_POST variables.
+ */
+function httpAllPostClean()
+{
+	global $sqlite_resource, $mysqli_resource;
+	$post = [];
+	foreach ($_POST as $key => $value) {
+		$post[$key] = httpPostClean($key);
+	}
+	return $post;
+}
+
 function httpget($var){
 	global $HTTP_GET_VARS;
 

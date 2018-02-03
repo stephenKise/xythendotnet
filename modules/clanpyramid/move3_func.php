@@ -51,15 +51,15 @@ if ($move=="north"){
 	$squarenew=$square;
 }elseif($move=="throneg"){
 	$squarenew=2085;
-	page_header("Throne Guardian");
-	output("You move through the wall, only to be confronted by the Throne Guardian");
+	page_header("Labyrinth Guardian");
+	output("You move through the wall, only to be confronted by the Labyrinth Guardian");
 	output_notl("`n");
 	addnav("Guardian Fight","runmodule.php?module=clanpyramid&op=attack&p=3&f=3");
 	page_footer();
 }elseif($move=="thronec"){
-	page_header("The Throne");
+	page_header("The Guardian Chamber");
 	if ($clanid<>$owned3){
-		output("You have captured the Vault in the name of your clan");
+		output("You have captured the Labyrinth in the name of your guild");
 		output_notl("`n");
 		//add in the reset of pyramid to new clan
 		set_module_setting("owned3",$clanid);
@@ -95,14 +95,14 @@ if ($move=="north"){
 		$cw=get_module_objpref("clans",$clanid,"clanwins","clanpyramid")+$mpoints;
 		set_module_objpref("clans",$clanid,"clanwins",$cw,"clanpyramid");
 		output_notl("`n`n");
-		output("You receive %s Guild Points",$mpoints);
+		output("You receive %s guild points",$mpoints);
 		if (is_module_active("clanwarvault")){
 			$cdef = get_module_objpref("clans",$clanid,"def","clanwarvault");
 			$wallhp = $cdef*250;
 		}else{
 			$wallhp = 25000;
 		}
-		output("`n`n`^Your Guilds Walls are now set at $wallhp");
+		output("`n`n`^Your guilds walls are now set at $wallhp");
 		set_module_objpref("clans",$clanid,2085,$wallhp,"clanpyramid");
 		set_module_objpref("clans",$clanid,2098,$wallhp,"clanpyramid");
 		$sqle = "SELECT $acc.name AS name,
@@ -127,7 +127,7 @@ if ($move=="north"){
 			}
 		}
 	}elseif ($clanid==$owned3){
-		output("Your clan is successful and the Vault has been captured.");
+		output("Your guild is successful and the Labyrinth has been captured.");
 		output_notl("`n");
 	}
 	villagenav();
@@ -154,25 +154,25 @@ if ($portal==true){
 	blocknav("runmodule.php?module=clanpyramid&op=move&move=west");
 }
 if (in_array(($squarenew-13),$tarray1)&&$defender<>1){
-	output("You have found the throne");
+	output("You have found the Guardian Chamber");
 	//$wall=$squarenew-13;
 	addnav("Hit the Throne","runmodule.php?module=clanpyramid&op=wall&hit=north&p=3");
 	blocknav("runmodule.php?module=clanpyramid&op=move&move=north&p=3");
 }
 if (in_array(($squarenew+13),$tarray1)&&$defender<>1){
-	output("You have found the throne");
+	output("You have found the Guardian Chamber");
 	//$wall=$squarenew+13;
 	addnav("Hit the Throne","runmodule.php?module=clanpyramid&op=wall&hit=south&p=3");
 	blocknav("runmodule.php?module=clanpyramid&op=move&move=south&p=3");
 }
 if (in_array(($squarenew-1),$tarray1)&&$defender<>1){
-	output("You have found the throne");
+	output("You have found the Guardian Chamber");
 	//$wall=$squarenew-1;
 	addnav("Hit the Throne","runmodule.php?module=clanpyramid&op=wall&hit=west&p=3");
 	blocknav("runmodule.php?module=clanpyramid&op=move&move=west&p=3");
 }
 if (in_array(($squarenew+1),$tarray1)&&$defender<>1){
-	output("You have found the throne");
+	output("You have found the Guardian Chamber");
 	//$wall=$squarenew+1;
 	addnav("Hit the Throne","runmodule.php?module=clanpyramid&op=wall&hit=east&p=3");
 	blocknav("runmodule.php?module=clanpyramid&op=move&move=east&p=3");
@@ -213,7 +213,7 @@ if ($countrow>0){
 	$opp=0;
 }
 if ($opp<>0){
-	output("There are %s warriors from other clans rushing towards you",$opp);
+	output("There are %s warriors from other guilds rushing towards you",$opp);
 	output_notl("`n");
 	addnav("Attack Warriors","runmodule.php?module=clanpyramid&op=warriors&p=3");
 }
@@ -240,7 +240,7 @@ if (!$countrow){
 	$members=$countrow;
 }
 if ($members>0){
-	output("There are %s clan members with you",$members);
+	output("There are %s guild members with you",$members);
 	output_notl("`n");
 }
 if ($defender==1){

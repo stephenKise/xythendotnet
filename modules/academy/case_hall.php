@@ -1,22 +1,29 @@
 <?php
 	addnav("Training Hall");
 	if (!$active){
-		output("`6Dycedarg marches you into the Training Hall.");
-		output("\"`&Here, we strive for perfection.");
-		output("Not one of our student's is out of line...`6\"");
-		output("`n`nJust then, fire erupts from his fingertips and flies towards one of the misbehaving students.");
-		output("\"`&He was looking at my cock-eyed...");
-		output("Now then, would you like to Indoctrinate a Squire?`6\"");
-		addnav("Indoctrinate Squire","runmodule.php?module=academy&op=buy");
+		output(
+            "MacCready gestures to the left side of the room," . 
+            "\"`&Our high level mercenaries are currently already spoken for," .
+            " but I have a few contracts for some of our newer mercs." .
+            " Now, I know what you're thinking... Don't worry. They'll get" .
+            " the job done as long as they're paid in the end.\"");
+		addnav("Buy Contract","runmodule.php?module=academy&op=buy");
 	}else{
-		output("`6Dycedarg looks at you, \"`&How many I be of service outside of renaming your Squire for `^%s `&gold?`6\"",get_module_setting("re"));
+		output(
+            "`7MacCready looks at you, \"`&You can rename your mercenary for" .
+            " a small fee of `^%s `&gold.`6\"",get_module_setting("re"));
 		addnav(array("Rename %s",$name),"runmodule.php?module=academy&op=train&type=rename");
-		if ($dead){
-			output("`n`n`6Dycedarg frowns and looks solemn.");
-			output("\"`&It is quite sad that we have to meet once more on this occasion... ");
-			output("As I am your %s's master, I would like to do the honors in reviving him.",$classarray[$class]);
-			if (get_module_setting("favor") > 0 && get_module_setting("gold-revive") <= 0){
-				output("It will cost `\$%s `&Favor.`6\"",get_module_setting("favor"));
+        if ($dead){
+			output(
+                "It's customary for the contract dealer to do the revival," .
+                "Let's get your %s all fixed up.\"",$classarray[$class]);
+            output(
+                "MacCready takes the resurrection stone and slaps it down on" .
+                " on the table where you set the dead body of your follower" . 
+                " after a bit of unorthodox chanting from MacCready, your" .
+                " mercenary groggily opens their eyes...");
+            if (get_module_setting("favor") > 0 && get_module_setting("gold-revive") <= 0){
+				output("It will cost `\$%s `&favor.`6\"",get_module_setting("favor"));
 				addnav(array("Revive %s (%s Favor)",$classarray[$class],	get_module_setting("favor")),
 					"runmodule.php?module=academy&op=train&type=revive");
 			}elseif (get_module_setting("favor") <= 0 && get_module_setting("gold-revive") > 0){

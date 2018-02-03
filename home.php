@@ -50,6 +50,7 @@ modulehook('index', []);
 rawoutput("<style>html, body {height: 100%}</style>");
 output("`c`n`n");
 output(getsetting('description', 'Welcome to Legend of the Green Dragon!'), true);
+output("`n`n`n`n");
 
 if (isset($session['message']) && $session['message'] != '') {
     output_notl("`n`b`\$%s`b`n", $session['message'], true);

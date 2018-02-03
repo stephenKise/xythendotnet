@@ -38,8 +38,8 @@ function guild_tag_name_dohook($hookname,$args){
 	switch ($hookname){
 		case "lodge":
 			addnav("Guild");
-			addnav(array("Edit Guild Name `@(%s DP)",$name_cost),"runmodule.php?module=guild_tag_name&op=clan_name");
-			addnav(array("Edit Guild Tag `@(%s DP)",$tag_cost),"runmodule.php?module=guild_tag_name&op=clan_tag");
+			addnav(array("Guild Name `@(%s DP)",$name_cost),"runmodule.php?module=guild_tag_name&op=clan_name");
+			addnav(array("Guild Tag `@(%s DP)",$tag_cost),"runmodule.php?module=guild_tag_name&op=clan_tag");
 			break;
 		case "pointsdesc":
 			$args['count']++;

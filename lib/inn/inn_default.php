@@ -38,17 +38,36 @@ if (!$skipinndesc) {
 		output("You `\$lose`0 a charm point.`n`n");
 		if ($session['user']['charm'] > 0) $session['user']['charm']--;
 	} else {
-		output("You duck into a dim tavern that you know well.");
-		output("The pungent aroma of pipe tobacco fills the air.`n");
+		output(
+		"`7You slip into the one place that's been known" .
+		" in many lands to be the place where one can" .
+		" get all three of their necessities for only" .
+		" a few bucks: Food, Drink, and `&Shelter`7.");
 	}
+	output(
+		"`7Of course, those three things aren't `iall`7`i" .
+		" `7that's available here. There's also some other" .
+		" forms of entertainment here for those with the" .
+		" occasional guilty pleasure. For example, there" .
+		" is gambling going on at some of the tables," .
+		" which of course, occasionally breaks out into" .
+		" the expected fight or argument due to some" .
+		" people accusing another of cheating. Along" .
+		" with that, there are a number of very" .
+		" attractive wenches of a vast array of races," .
+		" most appearing to be human or at least" .
+		" humanoid, but as most learn around here, looks" .
+		" can be quite deceiving.");
 
-	output("You wave to several patrons that you know.");
 	if ($session['user']['sex']) {
-		output("You give a special wave and wink to %s`0 who is tuning his harp by the fire.",$partner);
+		output("You give a special wave and wink to the bard, %s`7, who is tuning his harp by the fire.",$partner);
 	} else {
-		output("You give a special wave and wink to %s`0 who is serving drinks to some locals.",$partner);
+		output("You give a special wave and wink to the barmaid, %s`7, who is serving drinks to some locals.",$partner);
 	}
-	output("%s`0 the innkeep stands behind his counter, chatting with someone.",$barkeep);
+	output(
+		"`)%s`7, the bartender and owner of the establishment," .
+		" stands behind the counter chatting with some of the patrons" .
+		" while serving a varity of alcholic beverages for all species.",$barkeep);
 
 	$chats = array(
 		translate_inline("dragons"),
@@ -60,7 +79,7 @@ if (!$skipinndesc) {
 	);
 	$chats = modulehook("innchatter", $chats);
 	$talk = $chats[e_rand(0, count($chats)-1)];
-	output("You can't quite make out what he is saying, but it's something about %s`0.`n`n", $talk);
+	output("You can't quite make out what the Bartender is saying, but it's something about %s`0.`n`n", $talk);
 	output("The clock on the mantle reads `6%s`0.`n", getgametime());
 	modulehook("inn-desc", array());
 }

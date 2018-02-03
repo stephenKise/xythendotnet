@@ -21,7 +21,7 @@ function pyramid3_transport(){
 		set_module_pref("square",135);
 		//set_module_pref("pyramid",1);
 		addnav("Continue","runmodule.php?module=clanpyramid&op=move&move=transport&p=1");
-		output("You disappear from one spot and appear in another vault");
+		output("You disappear from one spot and appear in another Labyrinth");
 		break;
 		case 3:
 		case 4:
@@ -30,7 +30,7 @@ function pyramid3_transport(){
 		set_module_pref("square",1156);
 		//set_module_pref("pyramid",2);
 		addnav("Continue","runmodule.php?module=clanpyramid&op=move&move=transport&p=2");
-		output("You disappear from one spot and appear in another vault");
+		output("You disappear from one spot and appear in another Labyrinth");
 		break;
 		case 5:
 		case 10:
@@ -38,7 +38,7 @@ function pyramid3_transport(){
 		//inside pyramid 3
 		set_module_pref("square",2001);
 		addnav("Continue","runmodule.php?module=clanpyramid&op=move&move=transport&p=3");
-		output("You return to the Main entrance");
+		output("You return to the main entrance");
 		break;
 		case 6:
 		case 11:
@@ -52,20 +52,20 @@ function pyramid3_transport(){
 		//send to throne pyramid 3
 		set_module_pref("square",2085);
 		addnav("Continue","runmodule.php?module=clanpyramid&op=move&move=thronec&p=3");
-		output("Hmmmm you found a good transport portal");
+		output("Hmmmm, you have found a transportion portal");
 		break;
 		case 8:
 		//send to near throne pyramid 2
 		set_module_pref("square",1124);
 		set_module_pref("pyramid",2);
 		addnav("Continue","runmodule.php?module=clanpyramid&op=move&move=transport&p=2");
-		output("Wow back to another Vault..pssst, go north if its not yours");
+		output("Wow back to another Labyrinth...Pssst, go north if it's not yours");
 		break;
 		case 9:
 		//send to near throne pyramid 3
 		set_module_pref("square",2111);
 		addnav("Continue","runmodule.php?module=clanpyramid&op=move&move=transport&p=3");
-		output("Well, that was lucky, almost all the way to the throne now");
+		output("Well, that was lucky, you're almost all the way to the Guardian Chamber now");
 		break;
 	}
 	

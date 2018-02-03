@@ -87,7 +87,7 @@ function academy_run(){
 	$dead = get_module_pref("dead");
 	$active = get_module_pref("active");
 	$name = get_module_pref("name");
-	$classarray = array(0=>translate_inline("Squire"),1=>translate_inline("Knight"),2=>translate_inline("Warlord"));
+	$classarray = array(0=>translate_inline("Novice Mercenary"),1=>translate_inline("Adept Mercenary"),2=>translate_inline("Master Mercenary"));
 	$max = array(0=>get_module_setting("knight"),1=>get_module_setting("warlord"),2=>get_module_setting("max"));
 	$class = get_module_pref("class");
 	

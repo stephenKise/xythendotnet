@@ -141,9 +141,10 @@ function jquerycommentary_dohook($hook, $args)
                                 reloadCommentary();
                             }
                         }, $refresh*1000);
-                        $('#inputinsertcommentary').keypress(function(e) {
+                        $('#inputinsertcommentary').on('change keydown keyup paste', function(e) {
                             var lastKeyUp = currentTimeout;
                             var input = $(this).val();
+                            console.log(e.type);
                             localStorage.setItem('commentaryForm', input);
                             $('#charsleftinsertcommentary').hide();
                             if (isInputEmpty == 0 && input.length != 0 && $ninja != 1) {
@@ -159,7 +160,7 @@ function jquerycommentary_dohook($hook, $args)
                             if (input == '/edit' || (e.keyCode == '38' && input.length < 1)) {
                                 $(this).val(myComment.replace(/(\<.*?\>)/ig, '').replace(/\`\`/ig, '`')).attr('name','updatecommentary_' + myCommentID);
                             }
-                            if (e.keyCode == 13) {
+                            if (e.keyCode == 13 && e.type != 'keyup') {
                                 e.preventDefault();
                                 jquerypostcommentary();
                                 return false;

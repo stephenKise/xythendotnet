@@ -40,9 +40,9 @@ if ($lm){
     output(
         "<table align='center''>
             <tr>
-                <td width='30%' align='center'>Rapacity</td>
-                <td width='30%' align='center'>Cupidity</td>
-                <td width='30%' align='center'>Avarice</td>
+                <td width='30%' align='center'>Labyrinth A</td>
+                <td width='30%' align='center'>Labyrinth B</td>
+                <td width='30%' align='center'>Labyrinth C</td>
             </tr>
             <tr>
                 <td align='center'>$mid1</td>

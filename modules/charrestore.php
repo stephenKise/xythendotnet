@@ -530,7 +530,7 @@ function charrestore_run()
 			{
 				$day = substr($key['date'], 6, 2);
 				$month = substr($key['date'], 4, 2);
-				$year = substr($key['date'], 0, 4);
+				$year = (int) substr($key['date'], 0, 4);
 				$timestamp = mktime(0, 0, 0, $month, $day, $year);
 				$time = charrestore_deleted_when($timestamp);
 				$style = ( $i % 2 ) ? 'trlight' : 'trdark';

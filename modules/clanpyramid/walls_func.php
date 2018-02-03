@@ -76,7 +76,7 @@ if ($owned1==0){
 		$members=db_num_rows($res2);
 	}
 	if ($members>0){
-		output("There are %s Guild members with you",$members);
+		output("There are %s guild  members with you",$members);
 		output_notl("`n");
 	}
 	$hit=httpget('hit');
@@ -109,7 +109,7 @@ if ($owned1==0){
 		}else{
 			$catk = 500*$num;
 		}
-		output("`nYour Guild helps you by boosting your attack by $catk`n");
+		output("`nYour guild  helps you by boosting your attack by $catk`n");
 		$tatk=$atk+$catk;
 		$def=$u['defence'];
 		$hp = get_module_objpref("clans",$clanid,$wall,"clanpyramid");
@@ -142,19 +142,19 @@ if ($owned1==0){
 				output("You hit the wall for %s damage, the wall crumbles in front of you",$dam);
 				output_notl("`n");
 				if (in_array($wall,$wallsarray1) || in_array($wall,$wallsarray5)){
-					addnav("Through the wall","runmodule.php?module=clanpyramid&op=move&move=southg&p=1&wall=$wall");
+					addnav("Through the Wall","runmodule.php?module=clanpyramid&op=move&move=southg&p=1&wall=$wall");
 				}
 				if (in_array($wall,$wallsarray2) || in_array($wall,$wallsarray6)){
-					addnav("Through the wall","runmodule.php?module=clanpyramid&op=move&move=northg&p=1&wall=$wall");
+					addnav("Through the Wall","runmodule.php?module=clanpyramid&op=move&move=northg&p=1&wall=$wall");
 				}
 				if (in_array($wall,$wallsarray3) || in_array($wall,$wallsarray7)){
-					addnav("Through the wall","runmodule.php?module=clanpyramid&op=move&move=eastg&p=1&wall=$wall");
+					addnav("Through the Wall","runmodule.php?module=clanpyramid&op=move&move=eastg&p=1&wall=$wall");
 				}
 				if (in_array($wall,$wallsarray4) || in_array($wall,$wallsarray8)){
-					addnav("Through the wall","runmodule.php?module=clanpyramid&op=move&move=westg&p=1&wall=$wall");
+					addnav("Through the Wall","runmodule.php?module=clanpyramid&op=move&move=westg&p=1&wall=$wall");
 				}
 				if ($wall==$doort1){
-					addnav("Through the wall","runmodule.php?module=clanpyramid&op=move&move=throneg&p=1&wall=$wall");
+					addnav("Through the Wall","runmodule.php?module=clanpyramid&op=move&move=throneg&p=1&wall=$wall");
 				}
 				blocknav("runmodule.php?module=clanpyramid&op=move");
 			}
@@ -168,7 +168,7 @@ if ($owned1==0){
 }
 function hidden_passage(){
 	page_header("Hidden Passage");
-	output("You have found a hidden passage which leads you back to....`");
+	output("You have found a hidden passage which leads you back to...`");
 	output_notl("`n`n");
 	addnav("Hidden Passage","runmodule.php?module=clanpyramid&op=move&move=passage&p=1");
 	set_module_pref("square",1);

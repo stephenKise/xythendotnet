@@ -26,7 +26,7 @@ $tarray1=array(1072,1085,1098);
 if ($owned2==$clanid){
 	set_module_pref("defender",1,"clanpyramid",$userid);
 }elseif ($owned2<>$clanid && $defender==1){
-	page_header("Vault");
+	page_header("Labyrinth");
 	clear_module_pref("defender","clanpyramid",$userid);
 	output("You are no longer defending and must return to the village");
 	villagenav();
@@ -78,16 +78,16 @@ if ($move=="guardian"){
 }
 if($move=="throneg"){
 	$squarenew=1085;
-	page_header("Throne Guardian");
-	output("You move through the wall, only to be confronted by the Throne Guardian");
+	page_header("Labryinth Guardian");
+	output("You move through the wall, only to be confronted by the Guardian");
 	output_notl("`n");
 	addnav("Guardian Fight","runmodule.php?module=clanpyramid&op=attack&p=2&f=3&wall=$wall");
 	page_footer();
 }
 if($move=="thronec"){
-	page_header("The Throne");
+	page_header("The Guardian Chamber");
 	if ($clanid<>$owned2){
-		output("You have captured the Vault in the name of your clan");
+		output("You have captured the Labyrinth in the name of your clan");
 		output_notl("`n");
 		//add in the reset of pyramid to new clan
 		set_module_setting("owned2",$clanid);
@@ -158,7 +158,7 @@ if($move=="thronec"){
 			}
 		}
 	}elseif ($clanid==$owned2){
-		output("Your clan is successful and the Vault has been captured.");
+		output("Your guild is successful and the Labyrinth has been captured.");
 		output_notl("`n");
 	}
 	villagenav();
@@ -191,7 +191,7 @@ if ((in_array(($squarenew+13),$wallarray) && $defender<>1)	|| (($squarenew+13)==
 			addnav("Through the Wall","runmodule.php?module=clanpyramid&op=move&move=throneg&p=2");
 			blocknav("runmodule.php?module=clanpyramid&op=move&move=south&p=2");
 		}else{
-			output("Your clan has already taken down this wall");
+			output("Your guild has already taken down this wall");
 			output_notl("`n");
 		}
 	}
@@ -222,7 +222,7 @@ if ((in_array(($squarenew+1),$wallarray) && $defender<>1) || (in_array(($squaren
 			addnav("Through the Wall","runmodule.php?module=clanpyramid&op=move&move=throneg&p=2");
 			blocknav("runmodule.php?module=clanpyramid&op=move&move=east&p=2");
 		}else{
-			output("Your clan has already taken down this wall");
+			output("Your guild has already taken down this wall");
 			output_notl("`n");
 		}
 	}
@@ -253,7 +253,7 @@ if ((in_array(($squarenew-13),$wallarray)&&$defender<>1) || (in_array(($squarene
 			addnav("Through the Wall","runmodule.php?module=clanpyramid&op=move&move=throneg&p=2");
 			blocknav("runmodule.php?module=clanpyramid&op=move&move=north&p=2");
 		}else{
-			output("Your clan has already taken down this wall");
+			output("Your guild has already taken down this wall");
 			output_notl("`n");
 		}
 	}
@@ -284,7 +284,7 @@ if ((in_array(($squarenew-1),$wallarray)&&$defender<>1) || (in_array(($squarenew
 			blocknav("runmodule.php?module=clanpyramid&op=move&move=west&p=2");
 			addnav("Through the Wall","runmodule.php?module=clanpyramid&op=move&move=throneg&p=2");
 		}else{
-			output("Your clan has already taken down this wall");
+			output("Your guild has already taken down this wall");
 			output_notl("`n");
 		}
 	}
@@ -325,7 +325,7 @@ if ($countrow1>0){
 	$opp=0;
 }
 if ($opp<>0){
-	output("There are %s warriors from other clans rushing towards you",$opp);
+	output("There are %s warriors from other guilds rushing towards you",$opp);
 	output_notl("`n");
 	addnav("Attack Warriors","runmodule.php?module=clanpyramid&op=warriors&p=2");
 }
@@ -352,7 +352,7 @@ if (!$countrow){
 	$members=$countrow;
 }
 if ($members>0){
-	output("There are %s clan members with you",$members);
+	output("There are %s guild members with you",$members);
 	output_notl("`n");
 }
 if ($squarenew==1001){

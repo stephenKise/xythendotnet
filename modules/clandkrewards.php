@@ -138,17 +138,17 @@ function clandkrewards_dohook($hookname,$args) {
 			
 			$clangold = get_module_objpref("clans", $session['user']['clanid'], "vaultgold","clanvault");
 			$clangems = get_module_objpref("clans", $session['user']['clanid'], "vaultgems","clanvault");
-			//if the clan vault is <= 100000 for gold or <= 50000 gems
-			if ($clangold <= 50000 || $clangems <= 10000){
-			//if its been 24 hours since last yom
+			//if the clan vault is <= 500000 for gold or <= 10000 gems
+			if ($clangold <= 50000 || $clangems <= 10000 ){
+			//if its been 48 hours since last yom
 				$now = strtotime(date("Y-m-d H:i:s"));
-				if ($now - strtotime($leaderyom) >= 24*3600){
+				if ($now - strtotime($leaderyom) >= 48*3600){
 				//grab leaders and founders
 				$sql = "SELECT acctid FROM accounts WHERE clanid='{$session['user']['clanid']}' AND clanrank >= 30";
 				$res = db_query($sql);
 				for ($i=1; $i<db_num_rows($res); $i++){
 					$row = db_fetch_assoc($res);
-					systemmail($row['acctid'],"`b`\$Guild Funds Warning`b","`b`c`Q::This is an automated message sent to the Leaders and Founders of your Guild::`b`c`n`nYour Guild Funds are in desperate need of funds!`0`n`nGuild Gold Funds: $clangold`nGuild Gems Funds: $clangems`n`n`i`tMake sure to top it up so your members can still recieve TentroMech rewards!`i");
+					systemmail($row['acctid'],"`b`\$Guild Funds Warning`b","`b`c`Q::This is an automated message sent to the Leaders and Founders of your Guild::`b`c`n`nYour Guild Funds are in desperate need of funds!`0`n`nGuild Gold Funds: $clangold`nGuild Gems Funds: $clangems`n`n`i`tMake sure to top it up so your members can still recieve Crystal Guardian rewards!`i");
 				}
 				set_module_objpref("clans", $session['user']['clanid'], "leaderyom",date("Y-m-d H:i:s"),"clandkrewards");
 				}

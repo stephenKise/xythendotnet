@@ -38,7 +38,7 @@ function additionalbioinfos_getmoduleinfo()
 		),
 		"prefs"=>array(
 		    "Biography,title",
-			"user_showbioinfo"=>"Do you want to display this info in your bio?,bool|0",
+			"user_showbioinfo"=>"Do you want to display this info in your bio?,bool|1",
 			"`^Additional bio info is currently $additional`^.,note",
 			"user_statcolor"=>"What color do you want to use for your stat names?,enum,".$string,
 			"`^These are the colors: $colors,note",

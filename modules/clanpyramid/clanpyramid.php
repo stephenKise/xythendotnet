@@ -1,7 +1,7 @@
 
 <?php
 global $session;
-page_header("Forbidden Vault");
+page_header("Forbidden Labyrinths");
 $op=httpget('op');
 $u=&$session['user'];
 $which=httpget('p');
@@ -16,7 +16,7 @@ $owned3=get_module_setting("owned3");
 $time=date("Y-m-d H:i:s",strtotime("-600 seconds"));
 $timeold = get_module_pref("time","clanpyramid",$userid);
 if ($timeold>$time && $op<>"enter"){
-	output("You have been killed.  This has cost you 1 Guild point for your Guild`n");
+	output("You have been killed.  This has cost you 1 guild point .`n");
 	$cw=get_module_objpref("clans",$clanid,"clanwins","clanpyramid")-1;
 	if ($cw<=0){
 		$cw=0;
@@ -40,22 +40,22 @@ if ($timeold>$time && $op<>"enter"){
 	clear_module_pref("time");
 	clear_module_pref("defender");
 	if ($clanid==0){
-		output("Sorry, you must be a member of a Guild to explore the Vault");
+		output("Sorry, you must be a member of a guild to explore the Labyrinths");
 		output_notl("`n");
 	}else{
-		output("You duck through the entrance to the Forbidden Vault, only to find there also appears to be two smaller vaults, alongside it.  Some strange inscriptions appear next to the entrance.");//, which of the three will you end up in?");
+		output("Upon entering the main room of the Labyrinths, you notice that there are doorways on each wall of the room, equating to four doorways total. The first, the one you entered from - will be your main source of leaving and entering the Labyrinths. To the right is the doorway to Labyrinth A, the left to Labyrinth B, and the right to Labyrinth C.");//, which of the three will you end up in?");
 		switch (e_rand(1,3)){
 			case 1:
-			addnav("Vault of Rapacity","runmodule.php?module=clanpyramid&op=one");
-			addnav("Vault of Cupidity","runmodule.php?module=clanpyramid&op=two");
+			addnav("Labyrinth A","runmodule.php?module=clanpyramid&op=one");
+			addnav("Labyrinth B","runmodule.php?module=clanpyramid&op=two");
 			break;
 			case 2:
-			addnav("Vault of Rapacity","runmodule.php?module=clanpyramid&op=one");
-			addnav("Vault of Avarice","runmodule.php?module=clanpyramid&op=three");
+			addnav("Labyrinth A","runmodule.php?module=clanpyramid&op=one");
+			addnav("Labyrinth C","runmodule.php?module=clanpyramid&op=three");
 			break;
 			case 3:
-			addnav("Vault of Cupidity","runmodule.php?module=clanpyramid&op=two");
-			addnav("Vault of Avarice","runmodule.php?module=clanpyramid&op=three");
+			addnav("Labyrinth B","runmodule.php?module=clanpyramid&op=two");
+			addnav("Labyrinth C","runmodule.php?module=clanpyramid&op=three");
 			break;
 		}
 	}
@@ -63,12 +63,12 @@ if ($timeold>$time && $op<>"enter"){
 	page_footer();
 }
 if ($op=="one"){
-	page_header("Vault of Avrice");
-	output("Pulling back the vine enshrouded cover stone to the vaults entrance, you step inside, it takes your eye's a moment to adjust to the dim interior.  You realise in this gloom you can only see a few paces in front and behind you, you wish you had some form of illumination, but it appears this is not to be.");
+	page_header("Labyrinth C");
+	output("Pulling back the vine enshrouded cover stone to the labyrinth entrance, you step inside, it takes your eye's a moment to adjust to the dim interior.  You realise in this gloom you can only see a few paces in front and behind you, you wish you had some form of illumination, but it appears this is not to be.");
 	output_notl("`n`n");
 	if ($owned1==$clanid){
 		output("You may enter and defend");
-		addnav("Enter Vault","runmodule.php?module=clanpyramid&op=defend&p=1");
+		addnav("Enter Labyrinth","runmodule.php?module=clanpyramid&op=defend&p=1");
 	}elseif ($owned1<>$clanid){
 		output("You have two choices, explore or leave.");
 		addnav("What Will You Do?");
@@ -79,33 +79,33 @@ if ($op=="one"){
 		output_notl("`n`n");
 		rawoutput("<IMG SRC=\"modules/clanpyramid/images/Map_pyramid1.gif\"><BR>\n");
 	}
-	addnav("Warriors in Vault","runmodule.php?module=clanpyramid&op=listwarriors&p=1");
+	addnav("Nearby Warriors","runmodule.php?module=clanpyramid&op=listwarriors&p=1");
 	villagenav();
 	page_footer();
 }
 if ($op=="listwarriors"){
 	clanpyramid_warriorslist();
 	if ($square==901){
-		addnav("Back to Vault","runmodule.php?module=clanpyramid&op=one");
+		addnav("Back to Labyrinth","runmodule.php?module=clanpyramid&op=one");
 	}elseif ($square==222){
-		addnav("Back to Vault","runmodule.php?module=clanpyramid&op=move&move=return&wall=222&p=1");
+		addnav("Back to Labyrinth","runmodule.php?module=clanpyramid&op=move&move=return&wall=222&p=1");
 	}elseif($square==1300){
-		addnav("Back to Vault","runmodule.php?module=clanpyramid&op=two");
+		addnav("Back to Labyrinth","runmodule.php?module=clanpyramid&op=two");
 	}elseif($square==1095){
-		addnav("Back to Vault","runmodule.php?module=clanpyramid&op=move&move=return&wall=1095&p=2");
+		addnav("Back to Labyrinth","runmodule.php?module=clanpyramid&op=move&move=return&wall=1095&p=2");
 	}elseif($square==2157){
-		addnav("Back to Vault","runmodule.php?module=clanpyramid&op=move&move=return&wall=2157&p=3");
+		addnav("Back to Labyrinth","runmodule.php?module=clanpyramid&op=move&move=return&wall=2157&p=3");
 	}elseif($square=="P3"){
-		addnav("Back to Vault","runmodule.php?module=clanpyramid&op=move&move=entry&p=3");
+		addnav("Back to Labyrinth","runmodule.php?module=clanpyramid&op=move&move=entry&p=3");
 	}elseif($square=="3001"){
-		addnav("Back to Vault","runmodule.php?module=clanpyramid&op=three&p=3");
+		addnav("Back to Labyrinth","runmodule.php?module=clanpyramid&op=three&p=3");
 	}
 }
 if ($op=="two"){
 	set_module_pref("square",1300);
 	if ($owned2==$clanid){
 		output("You may enter and defend");
-		addnav("Enter Vault","runmodule.php?module=clanpyramid&op=defend&p=2");
+		addnav("Enter Labyrinths","runmodule.php?module=clanpyramid&op=defend&p=2");
 	}elseif ($owned2<>$clanid){
 		output("Stepping through the gateway, you are confronted with a set of 4 passageways, 2 of which are blocked.	Which entry will you choose?");
 		addnav("What Will You Do?");
@@ -143,15 +143,15 @@ if ($op=="two"){
 if ($op=="three"){
 	if ($owned3==$clanid){
 		output("You may enter and defend");
-		addnav("Enter Vault","runmodule.php?module=clanpyramid&op=defend&p=3");
+		addnav("Enter Labyrinth","runmodule.php?module=clanpyramid&op=defend&p=3");
 		set_module_pref("square","3001");
 		addnav("Warriors List","runmodule.php?module=clanpyramid&op=listwarriors&p=3");
 	}elseif ($owned3<>$clanid){
 		output("You enter a shadowy realm, a dappled light, causes the shadows to dance, giving them a ghostly lifelike appearance, you shiver slightly and unsheathing your weapon continue on towards the entrance you can see in the distance.");
 		output_notl("`n`n");
-		output("Following a heavily overgrown pathway, you are suddenly confronted with a group of temple guards......");
+		output("Following a heavily overgrown pathway, you are suddenly confronted with a group of guards......");
 		output_notl("`n`n");
-		output("Before you have time to wonder what they are doing this far from the Vault itself, they are upon you");
+		output("Before you have time to wonder what they are doing this far from the Labyrinth itself, they are upon you");
 		addnav("What Will You Do?");
 		set_module_pref("square","3000");
 		addnav("Fight","runmodule.php?module=clanpyramid&op=attack&f=1&p=3");
@@ -195,8 +195,8 @@ if ($op=="warriorattack"){
 	warrior_attack($p);
 }
 if ($op=="giveup"){
-	page_header("Leave the Vault");
-	output("You have chosen to leave, you will not be able to return to any vault for 10 minutes");
+	page_header("Leave the Labyrinth");
+	output("`b`$You have chosen to leave, you will not be able to return to any of the Labyrinths for 10 minutes.`b");
 	addnav("Leave","village.php?");
 	$timenow = date("Y-m-d H:i:s");
 	set_module_pref("time",$timenow);
@@ -218,7 +218,7 @@ if ($op=="attack"){
 		$dk = round($u['dragonkills']*.1);
 		$minion=$clanatk*0.1;
 		$badguy = array(
-			"creaturename"=>"`tAngry `eTemple `tGuards",
+			"creaturename"=>"Labyrinth Guardians",
 			"creaturelevel"=>$level,
 			"creatureweapon"=>"`TStaffs and `ERods",
 			"creatureattack"=>round($u['attack']),
@@ -227,14 +227,14 @@ if ($op=="attack"){
 			"diddamage"=>0,
 			"type"=>"Guards");
 			apply_buff('clanstrength', array(
-			"startmsg"=>"`^Your Guild strength comes to your aid!`n",
+			"startmsg"=>"`^Your guild's'strength comes to your aid!`n",
 			"name"=>"`4Guild Attack",
 			"rounds"=>20,
-			"wearoff"=>"The Strength Fades.",
+			"wearoff"=>"You guild's strength fades.",
 			"minioncount"=>$minion,
 			"minbadguydamage"=>0,
 			"maxbadguydamage"=>$clanatk,
-			"effectmsg"=>"`RThe Strength of Your Guild empowers you. You inflict {damage} damage",
+			"effectmsg"=>"`RThe Strength of your guild empowers you. You inflict {damage} damage",
 			"effectnodmgmsg"=>"`VYour attack is blocked.",
 			"effectfailmsg"=>"`RYou grow weary.",
 			));
@@ -273,16 +273,16 @@ if ($op=="attack"){
 		"creaturedefense"=>round($u['defense'])-1,
 		"creaturehealth"=>round($u['maxhitpoints']*2),
 		"diddamage"=>0,
-		"type"=>"Level Guardian");
+		"type"=>"Labyrinth Guardian");
 		apply_buff('clanstrength', array(
-		"startmsg"=>"`^Your Guild strength comes to your aid!`n",
+		"startmsg"=>"`^Your guild's strength comes to your aid!`n",
 		"name"=>"`4Guild Attack",
 		"rounds"=>20,
-		"wearoff"=>"The Strength Fades.",
+		"wearoff"=>"Your guild's strengh fades.",
 		"minioncount"=>$minion,
 		"minbadguydamage"=>0,
 		"maxbadguydamage"=>$clanatk,
-		"effectmsg"=>"`RThe Strength of Your Guild empowers you. You inflict {damage} damage",
+		"effectmsg"=>"`RThe Strength of your guild empowers you. You inflict {damage} damage",
 		"effectnodmgmsg"=>"`jYour attack is blocked.",
 		"effectfailmsg"=>"`RYou grow weary.",
 		));
@@ -292,23 +292,23 @@ if ($op=="attack"){
 		$dk = round($u['dragonkills']*.1);
 		$minion=$clanatk*0.1;
 		$badguy = array(
-			"creaturename"=>"`$ Nehebkau",
+			"creaturename"=>"`$Labyrinth Guardian",
 			"creaturelevel"=>$level,
 			"creatureweapon"=>"`TStaffs and `ERods",
 			"creatureattack"=>round($u['attack']),
 			"creaturedefense"=>round($u['defense'])-1,
 			"creaturehealth"=>round($u['maxhitpoints']*2.5),
 			"diddamage"=>0,
-			"type"=>"Throne Guardian");
+			"type"=>"Labyrinth Guardian");
 			apply_buff('clanstrength', array(
-			"startmsg"=>"`^Your Guild strength comes to your aid!`n",
+			"startmsg"=>"`^Your guild's strength comes to your aid!`n",
 			"name"=>"`4Guild Attack",
 			"rounds"=>20,
-			"wearoff"=>"The Strength Fades.",
+			"wearoff"=>"Your guild's strengh fades.",
 			"minioncount"=>$minion,
 			"minbadguydamage"=>0,
 			"maxbadguydamage"=>$clanatk,
-			"effectmsg"=>"`RThe Strength of Your Guild empowers you. You inflict {damage} damage",
+			"effectmsg"=>"`RThe Strength of your guild empowers you. You inflict {damage} damage",
 			"effectnodmgmsg"=>"`jYour attack is blocked.",
 			"effectfailmsg"=>"`RYou grow weary.",
 			));
@@ -344,15 +344,15 @@ if ($op=="fight"){ $battle=true; }
 				$u['experience']+=$expgain;
 				output("`@You gain `#%s experience`@.",$expgain);
 				output_notl("`n`n");
-				output("You continue on further down the path, knowing you shall reach the Vault soon.  Also knowing, you have reached the point of no return, after this there is no turning back.");
+				output("You continue on further down the path, knowing you shall reach the Labyrinth's end soon.  Also knowing, you have reached the point of no return, after this there is no turning back.");
 				addnav("Continue On");
 				set_module_pref("square","P3");
-				addnav("Vault Entrance","runmodule.php?module=clanpyramid&op=move&move=entry&p=3");
+				addnav("Labyrinths Entrance","runmodule.php?module=clanpyramid&op=move&move=entry&p=3");
 				addnav("Warriors List","runmodule.php?module=clanpyramid&op=listwarriors&p=3");
 				villagenav();
 			}elseif ($fightnum==2){
 				output_notl("`n");
-				output("The Guardian Falls at your feet, stepping swiftly over the body you move on");
+				output("The Guardian falls at your feet, stepping swiftly over the body you move on to the exit.");
 				addnav("Continue","runmodule.php?module=clanpyramid&op=move&move=return&wall=$wall&p=$p");
 				$expbonus=$u['dragonkills']*4;
 				if ($expbonus>400){
@@ -362,7 +362,7 @@ if ($op=="fight"){ $battle=true; }
 				$u['experience']+=$expgain;
 			}elseif ($fightnum==3){
 				output_notl("`n");
-				output("The Great God Nehebkau falls at your feet.");
+				output("The Labyrinth's Guardian falls at your feet. You now see the exit.");
 				addnav("Continue","runmodule.php?module=clanpyramid&op=move&move=thronec&p=$p");
 				$expbonus=$u['dragonkills']*4;
 				if ($expbonus>400){
@@ -385,29 +385,29 @@ if ($op=="fight"){ $battle=true; }
 			$u['specialmisc']="";
 		}elseif($defeat){
 			if ($fightnum==1){
-				output("You can feel the guards pick your lifeless body up and toss you bodily back through the entranceway");
+				output("The Guardian of Labyrinth A teleports you back to the main entrance of the Labyrinth.");
 				$exploss = round($u['experience']*.05);
 		 		$u['experience']-=$exploss;
-				output("You have lost %s experience",$exploss);
-				output("You start to come too a bit more, until your body hits the hard surface of the village square");
-				addnews("`GThe body of %s `Gwas seen being thrown from a Vaults Entrance.",$u['name']);
+				output("You have lost %s experience.",$exploss);
+				output("Your defeated body appears on the hard surface of the Labyrinth's main enterance room...");
+				addnews("`GThe body of %s `Gwas seen mangled on the main entrance floor of the Labyrinths.",$u['name']);
 				$time = date("Y-m-d H:i:s");
 			}elseif ($fightnum==2){
 				$u['hitpoints'] = 1;
-				output("You can feel the guardian throw you bodily back from the Vault");
+				output("The Guardian of Labyrinth B teleports you back to the main entrance of the Labyrinth.");
 				$exploss = round($u['experience']*.05);
 				$u['experience']-=$exploss;
 				output("You have lost %s experience",$exploss);
-				output("You start to come too a bit more, until your body hits the hard surface of the village square");
-				addnews("%s `Gwas thrown bodily from a Vault.",$u['name']);
+				output("Your defeated body appears on the hard surface of the Labyrinth's main enterance room...");
+				addnews("GThe body of %s `Gwas seen mangled on the main entrance floor of the Labyrinths.",$u['name']);
 			}elseif ($fightnum==3){
 				$u['hitpoints'] = 1;
-				output("You can feel the God Nehebkau throw you bodily out of the Vault");
+				output("The Guardian of Labyrinth C teleports you back to the main entrance of the Labyrinth.");
 				$exploss = round($u['experience']*.05);
 				$u['experience']-=$exploss;
 				output("You have lost %s experience",$exploss);
-				output("You start to come too a bit more, until your body hits the hard surface of the village square");
-				addnews("%s `Gwas hurled from a Vault by a God.",$u['name']);
+				output("Your defeated body appears on the hard surface of the Labyrinth's main enterance room...");
+				addnews("GThe body of %s `Gwas seen mangled on the main entrance floor of the Labyrinths.",$u['name']);
 			}
 			$u['hitpoints']=1;
 			$time = date("Y-m-d H:i:s");

@@ -125,7 +125,7 @@ function contest_room_run(){
 			addnav("`i`&You have `@$pts `&points`i","");
 
 			rawoutput("<font style='font-size: 14pt;'>");
-			output("`n`b`c`&Welcome to the Trivia Room!`c`b`n");
+			output("`n`b`c`&Welcome to the Trivia Room!`c`b");
 			rawoutput("</font>");
 
 			output("`L_______________________________`n
@@ -138,10 +138,7 @@ function contest_room_run(){
 `l6.) `LAll `bnumber`b answers will be in number format. There is no need to spell out the number.  `n
 `l7.) `LWe cannot accept player donated trivia questions, unfortunately, to maintain fairness.        `n
 `l8.) `LDo not announce the answers to trivia questions to other players - keep it secret, keep it safe! (lotr <3)    `n
-`n`n
-`L_______________________________`n
-`b`^Hang Man`b`L______________________`n
-`#Players are given a certain amount of blank letter places and a certain number of failed guess attempts. All players can openly guess letters, but the key is to be patient and not guess too fast (and thus use up your letters). When all of the failed letters run out, players each have `utwo guesses`u at the word. Winner gets `^20 points`# and participants all get a bonus of `^10 points`#.`n`n");
+`n`n");
 			
 			//output("`n`c`3`bHave some contest points you want to spend? Check out the prizes...`b`c`n`n");
 			

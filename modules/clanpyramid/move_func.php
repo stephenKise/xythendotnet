@@ -45,7 +45,7 @@ $darray1=array($doorno,$doorso,$dooreo,$doorwo,$doorni,$doorsi,$doorwi,$doorei);
 if ($owned1==$clanid){
 	set_module_pref("defender",1,"clanpyramid",$userid);
 }elseif ($owned1<>$clanid && $defender==1){
-	page_header("Vault");
+	page_header("Labyrinth");
 	clear_module_pref("defender","clanpyramid",$userid);
 	output("You are no longer defending and must return to the village");
 	villagenav();
@@ -127,9 +127,9 @@ if($move=="throneg"){
 	}
 }
 if($move=="thronec"){
-	page_header("The Throne");
+	page_header("The Guardian Chamber");
 	if ($clanid<>$owned1){
-		output("You have captured the Vault in the name of your Guild");
+		output("You have captured the Labyrinth in the name of your guild");
 		output_notl("`n");
 		//add in the reset of pyramid to new clan
 		set_module_setting("owned1",$clanid);
@@ -166,7 +166,7 @@ if($move=="thronec"){
 		$cw=get_module_objpref("clans",$clanid,"clanwins","clanpyramid")+$mpoints;
 		set_module_objpref("clans",$clanid,"clanwins",$cw,"clanpyramid");
 		output_notl("`n`n");
-		output("You receive %s Guild Points",$mpoints);
+		output("You receive %s guild points",$mpoints);
 		//set floating outer doors
 		$num=$wallsarray3[e_rand(0,8)];
 		if ($num==0){
@@ -243,7 +243,7 @@ if($move=="thronec"){
 			}
 		//}
 		output_notl("`n`n`^");
-		output("Your Guilds walls are $wallhp");
+		output("Your guild's walls are $wallhp");
 		$sql="SELECT * FROM " .db_prefix("clans") . " WHERE `clanid` <> $clanid";
 		$res=db_query($sql);
 		$countrow=db_num_rows($res);
@@ -281,7 +281,7 @@ if($move=="thronec"){
 		}
 	}
 }elseif ($clanid==$owned1){
-	output("Your Guild is successful and the Vault has been captured.");
+	output("Your guild is successful and the Labyrinth has been captured.");
 	output_notl("`n");
 }
 villagenav();
@@ -297,7 +297,7 @@ if ((in_array(($squarenew+13),$wallarray)  || in_array(($squarenew+13),$blockarr
 			blocknav("runmodule.php?module=clanpyramid&op=move&move=south&p=1");
 			addnav("Hit the Wall","runmodule.php?module=clanpyramid&op=wall&hit=south&p=1");
 		}elseif (get_module_objpref("clans",$clanid,($squarenew+13),"clanpyramid")<=0){
-			output("Your Guild has already taken down this wall");
+			output("Your guild has already taken down this wall");
 			output_notl("`n");
 		}
 	}elseif (!in_array(($squarenew+13),$darray1)){
@@ -305,7 +305,7 @@ if ((in_array(($squarenew+13),$wallarray)  || in_array(($squarenew+13),$blockarr
 		output_notl("`n");
 		blocknav("runmodule.php?module=clanpyramid&op=move&move=south&p=1");
 	}elseif (($squarenew+13)==98 && ($squarenew+13)<>$doorto){
-		output("There is a wall to the south, it is the throne, you must now find the throne door");
+		output("There is a wall to the south, it is the wall of the Guardian Chamber, you must now find the door to the Guardian Chamber");
 		output_notl("`n");
 		blocknav("runmodule.php?module=clanpyramid&op=move&move=south&p=1");
 }
@@ -318,7 +318,7 @@ if ((in_array(($squarenew+1),$wallarray) || in_array(($squarenew+1),$blockarray)
 			output_notl("`n");
 			addnav("Hit the Wall","runmodule.php?module=clanpyramid&op=wall&hit=east&p=1");
 		}elseif (get_module_objpref("clans",$clanid,($squarenew+1),"clanpyramid")<=0){
-			output("Your Guild has already taken down this wall");
+			output("Your guild has already taken down this wall");
 			output_notl("`n");
 		}
 	}elseif (!in_array(($squarenew+1),$darray1)){
@@ -326,19 +326,19 @@ if ((in_array(($squarenew+1),$wallarray) || in_array(($squarenew+1),$blockarray)
 		output_notl("`n");
 		blocknav("runmodule.php?module=clanpyramid&op=move&move=east&p=1");
 	}elseif (in_array(($squarenew+1),$tarray1) && ($squarenew+1)<>$doort1){
-		output("There is a wall to the east, it is the throne, you must now find the throne door");
+		output("There is a wall to the east, it is the to the Guardian's Chamber, you must now find the  door");
 		output_notl("`n");
 		blocknav("runmodule.php?module=clanpyramid&op=move&move=east&p=1");
 	}
 }
 if ((($squarenew+1)==$doort1 || ($squarenew+13)==$doort1 || ($squarenew-1)==$doort1 || ($squarenew-13)==$doort1) && $defender<>1){
 	if (get_module_objpref("clans",$clanid,"doort","clanpyramid")>0){
-		output("You have found the throne door");
+		output("You have found the door to the Guardian's Chamber");
 		output_notl("`n");
-		addnav("Hit the Throne","runmodule.php?module=clanpyramid&op=wall&hit=throne&p=1");
+		addnav("Hit the Door","runmodule.php?module=clanpyramid&op=wall&hit=throne&p=1");
 		output("There is a wall to the north, that way is blocked.");
 	}elseif (get_module_objpref("clans",$clanid,"doort","clanpyramid")<=0){
-		output("Your Guild has already taken down the throne.");
+		output("Your guild has already taken down the Guardian.");
 		output_notl("`n");
 		addnav("Through the wall","runmodule.php?module=clanpyramid&op=move&move=throneg&p=1");
 	}
@@ -359,7 +359,7 @@ if ((in_array(($squarenew-13),$wallarray) || in_array(($squarenew-13),$blockarra
 			output_notl("`n");
 			addnav("Hit the Wall","runmodule.php?module=clanpyramid&op=wall&hit=north&p=1");
 		}elseif (get_module_objpref("clans",$clanid,($squarenew-13),"clanpyramid")<=0){
-			output("Your Guild has already taken down this wall");
+			output("Your guild has already taken down this wall");
 			output_notl("`n");
 		}
 	}elseif (!in_array(($squarenew-13),$darray1)){
@@ -380,7 +380,7 @@ if ((in_array(($squarenew-1),$wallarray) || in_array(($squarenew-1),$blockarray)
 			output_notl("`n");
 			addnav("Hit the Wall","runmodule.php?module=clanpyramid&op=wall&hit=west&p=1");
 		}elseif (get_module_objpref("clans",$clanid,($squarenew-1),"clanpyramid")<=0){
-			output("Your Guild has already taken down this wall");
+			output("Your guild has already taken down this wall");
 			output_notl("`n");
 		}
 	}elseif (!in_array(($squarenew-1),$darray1)){
@@ -428,7 +428,7 @@ if (db_num_rows($res)>0){
 	$opp=0;
 }
 if ($opp<>0){
-	output("There are %s warriors from other Guilds rushing towards you",$opp);
+	output("There are %s warriors from other guilds rushing towards you",$opp);
 	output_notl("`n");
 	addnav("Attack Warriors","runmodule.php?module=clanpyramid&op=warriors&p=1");
 }
@@ -457,7 +457,7 @@ if (!$countrow){
 	$members=$countrow;
 }
 if ($members>0){
-	output("There are %s Guild members with you",$members);
+	output("There are %s guild members with you",$members);
 	output_notl("`n");
 }
 if ($squarenew==1){

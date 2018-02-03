@@ -36,7 +36,7 @@ function notepad_anchor($optext=false) {
 	$width = get_module_pref("user_winwidth");
 	$height = get_module_pref("user_winheight");
 	$jspopwin = "window.open('$link', 'notepad', 'scrollbars=yes,resizable=yes,width=$width,height=$height').focus()";
-	$anchor = "<a href='$link' target='notepad' onClick=\"$jspopwin; return false;\">";
+	$anchor = "<a href='$link' target='_blank'>";
 
 	return $anchor;
 }

@@ -58,7 +58,6 @@ function locations_dohook($hook, $args)
                 addnav($args['gatenav']);
                 addnav('Travel', 'runmodule.php?module=locations&op=travel');
                 if ($current != get_module_setting('capital')) {
-                    blocknav('hof.php');
                     blocknav('inn.php');
                 }
             }

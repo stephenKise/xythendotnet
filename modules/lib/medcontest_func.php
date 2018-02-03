@@ -5,10 +5,10 @@ function medcontest_reset(){
 	set_module_setting('lastreset',date("Y-m-d"));
 	$sql = "SELECT value FROM ".db_prefix("module_userprefs")." WHERE modulename = 'medcontest' and setting = 'medhunt' and value > 0 ORDER BY value+0 DESC";
 	$result = db_query($sql);
-	$totalpot=15000;
-	$firstplace=7500;
-	$secondplace=5000;
-	$thirdplace=2500;
+	$totalpot=1500;
+	$firstplace=1000;
+	$secondplace=500;
+	$thirdplace=250;
 	// $firstplace=$firstplace-$thirdplace;
 	$sql = "SELECT userid,value FROM ".db_prefix("module_userprefs")." WHERE modulename = 'medcontest' and setting = 'medpoints' ORDER BY value+0 DESC";
 	//first place

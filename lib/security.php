@@ -37,7 +37,7 @@ function soap_email($email){
 	
 	foreach($banned_emails as $banned)
 	{
-		if ($email = $banned)
+		if ($email == $banned)
 		{
 			return "BANNED EMAIL";
 		}

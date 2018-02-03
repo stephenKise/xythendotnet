@@ -182,11 +182,11 @@ if (getsetting("allowcreation",1)==0){
 			
 			// Security Checks
 			require_once("lib/security.php");
-			
-			if (soap_email($email) != "VALID"){
-				$msg.=translate_inline("The email you have used is invalid. Please use a valid email address.");
-				$blockaccount = true;
-			}
+			//debug(soap_email($email), true);
+			//if (soap_email($email) != "VALID"){
+			//	$msg.=translate_inline("The email you have used is invalid. Please use a valid email address.");
+			//	$blockaccount = true;
+			//}
 			
 			if (soap_email_host($email) != "VALID"){
 				$msg.=translate_inline("The email host you have used is blocked from this server. Please use a valid email host.");

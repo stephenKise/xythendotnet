@@ -44,7 +44,7 @@ function walls3_hit(){
 		$members=$countrow;
 	}
 	if ($members>0){
-		output("There are %s Guild members with you",$members);
+		output("There are %s guild members with you",$members);
 		output_notl("`n");
 	}
 	$hit=httpget('hit');
@@ -73,7 +73,7 @@ function walls3_hit(){
 	}else{
 		$catk = 500*$num;
 	}
-	output("`nYour clan helps you by boosting your attack by $catk`n");
+	output("`nYour guild helps you by boosting your attack by $catk`n");
 	$tatk=$atk+$catk;
 	$def=$u['defence'];
 	$hp = get_module_objpref("clans",$owned3,$wall,"clanpyramid");
@@ -101,12 +101,12 @@ function walls3_hit(){
 			output("You hit the wall for %s damage, there is %s hp left on the wall",$dam,$hp1);
 			output_notl("`n");
 			addnav("Hit","runmodule.php?module=clanpyramid&op=wall&hit=return&wall=$wall&p=$p");
-			addnav("Return to Vault","runmodule.php?module=clanpyramid&op=move&move=return&wall=$square&p=$p");
+			addnav("Return to Labyrinth  ","runmodule.php?module=clanpyramid&op=move&move=return&wall=$square&p=$p");
 		}elseif ($hp1<=0){
 			output("You hit the wall for %s damage, the wall crumbles in front of you",$dam);
 			output_notl("`n");
 			if (in_array($wall,$tarray1)){
-				addnav("Through the wall","runmodule.php?module=clanpyramid&op=move&move=throneg&p=$p");
+				addnav("Through the Wall","runmodule.php?module=clanpyramid&op=move&move=throneg&p=$p");
 				set_module_pref("fightnum",3);
 			}
 		}

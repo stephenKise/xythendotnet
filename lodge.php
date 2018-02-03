@@ -30,13 +30,26 @@ villagenav();
 
 
 if ($op==""){
-	output("`c`b`LJCP Lodge`b`c`n");
-	output("`0");
-	output(" `7As you enter the high class establishment named the `3JCP Lodge`7, you find yourself feeling slightly under dressed...A man at the entrance looks you over, clearing his throat in a displeased manner. You feel as though you may be cast back out onto the city streets...Quickly, you flash a voucher towards the man. `3Very good. `7The man says, his chin high as though he was some figure of importance, `3Carry on.`n`n");
+	output("`c`bThe High Roller`b`c`n");
+	output("`c`7The High Roller is the country-club of Xythen where upper-class" .
+        " citizens often gather to gamble, dine, drink, gossip and schmooze." .
+        " Upon first visiting the High Roller, guests are directed to the" .
+        " welcome desk where they can log into their personal club accounts." .
+        " To the left of the welcome desk is the dining area, brightly lit" .
+        " by elegant bay-style windows overlooking a botanical garden. To" .
+        " the right is the bar and lounge can be seen despite the dark red" .
+        " ambient lighting. Couches line the walls, separated by dividers for" .
+        " private conversations. At the middle of the lounge is a circular" .
+        " bar, tended by two bartenders.`c");
 
 	if ($entry){
-		output("`7Down the hall, you pass another set of large doors that were decorated in a rustic golden material. These, lead to a foyer room filled with elegant furniture, a bar, and very highly established decor. Continuing onward, you are urged to move towards a secluded counter in the middle of the room`n`n");
-		output("`c`7A small woman in a pinstriped dress greets you from behind a very well crafted reception desk, `&Hello, and welcome to the JCP lodge. According to our records, you have earned `^%s`& points and have `^%s`& points available to spend.`7 `7The woman moves a slice of paper towards the edge of the desk, with the available purchases. Patiently, she awaits your decision...The list seems to be extensive, so you take your time. `n`n`c", $session['user']['donation'], $pointsavailable);
+		output("`c`n`7You approach the welcome desk to log into your club" .
+        " account... The attendant behind the desk greets you personally and" .
+        " then logs you into your account. `n`n \"According to our records," .
+        " you have purchased a total of `^%s`7 points. Your current balance" .
+        " available for spending is `^%s`7. Please let us know if you would" .
+        " like to spend any of your points during your visit.\"  `n`n`n`c", $session['user']['donation'], $pointsavailable);
+
 		commentdisplay("`7Nearby, you can hear a few high-end individuals discussing their worth:`n", "hunterlodge","Talk quietly",25);
 		addnav("Use Points");
 		modulehook("lodge");

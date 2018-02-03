@@ -43,7 +43,7 @@ function xythenplots_dohook($hookname, $args){
 	tlschema($args['schemas']['infonav']);
 	addnav($args['infonav']);
 	tlschema();
-	addnav("Xythen Plots", "runmodule.php?module=xythenplots");
+	addnav("`zOngoing RPs", "runmodule.php?module=xythenplots");
 	
 	return $args;
 }
@@ -59,7 +59,7 @@ function xythenplots_run(){
 	$accounts = db_prefix("accounts");
 	$xythenplots = db_prefix("xythenplots");
 	
-	page_header("Xythen Plots");
+	page_header("Ongoing RPs");
 	
 	addnav("Return");
 	villagenav();
@@ -85,7 +85,7 @@ function xythenplots_run(){
 			$form = array(
 				"Add A Plot,title",
 				"title" => "Title of Plot",
-				"type" => "Type,enum,Personal,Personal,Public,Public",
+				"type" => "Type,enum, Request Invite,Request Invite,Open to All,Open to All",
 				"description" => "Description,textarea",
 				"characters" => "Characters"
 			);
@@ -94,7 +94,7 @@ function xythenplots_run(){
 			if (!$id){
 				$row = array(
 					"title" => "",
-					"type" => "Public",
+					"type" => "Request Invite",
 					"description" => "",
 					"characters" => ""
 				);

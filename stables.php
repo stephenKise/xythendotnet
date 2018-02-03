@@ -13,11 +13,32 @@ tlschema('stables');
 $basetext=array(
 	"title"=>"`i`#V`i`b`3e`b`Lh`b`li`b`~c`i`)l`i`7e `b`)D`b`~e`la`Ll`3e`#r",
 	"desc"=>array(
-		"`m Situated between the Inn and the Bank, you find a rather large establishment. On the outside, you notice a few riding instruments such as bikes, mobile machines, and a few scooters. As you step inside the industrialized building, you notice that there are two sorts of directions to choose from...One the right, seems to be a bestiary. On the left, there is a nice exhibit for machines. `n",
-		"`n`nMoving towards a center reception desk, you notice a man standing behind the counter with a wrench in hand. He seems to be hunched over a blueprint for the next model mount he plans to create...This must be the owner. `n`n
-",
-		array("You approach, and he whirls around, pointing a derringer in your general direction, \"`&Arg, Im sorry m'%s, I didnt hear you come in, thereMust have thought it was a breeze or something. ",translate_inline($session['user']['sex']?'lass':'lad'),getsetting('barkeep','`tCedrik')),
-		"What can I do for you?`m\" he asks.",
+		    "`7`cOut near the mountain of Sylisten, there lies a number" .
+        " of quaint houses and tenement buildings, all in fairly" .
+        " good condition and obviously quite sturdy. Closest to" .
+        " the mountain, and quite practically built into the bottom" .
+        " of the large geologic construct, you see a rather large building," .
+        " but split into two. Each of the halves sporting totally different" .
+        " styles and feels. One side was very much similar to that of a large" .
+        " barn, housing many different types of animals from horses to" .
+        " more exotic creatures" .
+        " The other half was much more industrialized," .
+        " having vehicles such as motorcycles, scooters, and even cars" .
+        " should one be brave enough (or wealthy enough). `n`n" . 
+        " As you move throughout the building you see two women," .
+        " both similiar in appearance. The two seem busy as they move" .
+        " throughout taking care of things on their respective sides." . 
+        " The only way that you could tell the two women apart was " .
+        " based on their clothing. One had a grease stains on her" .
+        " face, her overalls, her tucker cap and even her hands." .
+        " Based off of this, you can tell that she is the mechanic of the two." .
+        " Her sister, on the other hand, wore jeans, a long-sleeved t-shirt" .
+        " with the sleeves rolled up to just above her elbows, a pair of work" .
+        " boots and sturdy work gloves for tending the live creatures." .
+        " Once they noticed you, the two women welcomed you to their establishment.`c",
+
+		array("`c`n`7When you approach, depending on what vehicle you plan to buy, you will either be greeted by a cheery \"`RHiya!`7\" or a short, but quick, \"`vHi.`7\" You would then be subject to the age-old saying of \"`RWhat can we do for you, %s?\" `7The two continue to speak, advertising their services, \"`vWe have the finest live mounts and mechanical mounts around!\"`c",translate_inline($session['user']['sex']?'lass':'lad'),getsetting('barkeep','`tCedrik')),
+		"`0",
 	),
 	"nosuchbeast"=>"`m\"`&Are you joking? Such creation does not exist, here!`m\" shouts the shop keeper!",
 	"finebeast"=>array(

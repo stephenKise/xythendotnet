@@ -60,7 +60,7 @@ function fightarea_dohook($hookname,$args){
 			}
 		break;
 		case "moderate":
-			$args['fightarea'] = "RP Battle Arena";
+			$args['fightarea'] = "Battle Zones";
 		break;
 	}
 	return $args;
@@ -83,12 +83,12 @@ function fightarea_run(){
 		addnav("Actions");
 		addnav("Go Back", "runmodule.php?module=fightarea");
 
-		if ($set['desc'.$allprefs[$arena]]) output("`n`n`c%s`c`n`n", $set['desc'.$allprefs[$arena]]);
+		if ($set['desc'.$allprefs[$arena]]) output("`n`n`c%s`c", $set['desc'.$allprefs[$arena]]);
 		
 		addcommentary();
 		viewcommentary("fightarea".$arena,"Speak", 35, "says");
 	} else {
-		page_header("The Fighting Arena");
+		page_header("The Battle Zone");
 		
 		addnav("Arenas");
 		addnav("First Arena","runmodule.php?module=fightarea&op=fightarena1");

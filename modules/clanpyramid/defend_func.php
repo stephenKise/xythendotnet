@@ -1,8 +1,8 @@
 <?php
 $which=httpget('p');
-output("You enter the Vault to defend it, walls are no barrier to you, you may move freely, to find, attack and kill your enemies.  One thing however, you must FIND them FIRST!");
+output("You enter the Labyrinth to defend it, walls are no barrier to you, you may move freely, to find, attack and kill your enemies.  One thing however, you must FIND them FIRST!");
 output_notl("`n`n");
-output("You start in the throne");
+output("You start in the Guardian's Chambers");
 if ($which==1){
 	set_module_pref("square",111);
 }elseif ($which==2){

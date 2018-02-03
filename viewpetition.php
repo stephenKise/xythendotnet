@@ -16,12 +16,12 @@ addcommentary();
 
 $statuses = [
     0 => "`&`bUnhandled`b",
-    1 => "`\$Errors",
-    2 => "`QVotes",
-    3 => "`^Contest",
-    4 => "`@Donation",
-    5 => "`#Progressive",
-    6 => "`!Miscellaneous",
+    1 => "`\$Code Review",
+    2 => "`QJob Postings",
+    3 => "`^CDonation",
+    4 => "`@Contest",
+    5 => "`#Miscellaneous",
+    6 => "`!Awaiting Response",
     7 => "`)`iClosed`i",
 ];
 
@@ -163,7 +163,7 @@ $com = translate_inline("`b<big>`&`iCom`i</big>`b");
 $lastup = translate_inline("`b<big>`&`iLast Updater`i</big>`b");
 $mark = translate_inline("`b<big>`&`iSort`i</big>`b");
 
-output("`c`&`bLast Updater:`b `^Top Row `&= `QLast Mover`&, `^Bottom Row `&= `QLast Commenter`0`c");
+output("`c`&`bLast Updater:`b `^Top Row `&= `QLast Mover`&, `^Bottom Row `&= `QLast Commenter`0`n `$1-Code Review`0, `Q2-Job Posting`0, `^3-Donation`0, `@4-Contest`0, `#5-Misc`0, `L6-Pending`0, `)X-Closed`c`0");
 output("<table border='0' align='center'><tr class='trhead' align='center'><td>$tit</td><td>$from</td><td width='3%'>$com</td><td>$lastup</td><td>$mark</td></tr>",TRUE);
 $i=0;
 $laststatus=-1;
@@ -229,7 +229,7 @@ output_notl("`)`iNone`i`0");
 }
 rawoutput("</td>");
 rawoutput("<td nowrap>");
-output("`c<a href='viewpetition.php?setstat=0&id={$row['petitionid']}'>`&`bU`b`0</a>`&-<a href='viewpetition.php?setstat=1&id={$row['petitionid']}'>`\$E`0</a>`&-<a href='viewpetition.php?setstat=2&id={$row['petitionid']}'>`QV`0</a>`&-<a href='viewpetition.php?setstat=3&id={$row['petitionid']}'>`^C`0</a>`&-<a href='viewpetition.php?setstat=4&id={$row['petitionid']}'>`@D`0</a>`&-<a href='viewpetition.php?setstat=5&id={$row['petitionid']}'>`#P`0</a>`&-<a href='viewpetition.php?setstat=6&id={$row['petitionid']}'>`LM`0</a>`&-<a href='viewpetition.php?setstat=7&id={$row['petitionid']}'>`)`iX`i`0</a>`c",TRUE);
+output("`c<a href='viewpetition.php?setstat=0&id={$row['petitionid']}'>`&`bU`b`0</a>`&-<a href='viewpetition.php?setstat=1&id={$row['petitionid']}'>`\$1`0</a>`&-<a href='viewpetition.php?setstat=2&id={$row['petitionid']}'>`Q2`0</a>`&-<a href='viewpetition.php?setstat=3&id={$row['petitionid']}'>`^3`0</a>`&-<a href='viewpetition.php?setstat=4&id={$row['petitionid']}'>`@4`0</a>`&-<a href='viewpetition.php?setstat=5&id={$row['petitionid']}'>`#5`0</a>`&-<a href='viewpetition.php?setstat=6&id={$row['petitionid']}'>`L6`0</a>`&-<a href='viewpetition.php?setstat=7&id={$row['petitionid']}'>`)`iX`i`0</a>`c",TRUE);
 
 rawoutput("</td>");
 addnav("","viewpetition.php?op=view&id={$row['petitionid']}");

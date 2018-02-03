@@ -204,7 +204,7 @@ function clanpoints_run() {
 					output("</tr>",true);
 				}
 				output("</table>",true);
-				output("`n<small>`i`2What is this?`i`n`)Guild points are points earned by guilds, meeting varying requirements. For each Tentromech slain, each guild earns a set amount of points for slaying the Tentromech. The values you earn are determined by the staff here at Xythen and can change at anytime, especially during double points days. Alternatively, guilds can also lose points if their members fail to complete certain tasks, such as losing to the Tentromech or slaying another guild member. These points are reset each month, so if the values seem low, that is the reason why.</small>",true);
+				output("`n<small>`i`2What is this?`i`n`)Guild points are points earned by guilds, meeting varying requirements. For each Crystal Guardian slain, each guild earns a set amount of points for slaying a Crystal Guardian. The values you earn are determined by the staff here at Xythen and can change at anytime, especially during double points days. Alternatively, guilds can also lose points if their members fail to complete certain tasks, such as losing to a Crystal Guardian or slaying another guild member. These points are reset each month, so if the values seem low, that is the reason why.</small>",true);
 				addnav("Leave");
 				addnav("Refresh","runmodule.php?module=clanpoints&op=hofenter");
 		break;

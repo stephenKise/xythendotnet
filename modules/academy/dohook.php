@@ -1,8 +1,8 @@
 <?php
 	$classarray = array(
-		0=>"Squire",
-		1=>"Knight",
-		2=>"Warlord",
+		0=>"Novice",
+		1=>"Adept",
+		2=>"Master",
 	);
 	$classarray = translate_inline($classarray);
 	$name = get_module_pref("name");
@@ -53,7 +53,7 @@
 		case "footer-hof":
 			if (get_module_setting("hof")){
 				addnav("Civilian Rankings");
-				addnav("Strongest Squires","runmodule.php?module=academy&op=hof");	
+				addnav("Strongest Mercenaries","runmodule.php?module=academy&op=hof");	
 			}
 			break;
 		case "creatureencounter":
@@ -70,12 +70,12 @@
 				$name = get_module_pref("name");
 				if (e_rand(1,100) <= get_module_pref("level")*5){
 					apply_buff("academy", array(
-						"name"=>sprintf_translate("%s's Melody",$name),
-						"roundmsg"=>sprintf_translate("The tune of %s's `5melody empowers you.",$name),
+						"name"=>sprintf_translate("%s's Protection",$name),
+						"roundmsg"=>sprintf_translate("%s protects you during battle by fighting at your side.",$name),
 						"rounds"=>e_rand(5,30),
 						"atkmod"=>1.1,
 						"defmod"=>1.1,
-						"wearoff"=>sprintf_translate("The tune of %s's `5melody slowly fades amongst the wind...",$name),
+						"wearoff"=>sprintf_translate("%s has gotten tired and needs to rest...",$name),
 						"schema"=>"module-academy",
 						)
 					);
@@ -123,9 +123,9 @@
 			if (get_module_pref("active") && httpget('module') != "battlearena"){
 				if (!get_module_pref("dead") && !$session['user']['alive']){
 					output("`n`)Sadly, %s `)has lost his life, trying to defend your body.`n",$name);
-					debuglog("'s Squire is dead.");
+					debuglog("'s Mercenary is dead.");
 					set_module_pref("dead",1);
-					debug("Squire died.");
+					debug("Mercenary died.");
 				}
 			}
 			strip_buff("battle-academy");
@@ -202,11 +202,11 @@
 			break;
 		case "charstats":
 			if (get_module_pref("user_show") && get_module_pref("active","academy")){
-				addcharstat("Squire Info");
-				addcharstat("Squire Name",get_module_pref("name"));
-				addcharstat("Squire Level",get_module_pref("level"));
-				addcharstat("Squire Class",$classarray[(get_module_pref("class"))]);
-				addcharstat("Squire Alive",get_module_pref("dead") ? "`4Dead" : "`^Yes");
+				addcharstat("Mercenary Info");
+				addcharstat("Mercenary Name",get_module_pref("name"));
+				addcharstat("Mercenary Level",get_module_pref("level"));
+				addcharstat("Mercenary Rank",$classarray[(get_module_pref("class"))]);
+				addcharstat("Mercenary Status",get_module_pref("dead") ? "`4Dead" : "`^Alive");
 				addcharstat("Ready to Level",get_module_pref("lsl") == get_module_setting("level") ? "`^Yes" : "`4No");
 			}
 			break;

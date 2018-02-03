@@ -4,7 +4,7 @@
 // mail ready
 
 function sanitize($in){
-	$out = preg_replace("/[`][1234567890!@#\$%^&)~QqRVvGgTtjJeElLxXyYkKpPmM?*AabicnHws]/", "", $in);
+	$out = preg_replace("/[`][!-_a-~]/", "", $in);
 	return $out;
 }
 
@@ -14,14 +14,14 @@ function newline_sanitize($in){
 }
 
 function color_sanitize($in){
-	$out = preg_replace("/[`][1234567890!@#\$%^&)~QqRVvGgTtjJeElLxXyYkKpPmM?*Aabi]/", "", $in);
+	$out = preg_replace("/[`][!-_a-~]/", "", $in);
 	return $out;
 }
 
 function comment_sanitize($in) {
 	// to keep the regexp from boinging this, we need to make sure
 	// that we're not replacing in with the ` mark.
-	$out=preg_replace("/[`](?=[^1234567890!@#\$%^&)~QqRVvGgTteEjJlLxXyYkKpPmM?*Aa])/", chr(1).chr(1), $in);
+	$out=preg_replace("/[`](?=[!-;\=?-GI-_abd-mo-rt-~])/", chr(1).chr(1), $in);
 	$out = str_replace(chr(1),"`",$out);
 	return $out;
 }
@@ -110,21 +110,30 @@ function sanitize_colorname($spaceallowed, $inname, $admin = false)
 	return preg_replace($expr, "", $inname);
 }
 
-// Strip out <script>...</script> blocks and other HTML tags to try and
-// detect if we have any actual output.  Used by the collapse code to try
-// and make sure we don't add spurious collapse boxes.
-// Also used by the rename code to remove HTML that some admins try to
-// insert.. Bah
-function sanitize_html($str)
+
+/**
+ * Alias of sanitizeHTMl().
+ * 
+ * @param string $input
+ * @return string
+ */
+function sanitize_html(string $input): string
 {
-	//take out script blocks
-	$str = preg_replace("/<script[^>]*>.+<\\/script[^>]*>/", "", $str);
-	//take out css blocks
-	$str = preg_replace("/<style[^>]*>.+<\\/style[^>]*>/", "", $str);
-	//take out comments
-	$str = preg_replace("/<!--.*-->/", "", $str);
-	$str = strip_tags($str);
-	return $str;
+    return sanitizeHTML($input);
+}
+
+/**
+ * Strips HTML codes and the contents within script, style, and comment tags.
+ * 
+ * @param string $input
+ * @return string
+ */
+function sanitizeHTML(string $input): string
+{
+    $input = preg_replace("/<script[^>]*>.+<\\/script[^>]*>/", "", $input);
+    $input = preg_replace("/<style[^>]*>.+<\\/style[^>]*>/", "", $input);
+    $input = preg_replace("/<!--.*-->/", "", $input);
+    return $input;
 }
 
 ?>

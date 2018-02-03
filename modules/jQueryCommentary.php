@@ -68,9 +68,7 @@ function jQueryCommentary_dohook(string $hook, array $args): array
             break;
         case 'everyfooter-loggedin':
                 if ($chatFormDeclared == 1) {
-                    global $colors;
                     rawoutput("</div>");
-                    debug($colors);
                 }
             break;
         case 'api':

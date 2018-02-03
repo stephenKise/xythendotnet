@@ -146,10 +146,10 @@ function is_new_day($now=0){
 	if ($session['user']['lasthit'] == "0000-00-00 00:00:00") {
 		return true;
 	}
-	$t1 = gametime();
-	$t2 = convertgametime(strtotime($session['user']['lasthit']." +0000"));
-	$d1 = gmdate("Y-m-d",$t1);
-	$d2 = gmdate("Y-m-d",$t2);
+	$t1 = (int) gametime();
+	$t2 = (int) convertgametime(strtotime($session['user']['lasthit']." +0000"));
+	$d1 = gmdate("Y-m-d", $t1);
+	$d2 = gmdate("Y-m-d", $t2);
 
 	if ($d1!=$d2){
 		return true;
@@ -186,12 +186,12 @@ function convertgametime($intime,$debug=false){
 function gametimedetails(){
 	$ret = array();
 	$ret['now'] = date("Y-m-d 00:00:00");
-	$ret['gametime'] = gametime();
+	$ret['gametime'] = (int) gametime();
 	$ret['daysperday'] = getsetting("daysperday", 12);
 	$ret['secsperday'] = 86400/$ret['daysperday'];
 	$ret['today'] = strtotime(gmdate("Y-m-d 00:00:00 O", $ret['gametime']));
 	$ret['tomorrow'] =
-		strtotime(gmdate("Y-m-d H:i:s O",$ret['gametime'])." + 1 day");
+		(int) strtotime(gmdate("Y-m-d H:i:s O",$ret['gametime'])." + 1 day");
 	$ret['tomorrow'] = strtotime(gmdate("Y-m-d 00:00:00 O",$ret['tomorrow']));
 	// Why isn't this
 	// $ret['tomorrow'] =

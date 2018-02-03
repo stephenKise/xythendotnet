@@ -39,6 +39,9 @@ $(document).ready(function() {
         .append(
             '<option value="Responsive.htm" data-css="black.css">Black</option>'
         );
+    if (!window.frameElement) {
+        $('.close-modal, .popout-modal').hide();
+    }
 });
 
 $(document).on(startEvent, function(e) {
@@ -117,6 +120,10 @@ $('#close-modal').on('click', function (e) {
     $('.modal', window.parent.document.body).slideUp(function () {
         $(this).removeAttr('src').hide();
     });
+});
+
+$('#popout-modal').on('click tap', function (e) {
+    window.open(window.frameElement.src);
 });
 
 $('select[name="template"]').on('change click tap', function() {

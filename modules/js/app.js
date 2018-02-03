@@ -86,7 +86,6 @@ $('#inputinsertcommentary').keyup(function(e) {
 
 $('#submitChat').on('click tap', function(e) {
     form = $('#inputinsertcommentary');
-    console.log(form.val());
     e.preventDefault();
     if (form.val().length > 0) {
         postChatMessage(form.val(), chatSection);
@@ -127,8 +126,6 @@ $('tr[name="messages"]').on('click tap', function() {
 
 $('.contact a').on('click tap', function() {
     $(this).children().removeClass('glow');
-    console.log('HELLO!');
-    console.log($(this).children());
 });
 
 function sanitizeMessage(message)
@@ -159,7 +156,6 @@ function freezeChat() {
 
 function startChat() {
     if (typeof chatLoop == 'number' || typeof chatLoop == 'object') {
-        console.log('Chat loop is already running, not starting chat twice.');
         return false;
     }
     chatLoop = setInterval(
@@ -258,7 +254,6 @@ function postChatMessage(message, channel)
     $.post(apiLink('jQueryCommentary', 'postMessage'),
         {comment: message, section: channel, edited: editedID},
         function(data, status) {
-            console.log(data);
             if (status == 'error') {
                 connectionError();
                 return;
@@ -283,7 +278,6 @@ function removeChatMessage(id)
         apiLink('jQueryCommentary', 'removeMessage'),
         {commentid: id},
         function(data) {
-            console.log(data);
             if (data.length < 1) {
                 return false;
             }

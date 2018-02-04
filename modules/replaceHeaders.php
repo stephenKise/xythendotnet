@@ -32,7 +32,7 @@ function replaceHeaders_dohook(string $hook, array $args): array
     global $session, $header, $footer;
     $pet = 'petition.php';
     $motd = 'motd.php';
-    $newMotd = ($session['needtoviewmotd']) ? 'alert' : '';
+    $newMotd = ($session['needtoviewmotd']) ? 'alert glow' : '';
     $question= "<i class='fa fa-flag fa-lg alert'></i>";
     $newspaper = "<i class='fa fa-rss fa-lg $newMotd'></i>";
     $petitionLink =

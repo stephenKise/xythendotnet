@@ -24,7 +24,7 @@ output("You sit down and, fiddling with your quill in the other hand, pull a bla
 
 rawoutput("<form method=\"post\" action=\"$strAction\">");
 rawoutput("<p>$strBookTitle: <input type=\"text\" name=\"n\" size=\"40\" />");
-output("<br />$strContents:<br /><textarea style=\"background-color: #FFFFBB;\"name=\"c\" rows=\"15\" cols=\"80\"></textarea>",true);
+output("<br />$strContents:<br /><textarea class='input' name=\"c\" rows=\"15\" cols=\"80\"></textarea>",true);
 rawoutput("<br />$strGenre:<select name=\"g\"><option value=\"Archives\">$g1</option><option value=\"Biography\">$g2</option><option value=\"Comedy\">$g3</option><option value=\"Crime\">$g4</option><option value=\"Fiction\">$g5</option><option value=\"Informational\">$g6</option><option value=\"Kids\">$g7</option><option value=\"Non-Fiction\">$g8</option><option value=\"Poetry\">$g9</option><option value=\"Sci-Fi\">$g10</option><option value=\"Other\">$g11</option></select>");
 rawoutput("<br />$strRate:<input type=\"checkbox\" name=\"r\" value=\"1\" />");
 rawoutput("<br />$strRate2:<input type=\"checkbox\" name=\"r\" value=\"0\" />");

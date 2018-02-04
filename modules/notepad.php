@@ -1,138 +1,97 @@
 <?php
-function notepad_getmoduleinfo() {
-    $info = array(
-        "name" => "Notepad",
-        "version" => "1.0",
-        "author" => "`!Boris735",
-        "category" => "General",
-        "description" => "Per-player editable notes",
-        "override_forced_nav" => true,
-        "prefs" => array(
-            "Notepad preferences,title",
-            "user_winwidth" => "Width of notepad (pixels),int|600",
-            "user_winheight" => "Height of notepad (pixels),int|400",
-            "user_textwidth" => "Width of edit area (columns),int|60",
-            "user_textheight" => "Height of edit area (rows),int|15",
-            "user_heading" => "Section of stats to appear under,text|Other",
-            "notetext" => "Text of user's notepad,text|",
-        ),
-    );
-    return $info;
+
+function notepad_getmoduleinfo(): array
+{
+    return [
+        'name' => 'Notepad',
+        'version' => '1.1',
+        'author' => 'Boris735, Stephen Kise',
+        'category' => 'General',
+        'description' => 'Per-player editable notes in a new tab.',
+        'override_forced_nav' => true,
+        'prefs' => [
+            'Notepad preferences, title',
+            'notetext' => 'Text of user\'s notepad, text|',
+        ],
+    ];
 }
 
-function notepad_install() {
-    module_addhook("charstats");
+function notepad_install(): bool
+{
+    module_addhook('charstats');
     return true;
 }
 
-function notepad_uninstall() {
+function notepad_uninstall(): bool
+{
+    return true;
 }
 
-function notepad_anchor($optext=false) {
-    $link = "runmodule.php?module=notepad";
-    if ($optext !== false && $optext != "")
-        $link .= "&$optext";
-
-    $width = get_module_pref("user_winwidth");
-    $height = get_module_pref("user_winheight");
-    $jspopwin = "window.open('$link', 'notepad', 'scrollbars=yes,resizable=yes,width=$width,height=$height').focus()";
-    $anchor = "<a href='$link'>";
-
-    return $anchor;
-}
-
-function notepad_linktext($linktext, $optext=false) {
-    $anchor = notepad_anchor($optext);
-    $anchor .= "$linktext</a>";
-    return $anchor;
-}
-
-function notepad_outputlink($linktext, $optext=false) {
-    // Should not use output() for links, since if someone has translation
-    // enabled then the tlbutton will try to nest links and it will end up
-    // being unclickable.  Thus, translate first.
-
-    $trans_linktext = translate_inline($linktext);
-    rawoutput(notepad_anchor($optext));
-    output_notl($trans_linktext);
-    rawoutput("</a>");
-}
-
-function notepad_dohook($hookname, $args) {
-    switch ($hookname) {
-    case "charstats":
-        $heading = get_module_pref("user_heading");
-        if ($heading == "")
-            $heading = "Personal Info";
-
-        $openmsg = translate_inline("Take Notes");
-
-        addcharstat($heading);
-        addcharstat("Notepad", notepad_linktext($openmsg, "op=read"));
-        addnav("","runmodule.php?module=notepad");
-        break;
-    }
+function notepad_dohook(string $hookName, array $args): array
+{
+    $link = "<a href='runmodule.php?module=notepad&op=read' target='_blank'>" .
+        "Open</a>";
+    addcharstat('Other');
+    addcharstat('Notepad', $link);
+    addnav('','runmodule.php?module=notepad&op=read');
     return $args;
 }
 
-function notepad_emptytext() {
-    $text = "Your notepad is enticingly empty, leaving plenty of room for your keen insights into the world.";
-    return $text;
+function notepad_emptytext(): string
+{
+    return "The notepad is blank! Maybe you should document your adventures!";
 }
 
-function notepad_run() {
-    popup_header("Your Notepad");
-
-    $op = httpget("op");
-
-    $text = get_module_pref("notetext");
-    $text = stripslashes($text);
+function notepad_run(): bool
+{
+    popup_header('Personal Notepad');
+    $op = httpget('op');
+    $notes = get_module_pref('notetext');
+    $notes = stripslashes($notes);
+    $notes = str_replace("\n", "`n", $notes);
+    $notes = htmlentities(
+        $notes,
+        ENT_COMPAT,
+        getsetting('charset', 'UTF-8')
+    );
 
     switch ($op) {
-    case "read":
-        notepad_outputlink("Edit Notes", "op=edit");
-        output("`n`n");
-
-        $text = str_replace("\n", "`n", $text);
-        if ($text == "")
-            $text = notepad_emptytext();
-
-        output("%s", $text);
-        output("`n`n");
-        break;
-
-    case "save":
-        $newtext = httppost("notes");
-        $newtext = stripslashes($newtext);
-        $newtext = str_replace("`n", "\n", $newtext);
-        if ($newtext != $text) {
-            // if (strlen($newtext) > 
-            $text = $newtext;
-            set_module_pref("notetext", $text);
-            output("`^Modified text saved`n`n");
-        }
-        /* fall through */
-    case "edit":
-
-        $width = get_module_pref("user_textwidth");
-        $height = get_module_pref("user_textheight");
-
-        output("`0");
-        rawoutput("<form action='runmodule.php?module=notepad&op=save' method='POST'>");
-        notepad_outputlink("View Notes`0", "op=read");
-        output("`\$(does `inot`i save)`0");
-        output_notl("`n`n`c`0");
-
-        $text = htmlentities($text, ENT_COMPAT, getsetting("charset", "ISO-8859-1"));
-        rawoutput("<textarea class='input' name='notes' cols='$width' rows='$height'>$text</textarea>");
-
-        output_notl("`c`n`0");
-        rawoutput("<input type='submit' class='button' value='Save' style='float: right'>");
-        rawoutput("</form>");
-
-        break;
+        case "read":
+            if (array_key_exists('saved', httpallget())) {
+                output("`c`b`QNotes saved!`b`c");
+            }
+            rawoutput(
+                "<a href='runmodule.php?module=notepad&op=edit'>Edit Notes</a>"
+            );
+            if ($notes == '') {
+                $notes = notepad_emptytext();
+            }
+            output("`n`n%s", $notes);
+            break;
+        case "save":
+            $newNotes = httppost('notes');
+            $newNotes = stripslashes($newNotes);
+            $newNotes = str_replace("`n", "\n", $newNotes);
+            if ($newNotes != $notes) {
+                set_module_pref("notetext", $newNotes);
+                header('Location: runmodule.php?module=notepad&op=read&saved');
+            }
+        case "edit":
+            rawoutput(
+                "<a href='runmodule.php?module=notepad&op=read'>View Notes</a>"
+            );
+            output("`\$(does `inot`i save)`n`n`c`0");
+            rawoutput(
+                "<form action='runmodule.php?module=notepad&op=save'
+                    method='POST'>
+                <textarea class='input' name='notes' rows='15'
+                    style='width: 90%'>$notes</textarea><br />
+                <input type='submit' class='button' value='Save'
+                    style='float: right'>
+                </form>"
+            );
+            output_notl("`c");
+            break;
     }
-
     popup_footer();
 }
-?>

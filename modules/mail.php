@@ -509,11 +509,15 @@ function mailView(): bool
         if ($row['author'] < 1) {
             $class = 'mail-reply-from-system';
         }
+        $relTime = reltime(strtotime($row['posted']));
         output(
             "<div class='mail-message-container'>
                 <div class='$class'>
                     <div class='message-details'>
                         {$row['name']}
+                        <div class='message-time'>
+                        $relTime
+                        </div>
                     </div>
                     {$row['body']}
                 </div>

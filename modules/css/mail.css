@@ -81,10 +81,6 @@
     min-width: 35%;
 }
 
-.mail-reply-from-me .message-details {
-    text-align: right;
-}
-
 .mail-reply-from-user {
     display: inline-block;
     padding: 10px;
@@ -98,6 +94,10 @@
     font-size: 12px;
     padding-bottom: 5px;
     text-transform: capitalize;
+}
+
+.message-time {
+    float: right;
 }
 
 #message-subject {

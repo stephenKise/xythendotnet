@@ -124,6 +124,9 @@ $('#close-modal').on('click', function (e) {
 
 $('#popout-modal').on('click tap', function (e) {
     window.open(window.frameElement.src);
+    $('.modal', window.parent.document.body).slideUp(function () {
+        $(this).removeAttr('src').hide();
+    });
 });
 
 $('select[name="template"]').on('change click tap', function() {

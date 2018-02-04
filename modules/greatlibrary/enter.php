@@ -3,16 +3,16 @@
 addnav("Actions");
 addnav("Browse the books", "runmodule.php?module=greatlibrary&op=browse");
 if(get_module_setting("adminonly") == 0){
-	$strText = translate_inline("Open to all would-be scribes");
-	addnav("Write your own book", "runmodule.php?module=greatlibrary&op=write");
+    $strText = translate_inline("Open to all would-be scribes");
+    addnav("Write your own book", "runmodule.php?module=greatlibrary&op=write");
 }else{
-	$strText = translate_inline("For $strLibraryName staff only");
-	if($session["user"]["superuser"] & 16){
-	addnav("Write your own book", "runmodule.php?module=greatlibrary&op=write");
+    $strText = translate_inline("For $strLibraryName staff only");
+    if($session["user"]["superuser"] & 16){
+    addnav("Write your own book", "runmodule.php?module=greatlibrary&op=write");
 }
 }
 if(get_module_setting("usehooks") == 1){
-	modulehook("greatlibrary_enter");
+    modulehook("greatlibrary_enter");
 }
 addnav("Other");
 villagenav();

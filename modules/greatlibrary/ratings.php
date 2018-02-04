@@ -15,7 +15,7 @@ $strAuthorName = $arrBook["BookAuthorName"];
 $strAvgRating = $arrBook["AvgRating"];
 $strCarried = $arrBook["BookCarried"];
 if(get_module_setting("nocolours") == 1){
-	$strName = prevent_colors($strName);
+    $strName = prevent_colors($strName);
 }
 
 $avgSQL = "SELECT AVG(Ratings) AS AVG_Ratings FROM ".db_prefix("library_ratings")." WHERE BookID = '$intBookID'";
@@ -32,12 +32,12 @@ output("`n`n`7Yours gratefully %s",$strAuthorName);
 output("`n`n`7This book now has an average rating of %0.1f",$avgRating);
 
 if($strCarried == 1){
-	villagenav();
+    villagenav();
 }else{
     addnav("Continue browsing", "runmodule.php?module=greatlibrary&op=browse");
 }
 if($session["user"]["superuser"] & 16){
-	addnav("Burn all copies", "runmodule.php?module=greatlibrary&op=burn&id=$intBookID");
+    addnav("Burn all copies", "runmodule.php?module=greatlibrary&op=burn&id=$intBookID");
 }
 
 ?>

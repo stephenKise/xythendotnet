@@ -28,15 +28,15 @@ $rRated = $arrRate["Rated"];
 // Deleting/Burning of books
 if($session["user"]["superuser"] & SU_MANAGE_MODULES)
 {
-	output("`0[<a href='runmodule.php?module=greatlibrary&op=burn&id={$intBookID}' onClick=\"return confirm('Are you sure you want to delete this book?');\">`\$Delete`0</a>]",true);
-	addnav("","runmodule.php?module-greatlibrary&op=burn&id=$intBookID");
+    output("`0[<a href='runmodule.php?module=greatlibrary&op=burn&id={$intBookID}' onClick=\"return confirm('Are you sure you want to delete this book?');\">`\$Delete`0</a>]",true);
+    addnav("","runmodule.php?module-greatlibrary&op=burn&id=$intBookID");
 }
 
 if($strAuthorName == null){
-	$strAuthorName = "Unknown Author";
+    $strAuthorName = "Unknown Author";
 }
 if(get_module_setting("nocolours") == 1){
-	$strName = prevent_colors($strName);
+    $strName = prevent_colors($strName);
 }
 $strContent = str_replace("\n", "`n", $strContent);
 $strSubmitRating = translate_inline("Rate this book");
@@ -62,31 +62,31 @@ if($strRate == 1){
 }
 $intCarried = httpget("cr");
 if($intCarried == 1){
-	villagenav();
+    villagenav();
 }else{
-	if($intPlayer == $intAuthor){
-		$boolRevise = true;
-		if(get_module_setting("adminonly") == 1){
-			if(!($session["user"]["superuser"] & 16)){
-				$boolRewrite = false;
-			}
-		}
-		if($boolRevise == true){
-			addnav("Revise this book", "runmodule.php?module=greatlibrary&op=revise&id=$intBookID");
-		}
-	}
-	if(get_module_setting("allowcheckout") == true){
-		$strSQL = "SELECT Book FROM  ".db_prefix("bookcarry")." WHERE Book = $intBookID AND Owner = $intPlayer";
-		$queCarrying = db_query($strSQL);
-		if(db_num_rows($queCarrying) == 0){
-			addnav("Check out this book", "runmodule.php?module=greatlibrary&op=checkout&id=$intBookID");
-		}else{
-			addnav("Replace this book", "runmodule.php?module=greatlibrary&op=replace&id=$intBookID");
-		}
-	}
-	addnav("Continue browsing", "runmodule.php?module=greatlibrary&op=browse");
+    if($intPlayer == $intAuthor){
+        $boolRevise = true;
+        if(get_module_setting("adminonly") == 1){
+            if(!($session["user"]["superuser"] & 16)){
+                $boolRewrite = false;
+            }
+        }
+        if($boolRevise == true){
+            addnav("Revise this book", "runmodule.php?module=greatlibrary&op=revise&id=$intBookID");
+        }
+    }
+    if(get_module_setting("allowcheckout") == true){
+        $strSQL = "SELECT Book FROM  ".db_prefix("bookcarry")." WHERE Book = $intBookID AND Owner = $intPlayer";
+        $queCarrying = db_query($strSQL);
+        if(db_num_rows($queCarrying) == 0){
+            addnav("Check out this book", "runmodule.php?module=greatlibrary&op=checkout&id=$intBookID");
+        }else{
+            addnav("Replace this book", "runmodule.php?module=greatlibrary&op=replace&id=$intBookID");
+        }
+    }
+    addnav("Continue browsing", "runmodule.php?module=greatlibrary&op=browse");
 }
 //if($session["user"]["superuser"] & SU_MANAGE_MODULES){
-//	addnav("Burn Book", "runmodule.php?module=greatlibrary&op=burn&id=$intBookID");
+//  addnav("Burn Book", "runmodule.php?module=greatlibrary&op=burn&id=$intBookID");
 //}
 ?>

@@ -6,9 +6,9 @@ $intBookID = htmlentities(stripslashes($intBookID));
 $strSQL = "SELECT BookContent, BookName, BookGenre, BookRate FROM ".db_prefix("library")." WHERE BookID = '$intBookID' AND BookAuthorID = '$intPlayer';";
 $queBook = db_query($strSQL);
 if(db_num_rows($queBook) == 0){
-	output("You could not find the book you were seeking on the shelves. Perplexed, you head back to the entrance of the %s.", $strLibraryName);
-	addnav("Return to the entrance", "runmodule.php?module=greatlibrary&op=enter");
-	return false;
+    output("You could not find the book you were seeking on the shelves. Perplexed, you head back to the entrance of the %s.", $strLibraryName);
+    addnav("Return to the entrance", "runmodule.php?module=greatlibrary&op=enter");
+    return false;
 }
 $arrBook = db_fetch_assoc($queBook);
 $strName = $arrBook["BookName"];

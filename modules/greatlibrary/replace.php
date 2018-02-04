@@ -7,7 +7,7 @@ $queBook = db_query($strSQL);
 $arrBook = db_fetch_assoc($queBook);
 $strName = $arrBook["BookName"];
 if(get_module_setting("nocolours") == 1){
-	$strName = prevent_colors($strName);
+    $strName = prevent_colors($strName);
 }
 $intOwner = $session["user"]["acctid"];
 $strSQL = "DELETE FROM  ".db_prefix("bookcarry")." WHERE Book = $intBookID AND Owner = $intOwner";

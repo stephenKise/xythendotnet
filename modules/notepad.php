@@ -36,7 +36,7 @@ function notepad_anchor($optext=false) {
 	$width = get_module_pref("user_winwidth");
 	$height = get_module_pref("user_winheight");
 	$jspopwin = "window.open('$link', 'notepad', 'scrollbars=yes,resizable=yes,width=$width,height=$height').focus()";
-	$anchor = "<a href='$link' target='_blank'>";
+	$anchor = "<a href='$link'>";
 
 	return $anchor;
 }
@@ -121,9 +121,6 @@ function notepad_run() {
 		rawoutput("<form action='runmodule.php?module=notepad&op=save' method='POST'>");
 		notepad_outputlink("View Notes`0", "op=read");
 		output("`\$(does `inot`i save)`0");
-
-		rawoutput("<input type='submit' class='button' value='Save' style='float: right'>");
-
 		output_notl("`n`n`c`0");
 
 		$text = htmlentities($text, ENT_COMPAT, getsetting("charset", "ISO-8859-1"));

@@ -14,7 +14,7 @@ $intAuthor = $session["user"]["acctid"];
 $strSQL = "SELECT name FROM ".db_prefix("accounts")." WHERE acctid = '$intAuthor';";
 $queAuthor = db_query($strSQL);
 $arrAuthor = db_fetch_assoc($queAuthor);
-$strAuthorName = $arrAuthor["name"];
+$strAuthorName = addslashes($session['user']['name']);
 $strName = htmlentities(stripslashes($strName));
 $strContent = stripslashes($strContent);
 $strName = str_replace("`", "\`", $strName);

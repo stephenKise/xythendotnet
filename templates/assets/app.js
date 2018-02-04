@@ -132,6 +132,9 @@ $('select[name="template"]').on('change click tap', function() {
 });
 
 $('a[target^="_"]').on('click tap', function (e) {
+    if ($(this).attr('href').startsWith('http')) {
+        return true;
+    }
     loadModal($(this).attr('href'));
     e.preventDefault();
     return false;

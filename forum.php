@@ -99,12 +99,12 @@ elseif ($op == 'save_category')
 	check_su_access(SU_EDIT_USERS);
 	$all_post = httpallpost();
 	debug($all_post);
-	$get_csv = file_get_contents('./game_cache/forumcategories.csv');
+	$get_csv = file_get_contents('./modules/forumcategories.csv');
 	$category = trim(ucfirst(strtolower($all_post['category'])));
 	$description = trim(ucfirst(strtolower($all_post['description'])));
 	$put_csv = $get_csv."|$category:$description";
 	debug($put_csv);
-	file_put_contents('./game_cache/forumcategories.csv', $put_csv);
+	file_put_contents('./modules/forumcategories.csv', $put_csv);
 }
 elseif ($op == 'sub_to_thread')
 {
@@ -145,4 +145,4 @@ if (httpget('cat'))
 	$session['user']['forumpeepdata'] = serialize($forumpeepdata);
 }
 page_footer();
-?>
+

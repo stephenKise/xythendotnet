@@ -247,7 +247,7 @@ $args['commentline'] = '';
 invalidatedatacache("comments-".$args['section']);
 invalidatedatacache("comments-or11");
 
-$trivia_list = file_get_contents('game_cache/trivia_questions.csv');
+$trivia_list = file_get_contents('modules/trivia_questions.csv');
 $trivia_list = explode("\n",$trivia_list);
 $trivia_list = array_filter($trivia_list,'trim');
 $display = $trivia_list[rand(0,(count($trivia_list)-1))];
@@ -281,7 +281,7 @@ $vote_array = unserialize($vote_array);
 $val = max($vote_array);
 $section = array_search($val,$vote_array);
 $section = "Misc";
-$trivia_list = file_get_contents('game_cache/trivia_questions.csv');
+$trivia_list = file_get_contents('modules/trivia_questions.csv');
 $trivia_list = explode("\n",$trivia_list);
 $trivia_list = array_filter($trivia_list,'trim');
 $category_list = array();
@@ -372,4 +372,3 @@ break;
 }
 page_footer();
 }
-?>

@@ -12,8 +12,9 @@ function jQueryCommentary_getmoduleinfo(): array
         'settings' => [
         ],
         'prefs' => [
-            'jQuery Commentary Prefs,title',
+            'Commentary Prefs,title',
             'section' => 'Current Commentary Section, viewonly| village',
+            'user_spacing' => 'Do you want spaces between each post?, bool| 0',
         ]
     ];
     return $info;
@@ -280,6 +281,7 @@ function getChatMessages(): array
         'jQueryCommentary',
         $session['user']['acctid']
     );
+    $spacing = (get_module_pref('user_spacing')) ? "`n" : '';
     $section = addslashes($section);
     $ret = URLEncode($post['ret']);
     $commentary = db_prefix('commentary');
@@ -307,7 +309,7 @@ function getChatMessages(): array
         }
         array_push(
             $response,
-            formatComment($row)
+            formatComment($row . $spacing)
         );
     }
     array_push(
@@ -346,7 +348,7 @@ function getChatMessages(): array
         }
         array_push(
             $response,
-            formatComment($row)
+            formatComment($row . $spacing)
         );
     }
     db_free_result($sql);

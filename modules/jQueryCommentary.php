@@ -307,9 +307,10 @@ function getChatMessages(): array
         if ($row['name'] == '') {
             $row['name'] = '';
         }
+        $row['comment'] = $row['comment'] . $spacing;
         array_push(
             $response,
-            formatComment($row . $spacing)
+            formatComment($row)
         );
     }
     array_push(
@@ -346,9 +347,10 @@ function getChatMessages(): array
         if ($row['name'] == '') {
             $row['name'] = '';
         }
+        $row['comment'] = $row['comment'] . $spacing;
         array_push(
             $response,
-            formatComment($row . $spacing)
+            formatComment($row)
         );
     }
     db_free_result($sql);

@@ -327,15 +327,33 @@ else
     }
     if (!isset ($session['user']['prefs']['timeformat']))
         $session['user']['prefs']['timeformat']="[m/d h:ia]";
-    $form=array("Account Preferences,title", "pass1" => "Password,password", "pass2" => "Retype,password", "You SHOULD use one capital letter&#44; one lower case letter&#44; and one number in your password!,note", "You will be logged out when you change your password!,note", "email" => "Email Address", "switch_accounts" => "Should we add the option for quick switching accounts above your character's stats?,bool", "allowed_names" => "What other logins should we allow you to switch to?,text", "Please be aware that you need to have the same password set for this account and the account that you want to switch to! If there is more than one account you want to switch to - separate the names with a comma.,note", "Display Preferences,title", "text_size" => "How big do you like your text?,range,9,20", "text_font" => "Which font should we use?,enum,0,Verdana,1,Times New Roman", "template" => "Skin,theme", "language" => "Language,enum,".getsetting("serverlanguages", "en,English,de,Deutsch,fr,Français,dk,Danish,es,Español,it,Italian"), "tabconfig" => "Show config sections in tabs,bool", "`@Colour/Commentary Options,note", "nocolornavs" => "Remove colour from navs?,bool", "highlight" => "Highlight dark colours,bool", "spacedchat" => "Space the chat out (dyslexic friendly)?,bool", "Game Behavior Preferences,title", "disable_popups" => "Do you want to disable popups and have new tabs open instead?,bool", "disable_hotkeys" => "Should we have the hotkeys disabled?,bool",
-    //      "emailonmail"=>"Send email when you get new message?,bool",
-    //      "systemmail"=>"Send email for system generated messages?,bool",
-    "dirtyemail" => "Allow profanity in received a message?,bool", "timestamp" => "Show timestamps in commentary?,enum,0,None,1,Real Time [12/25 1:27pm],2,Relative Time (1h35m)", "timeformat" => array("Timestamp format (currently displaying time as %s whereas default format is \"[m/d h:ia]\"),string,20", date($session['user']['prefs']['timeformat'], strtotime("now")+($session['user']['prefs']['timeoffset']*60*60))), "timeoffset" => array("Hours to offset time displays (%s currently displays as %s)?,int", date($session['user']['prefs']['timeformat']), date($session['user']['prefs']['timeformat'], strtotime("now")+($session['user']['prefs']['timeoffset']*60*60))), "togglecc" => "Should we display the Clan Chat in your OOC Chat?,bool", "toggleooc" => "Where should we display OOC chats at?,enum,0,Nowhere at all,1,Above current chat,2,Below current chat", "oocnews" => "Hide the news from the OOC?,bool", "deputy_moderator" => "Do you want to remove the reporting function from chat?,bool", "`i`^Please note that the chat will STILL DISPLAY AS IT WAS BEFORE THE SAVE until a new comment is made.`i,note", "ihavenocheer" => "`0Always disable all holiday related text replacements (such as a`1`0l`1`0e => e`1`0g`1`0g n`1`0o`1`0g for December),bool",
-    //      "bio"=>"Short Character Biography (255 chars max),string,255",
-    "nojump" => "Don't jump to comment areas after refreshing or posting a comment?,bool", "PvP Notification,title", "pvpnotif" => "Would you like to be notified when someone slays you?,bool", "Charm,title", "showcharm" => "Would you like to see your charm under your Personal Info?,bool",);
-    $staffprefs=array("Staff Preferences,title", "debug" => "Should we enable the debug output for you?,bool", "hide_deleted" => "Do you want deleted comments to show?,bool",);
+    $form = [
+        "Account Preferences, title",
+        "pass1" => "Password,password",
+        "pass2" => "Retype,password",
+        "You SHOULD use one capital letter&#44; one lower case letter&#44; and one number in your password!,note",
+        "You will be logged out when you change your password!,note",
+        "email" => "Email Address",
+        "switch_accounts" => "Should we add the option for quick switching accounts above your character's stats?,bool",
+        "allowed_names" => "What other logins should we allow you to switch to?,text",
+        "Please be aware that you need to have the same password set for this account and the account that you want to switch to! If there is more than one account you want to switch to - separate the names with a comma.,note",
+        "Display Preferences,title",
+        "template" => "Skin,theme",
+        "tabconfig" => "Show config sections in tabs,bool",
+        "Game Behavior Preferences,title",
+        "disable_hotkeys" => "Should we have the hotkeys disabled?,bool",
+        "PvP Notification,title",
+        "pvpnotif" => "Would you like to be notified when someone slays you?,bool",
+        "Charm,title",
+        "showcharm" => "Would you like to see your charm under your Personal Info?,bool",
+    ];
+    $staffprefs = [
+        "Staff Preferences, title",
+        "debug" => "Should we enable the debug output for you?,bool",
+        "hide_deleted" => "Do you want deleted comments to show?,bool",
+    ];
     if ($session['user']['superuser']&SU_EDIT_COMMENTS)
-        $form=array_merge($form, $staffprefs);
+        $form=array_merge($form,$staffprefs);
     rawoutput("<script language='JavaScript' src='lib/md5.js'></script>");
     $warn=translate_inline("Your password is too short.  It must be at least 4 characters long.");
     rawoutput("<script language='JavaScript'>

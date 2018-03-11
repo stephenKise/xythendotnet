@@ -70,6 +70,9 @@ function jQueryCommentary_dohook(string $hook, array $args): array
         case 'everyfooter-loggedin':
                 if ($chatFormDeclared == 1) {
                     rawoutput("</div>");
+                    if (get_module_pref('user_spacing') == 1) {
+                        rawoutput("<style>.jQuery-message { padding-bottom: .5em; }</style>");
+                    }
                 }
             break;
         case 'api':
@@ -281,7 +284,6 @@ function getChatMessages(): array
         'jQueryCommentary',
         $session['user']['acctid']
     );
-    $spacing = (get_module_pref('user_spacing')) ? "`n" : '';
     $section = addslashes($section);
     $ret = URLEncode($post['ret']);
     $commentary = db_prefix('commentary');
@@ -307,7 +309,6 @@ function getChatMessages(): array
         if ($row['name'] == '') {
             $row['name'] = '';
         }
-        $row['comment'] = $row['comment'] . $spacing;
         array_push(
             $response,
             formatComment($row)
@@ -347,7 +348,6 @@ function getChatMessages(): array
         if ($row['name'] == '') {
             $row['name'] = '';
         }
-        $row['comment'] = $row['comment'] . $spacing;
         array_push(
             $response,
             formatComment($row)

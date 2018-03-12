@@ -170,7 +170,6 @@ function appoencode($data,$priv=false){
             "{" => "colLeftCurly",
             "]" => "colRightBracket",
             "}" => "colRightCurly",
-            "\\" => "colBackSlash",
             "|" => "colPipe",
             ";" => "colSemicolon",
             ":" => "colColon",

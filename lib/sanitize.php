@@ -104,9 +104,9 @@ function sanitize_colorname($spaceallowed, $inname, $admin = false)
 {
 	if ($admin && getsetting("allowoddadminrenames", 0)) return $inname;
 	if ($spaceallowed)
-		$expr = "([^[:alpha:]`!@#$%^&\\)12345670 _-])";
+		$expr = "([^[:alpha:]`!@#$%^&)12345670 _-])";
 	else
-		$expr = "([^[:alpha:]`!@#$%^&\\)12345670])";
+		$expr = "([^[:alpha:]`!@#$%^&)12345670])";
 	return preg_replace($expr, "", $inname);
 }
 

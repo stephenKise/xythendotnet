@@ -16,6 +16,9 @@ $(document).ready(function() {
     if ($('a[name=mailLink] i').hasClass('glow')) {
         newMail();
     }
+    if ($('a[href^=motd] i').hasClass('glow')) {
+        newMotd();
+    }
     if (localStorage['hideMain'] == 1) {
         $('main').hide();
         $('nav').show();
@@ -94,6 +97,7 @@ $('.alerts').on('click tap', function(){
     $('.alerts').animate({
         height: '0em'
     }, 250).html('');
+    loadModal($(this).data('uri'));
 });
 
 $('.contact a').on('click', function (e) {
@@ -145,15 +149,18 @@ $('a[target^="_"]').on('click tap', function (e) {
 
 function newMail()
 {
-    $('a[name=mailLink] i').addClass('glow');
-    $('.alerts').html('You have a new mail!').animate({
-        height: '1.25em'
-    }, 250);
+    $('.alerts').html('You have a new mail!')
+        .data('uri', 'mail.php').animate({height: '1.25em'}, 250);
+}
+
+function newMotd()
+{
+    $('.alerts').html('A new MotD was posted!')
+        .data('uri', 'motd.php').animate({height: '1.25em'}, 250);
 }
 
 function clearMail()
 {
-    $('a[name=mailLink] i').removeClass('glow');
     $('.alerts').animate({
         height: '0em'
     }, 250).html('');

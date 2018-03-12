@@ -48,7 +48,6 @@ function notepad_run(): bool
     $op = httpget('op');
     $notes = get_module_pref('notetext');
     $notes = stripslashes($notes);
-    $notes = str_replace("\n", "`n", $notes);
     $notes = htmlentities(
         $notes,
         ENT_COMPAT,
@@ -57,6 +56,7 @@ function notepad_run(): bool
 
     switch ($op) {
         case "read":
+            $notes = str_replace("\n", "`n", $notes);
             if (array_key_exists('saved', httpallget())) {
                 output("`c`b`QNotes saved!`b`c");
             }

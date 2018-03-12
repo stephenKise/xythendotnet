@@ -722,7 +722,6 @@ function charstats(){
 //		if (is_module_active("friendlist")) addcharstat("Friends","");
 		if (is_module_active("logoutcharstat") && $SCRIPT_NAME == "village.php") addcharstat("Leaving?","");
 		addcharstat("Item Info");
-		addcharstat("Banking","<a href='runmodule.php?module=banking&op=main' target='_blank' onClick=\"".popup("runmodule.php?module=banking&op=main","1000x500").";return false;\">".translate_inline("Open")."</a>");
 		addcharstat("Gold",number_format($u['gold']));
 		addcharstat("Gems",number_format($u['gems']));
 		if (!$u['alive']) addcharstat("Favor", $u['deathpower'].check_temp_stat("deathpower",1));

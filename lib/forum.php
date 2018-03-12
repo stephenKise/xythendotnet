@@ -3,7 +3,7 @@ function categories_nav()
 {
 	global $session;
 	$my_views = unserialize($session['user']['forumpeepdata']);
-	$read_csv = file_get_contents('game_cache/forumcategories.csv');
+	$read_csv = file_get_contents('modules/forumcategories.csv');
 	$forum_categories = explode('|',$read_csv);
 	addnav("Quick Jump");
 	addnav("`)Home","forum.php?op=main");
@@ -21,7 +21,7 @@ function categories_nav()
 function display_categories()
 {
 	global $session;
-	$read_csv = file_get_contents('game_cache/forumcategories.csv');
+	$read_csv = file_get_contents('modules/forumcategories.csv');
 	$my_views = unserialize($session['user']['forumpeepdata']);
 	$forum_categories = explode('|',$read_csv);
 	output("<table align='center' width='700px' style='border: 1px dotted;'><tr><td colspan='2' width='400px'>Forum</td><td align='center'>Threads</td><td align='center'>Replies</td><td align='center'>Last Post</td></tr>",true);

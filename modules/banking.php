@@ -1,35 +1,46 @@
 <?php
 
-// Very Sloppy... Definitely needs revised. >.>
-
-function banking_getmoduleinfo(){
-    $info = array(
-        "name"=>"Banking",
-        "version"=>"2.0",
-        "author"=>"Maverick",
-        "category"=>"General",
-        "override_forced_nav"=>true,
-    );
-    return $info;
+function banking_getmoduleinfo(): array
+{
+    return [
+        'name' => 'Mobile Banking',
+        'version' => '2.1',
+        'author' => 'Maverick, Stephen Kise',
+        'category' => 'Gameplay',
+        'description' => 'Prepends a banking link to player\'s stats',
+        'requires' => [
+            'bankmod' => 'Bank Modification 1.1 by Spider',
+        ],
+        'override_forced_nav' => true,
+    ];
 }
 
-function banking_install(){
-    return TRUE;
+function banking_install(): bool
+{
+    module_addhook('charstats');
+    return true;
 }
 
-function banking_uninstall(){
-    return TRUE;
+function banking_uninstall(): bool
+{
+    return true;
 }
 
-function banking_dohook($hookname,$args){
+function banking_dohook(string $hookName, array $args): array
+{
+    global $charstat_info;
+    $link = "<a href='runmodule.php?module=banking' target='_blank'>Open</a>";
+    $charstat_info['Item Info'] =
+        ['Banking' => $link] + $charstat_info['Item Info'];
     return $args;
 }
 
-function banking_run(){
+function banking_run(): bool
+{
     global $session;
-    $op = httpget("op");
-    $subop = httpget("subop");
-    $a = httpget("a");
+    $op = httpget('op');
+    $subop = httpget('subop');
+    $a = httpget('a');
     $sql = "SELECT ownerid,gold,gems FROM dwellings WHERE ownerid='{$session['user']['acctid']}'";
     $result = db_query($sql);
     $num = db_num_rows($result);
@@ -58,9 +69,9 @@ function banking_run(){
     }
     
     popup_header("Bank Accounts");
-    output("`c`7The National Bank of Xythen is an institution that rose to prominence once most of the random portals closed. With the slowed influx of foreign currency, a standard could be implemented and a new centre of economy chosen. Every city holds one of these large perfectly square buildings, allowing everyone to deposit and withdraw both gold and gems from the institution, no matter where they are.`c",true);
+    output("`c`b`QMobile Banking`b`c",true);
     switch($op){
-        case "main":
+        default:
         output("<hr>`n`c`^You have {$onhandgold} `^Gold and {$onhandgems} `^Gems on hand`c`n<hr>",true);
         if (!$subop){
             
